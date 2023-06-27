@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-38:/layout/activity_main.xml",
+        "source": "com.example.ace.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\kugle\\.gradle\\daemon\\8.0\\com.example.ace.app-mergeDebugResources-38:\\layout\\activity_add_note.xml",
+        "source": "C:\\Users\\kugle\\.gradle\\daemon\\8.0\\com.example.ace.app-main-41:\\layout\\activity_add_note.xml"
+    },
+    {
+        "merged": "C:\\Users\\kugle\\.gradle\\daemon\\8.0\\com.example.ace.app-mergeDebugResources-38:\\layout\\activity_note_preview.xml",
+        "source": "C:\\Users\\kugle\\.gradle\\daemon\\8.0\\com.example.ace.app-main-41:\\layout\\activity_note_preview.xml"
+    },
+    {
+        "merged": "C:\\Users\\kugle\\.gradle\\daemon\\8.0\\com.example.ace.app-mergeDebugResources-38:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\kugle\\.gradle\\daemon\\8.0\\com.example.ace.app-main-41:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\kugle\\.gradle\\daemon\\8.0\\com.example.ace.app-mergeDebugResources-38:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\kugle\\.gradle\\daemon\\8.0\\com.example.ace.app-main-41:\\layout\\activity_login.xml"
+    }
+]

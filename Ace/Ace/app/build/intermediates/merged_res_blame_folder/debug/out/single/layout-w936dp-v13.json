@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-38:/layout-w936dp-v13/activity_login.xml",
+        "source": "com.example.ace.app-main-41:/layout-w936dp/activity_login.xml"
+    }
+]
