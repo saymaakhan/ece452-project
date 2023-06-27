@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/layout_fragment_first.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/layout/fragment_first.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/layout-w1240dp_activity_login.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/layout-w1240dp/activity_login.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/navigation_nav_graph.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/layout_fragment_second.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/layout/fragment_second.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/layout_activity_main.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/layout_activity_login.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/layout-w936dp_activity_login.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/layout-w936dp/activity_login.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/xml_backup_rules.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/drawable_loginlogo.png.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/drawable/loginlogo.png"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-54:/layout_activity_main.xml.flat",
+        "source": "com.example.ace.app-main-56:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/layout_activity_dashboard.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/layout_content_dashboard.xml.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/layout/content_dashboard.xml"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-54:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-56:/mipmap-mdpi/ic_launcher_round.webp"
+    }
+]
