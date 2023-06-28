@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ace.MainActivity
 import com.example.ace.R
+import com.example.ace.calendar.CalendarActivity
 import com.example.ace.databinding.ActivityDashboardBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -38,6 +39,7 @@ class DashboardActivity : AppCompatActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         val logout = binding.logout
+        val calendar = binding.calendar
 
         logout.setOnClickListener {
             mGoogleSignInClient.signOut().addOnCompleteListener {
@@ -46,6 +48,12 @@ class DashboardActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
+        }
+
+        calendar.setOnClickListener {
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

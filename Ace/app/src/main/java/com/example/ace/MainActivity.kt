@@ -2,19 +2,12 @@ package com.example.ace
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.R.attr.value
 import android.app.Activity
 import android.content.Intent
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.WindowCompat
-import com.example.ace.calendar.CalendarActivity
 import com.example.ace.databinding.ActivityMainBinding
-import com.example.ace.ui.login.LoginActivity
-import com.example.ace.MainActivity
-import com.example.ace.databinding.ActivityLoginBinding
 import com.example.ace.ui.login.DashboardActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -53,8 +46,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.sploginbutton.setOnClickListener {
-//            loading.visibility = View.VISIBLE
-//                loginViewModel.login(username.text.toString(), password.text.toString())
             signInGoogle()
         }
     }
