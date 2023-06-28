@@ -4225,7 +4225,7 @@
                     }
                 },
                 {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/res/values-night/themes.xml",
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "16,2",
                         "startColumns": "4,4",
@@ -6183,7 +6183,7 @@
                     }
                 },
                 {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/res/values-land/dimens.xml",
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/res/values-land/dimens.xml",
                     "from": {
                         "startLines": "1,2",
                         "startColumns": "4,4",
@@ -7653,7 +7653,7 @@
             "outputFile": "com.example.ace.app-merged_res-58:/values-w600dp-v13_values-w600dp-v13.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/res/values-w600dp/dimens.xml",
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/res/values-w600dp/dimens.xml",
                     "from": {
                         "startLines": "1,2",
                         "startColumns": "4,4",
@@ -8994,6 +8994,25 @@
             "outputFile": "com.example.ace.app-merged_res-58:/values_values.arsc.flat",
             "map": [
                 {
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "5,6,1,16,9,8,10,21,18,19,3,4,17,14,12,11,2,13,7",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "220,283,16,931,452,386,536,1146,1061,1099,120,167,995,808,663,592,57,732,340",
+                        "endLines": "5,6,1,16,9,8,10,56,18,19,3,4,17,14,12,11,2,13,7",
+                        "endColumns": "62,56,40,63,83,65,55,13,37,45,46,52,65,67,68,70,62,75,45",
+                        "endOffsets": "278,335,52,990,531,447,587,4286,1094,1140,162,215,1056,871,727,658,115,803,381"
+                    },
+                    "to": {
+                        "startLines": "2038,2039,2041,2084,2092,2093,2095,2096,2249,2255,2257,2258,2265,2269,2270,2271,2272,2273,2274",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "132960,133023,133163,138265,139144,139228,139353,139409,158651,159491,159607,159654,160268,160753,160821,160890,160961,161024,161100",
+                        "endLines": "2038,2039,2041,2084,2092,2093,2095,2131,2249,2255,2257,2258,2265,2269,2270,2271,2272,2273,2274",
+                        "endColumns": "62,56,40,63,83,65,55,13,37,45,46,52,65,67,68,70,62,75,45",
+                        "endOffsets": "133018,133075,133199,138324,139223,139289,139404,142549,158684,159532,159649,159702,160329,160816,160885,160956,161019,161095,161141"
+                    }
+                },
+                {
                     "source": "/Users/emilykissoon/.gradle/caches/transforms-3/1964c8d2a8e5e1a95cb0eca929de57b9/transformed/navigation-fragment-2.6.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12",
@@ -9102,6 +9121,23 @@
                     }
                 },
                 {
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/res/values/dimens.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "88,146,202",
+                        "endColumns": "57,55,41",
+                        "endOffsets": "141,197,239"
+                    },
+                    "to": {
+                        "startLines": "1113,1114,1184",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "65294,65352,69912",
+                        "endColumns": "57,55,41",
+                        "endOffsets": "65347,65403,69949"
+                    }
+                },
+                {
                     "source": "/Users/emilykissoon/.gradle/caches/transforms-3/7e1b835111c24f2cff728e8a2789e08b/transformed/recyclerview-1.1.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
@@ -9135,23 +9171,6 @@
                         "startOffsets": "125919",
                         "endColumns": "42",
                         "endOffsets": "125957"
-                    }
-                },
-                {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/res/values/dimens.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "88,146,202",
-                        "endColumns": "57,55,41",
-                        "endOffsets": "141,197,239"
-                    },
-                    "to": {
-                        "startLines": "1113,1114,1184",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "65294,65352,69912",
-                        "endColumns": "57,55,41",
-                        "endOffsets": "65347,65403,69949"
                     }
                 },
                 {
@@ -9468,61 +9487,6 @@
                     }
                 },
                 {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/build/generated/res/google-services/debug/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,707",
-                        "endColumns": "143,81,103,108,119,92,69",
-                        "endOffsets": "194,276,380,489,609,702,772"
-                    },
-                    "to": {
-                        "startLines": "2072,2085,2086,2087,2088,2089,2256",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "137221,138329,138411,138515,138624,138744,159537",
-                        "endColumns": "143,81,103,108,119,92,69",
-                        "endOffsets": "137360,138406,138510,138619,138739,138832,159602"
-                    }
-                },
-                {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "5,6,1,16,9,8,10,21,18,19,3,4,17,14,12,11,2,13,7",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "220,283,16,931,452,386,536,1146,1061,1099,120,167,995,808,663,592,57,732,340",
-                        "endLines": "5,6,1,16,9,8,10,56,18,19,3,4,17,14,12,11,2,13,7",
-                        "endColumns": "62,56,40,63,83,65,55,13,37,45,46,52,65,67,68,70,62,75,45",
-                        "endOffsets": "278,335,52,990,531,447,587,4286,1094,1140,162,215,1056,871,727,658,115,803,381"
-                    },
-                    "to": {
-                        "startLines": "2038,2039,2041,2084,2092,2093,2095,2096,2249,2255,2257,2258,2265,2269,2270,2271,2272,2273,2274",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "132960,133023,133163,138265,139144,139228,139353,139409,158651,159491,159607,159654,160268,160753,160821,160890,160961,161024,161100",
-                        "endLines": "2038,2039,2041,2084,2092,2093,2095,2131,2249,2255,2257,2258,2265,2269,2270,2271,2272,2273,2274",
-                        "endColumns": "62,56,40,63,83,65,55,13,37,45,46,52,65,67,68,70,62,75,45",
-                        "endOffsets": "133018,133075,133199,138324,139223,139289,139404,142549,158684,159532,159649,159702,160329,160816,160885,160956,161019,161095,161141"
-                    }
-                },
-                {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/res/values/themes.xml",
-                    "from": {
-                        "startLines": "16,2",
-                        "startColumns": "4,4",
-                        "startOffsets": "832,100",
-                        "endLines": "19,14",
-                        "endColumns": "12,12",
-                        "endOffsets": "1044,790"
-                    },
-                    "to": {
-                        "startLines": "2567,6445",
-                        "startColumns": "4,4",
-                        "startOffsets": "179751,449878",
-                        "endLines": "2570,6457",
-                        "endColumns": "12,12",
-                        "endOffsets": "179857,450447"
-                    }
-                },
-                {
                     "source": "/Users/emilykissoon/.gradle/caches/transforms-3/f820aeb0fef11ad043afc742c50cf79c/transformed/navigation-runtime-2.6.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,10,13",
@@ -9576,7 +9540,43 @@
                     }
                 },
                 {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/res/values/colors.xml",
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/build/generated/res/google-services/debug/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,707",
+                        "endColumns": "143,81,103,108,119,92,69",
+                        "endOffsets": "194,276,380,489,609,702,772"
+                    },
+                    "to": {
+                        "startLines": "2072,2085,2086,2087,2088,2089,2256",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "137221,138329,138411,138515,138624,138744,159537",
+                        "endColumns": "143,81,103,108,119,92,69",
+                        "endOffsets": "137360,138406,138510,138619,138739,138832,159602"
+                    }
+                },
+                {
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/res/values/themes.xml",
+                    "from": {
+                        "startLines": "16,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "832,100",
+                        "endLines": "19,14",
+                        "endColumns": "12,12",
+                        "endOffsets": "1044,790"
+                    },
+                    "to": {
+                        "startLines": "2567,6445",
+                        "startColumns": "4,4",
+                        "startOffsets": "179751,449878",
+                        "endLines": "2570,6457",
+                        "endColumns": "12,12",
+                        "endOffsets": "179857,450447"
+                    }
+                },
+                {
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/res/values/colors.xml",
                     "from": {
                         "startLines": "7,11,12,10,2,3,4,14,13,5,6,8",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -11586,7 +11586,7 @@
             "outputFile": "com.example.ace.app-merged_res-58:/values-w1240dp-v13_values-w1240dp-v13.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/res/values-w1240dp/dimens.xml",
+                    "source": "/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/res/values-w1240dp/dimens.xml",
                     "from": {
                         "startLines": "1,2",
                         "startColumns": "4,4",
