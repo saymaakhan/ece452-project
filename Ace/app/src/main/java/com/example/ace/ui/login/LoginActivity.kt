@@ -1,6 +1,7 @@
 package com.example.ace.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -13,8 +14,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
 import com.example.ace.databinding.ActivityLoginBinding
-
 import com.example.ace.R
+import com.example.ace.calendar.CalendarActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -102,11 +103,15 @@ class LoginActivity : AppCompatActivity() {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
         // TODO : initiate successful logged in experience
-        Toast.makeText(
-            applicationContext,
-            "$welcome $displayName",
-            Toast.LENGTH_LONG
-        ).show()
+
+        val intent = Intent(this, CalendarActivity::class.java)
+        startActivity(intent)
+        finish()
+//        Toast.makeText(
+//            applicationContext,
+//            "$welcome $displayName",
+//            Toast.LENGTH_LONG
+//        ).show()
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {

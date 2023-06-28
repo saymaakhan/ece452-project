@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.WindowCompat
+import com.example.ace.calendar.CalendarActivity
 import com.example.ace.databinding.ActivityMainBinding
 import com.example.ace.ui.login.LoginActivity
 import com.example.ace.MainActivity
