@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+color background
 color black
 color primary
 color primary_dark
@@ -15,8 +16,11 @@ color white
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 dimen fab_margin
+drawable camera
 drawable camera_icon
+drawable copy2
 drawable dot
+drawable eraser
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
@@ -24,6 +28,7 @@ drawable ic_launcher_foreground
 drawable ic_notifications_black_24dp
 drawable ic_outline_note_add_24
 drawable loginlogo
+drawable scan
 id FirstFragment
 id SecondFragment
 id action_FirstFragment_to_SecondFragment
@@ -31,11 +36,15 @@ id action_SecondFragment_to_FirstFragment
 id calendar
 id calendarView
 id camera
+id clear
+id constraintLayout
 id container
+id copy
 id emptyStateTextView
 id fabButton
 id floatingActionButton
 id floatingActionButton4
+id getImage
 id imageView
 id imageView1
 id imageView5
@@ -47,16 +56,19 @@ id nav_graph
 id noteEditText
 id noteTextView
 id password
+id recgText
 id saveButton
 id sploginbutton
 id textView
 id textView2
+id textView3
 id textView5
 id text_notifications
 id toolbar
 id username
 layout activity_add_note
 layout activity_calendar
+layout activity_camera
 layout activity_dashboard
 layout activity_login
 layout activity_main
@@ -92,6 +104,7 @@ string title_activity_calendar
 string title_activity_dashboard
 string title_activity_login
 string title_activity_note_preview
+string title_camera_activity
 string welcome
 style Base.Theme.Ace
 style Theme.Ace

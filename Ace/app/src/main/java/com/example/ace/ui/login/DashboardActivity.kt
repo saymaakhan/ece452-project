@@ -8,6 +8,7 @@ import com.example.ace.MainActivity
 import com.example.ace.R
 import com.example.ace.calendar.CalendarActivity
 import com.example.ace.databinding.ActivityDashboardBinding
+import com.example.ace.ui.camera.CameraActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -40,6 +41,7 @@ class DashboardActivity : AppCompatActivity() {
 
         val logout = binding.logout
         val calendar = binding.calendar
+        var camera = binding.camera
 
         logout.setOnClickListener {
             mGoogleSignInClient.signOut().addOnCompleteListener {
@@ -52,6 +54,12 @@ class DashboardActivity : AppCompatActivity() {
 
         calendar.setOnClickListener {
             val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        camera.setOnClickListener {
+            val intent = Intent(this, CameraActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -1,146 +1,162 @@
 [
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.ace.app-merged_res-60:/layout_fragment_notifications.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/fragment_notifications.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_activity_calendar.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/activity_calendar.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_dot.xml.flat",
+        "source": "com.example.ace.app-main-62:/drawable/dot.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_fragment_notifications.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/fragment_notifications.xml"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.ace.app-main-62:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable_loginlogo.png.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable/loginlogo.png"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.ace.app-merged_res-58:/layout_activity_calendar.xml.flat",
-        "source": "com.example.ace.app-main-60:/layout/activity_calendar.xml"
+        "merged": "com.example.ace.app-merged_res-60:/layout_fragment_dashboard.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/fragment_dashboard.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_fragment_dashboard.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/fragment_dashboard.xml"
+        "merged": "com.example.ace.app-merged_res-60:/xml_backup_rules.xml.flat",
+        "source": "com.example.ace.app-main-62:/xml/backup_rules.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/navigation_nav_graph.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/navigation/nav_graph.xml"
+        "merged": "com.example.ace.app-merged_res-60:/layout_activity_login.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/activity_login.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_activity_login.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/activity_login.xml"
+        "merged": "com.example.ace.app-merged_res-60:/layout_activity_calendar.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/activity_calendar.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_activity_add_note.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/activity_add_note.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_scan.png.flat",
+        "source": "com.example.ace.app-main-62:/drawable/scan.png"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/xml_data_extraction_rules.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/xml/data_extraction_rules.xml"
+        "merged": "com.example.ace.app-merged_res-60:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.ace.app-main-62:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable_ic_home_black_24dp.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable/ic_home_black_24dp.xml"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.ace.app-merged_res-60:/navigation_nav_graph.xml.flat",
+        "source": "com.example.ace.app-main-62:/navigation/nav_graph.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_activity_main.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/activity_main.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_loginlogo.png.flat",
+        "source": "com.example.ace.app-main-62:/drawable/loginlogo.png"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable_dot.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable/dot.xml"
+        "merged": "com.example.ace.app-merged_res-60:/layout_activity_note_preview.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/activity_note_preview.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout-w1240dp_activity_login.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout-w1240dp/activity_login.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_copy2.png.flat",
+        "source": "com.example.ace.app-main-62:/drawable/copy2.png"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.ace.app-merged_res-60:/layout_activity_camera.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/activity_camera.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.ace.app-main-62:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/xml_backup_rules.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/xml/backup_rules.xml"
+        "merged": "com.example.ace.app-merged_res-60:/layout_activity_dashboard.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/activity_dashboard.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable_ic_outline_note_add_24.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable/ic_outline_note_add_24.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_camera_icon.png.flat",
+        "source": "com.example.ace.app-main-62:/drawable/camera_icon.png"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout-w936dp_activity_login.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout-w936dp/activity_login.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_ic_outline_note_add_24.xml.flat",
+        "source": "com.example.ace.app-main-62:/drawable/ic_outline_note_add_24.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_activity_note_preview.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/activity_note_preview.xml"
+        "merged": "com.example.ace.app-merged_res-60:/layout_activity_main.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/activity_main.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable_ic_notifications_black_24dp.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable/ic_notifications_black_24dp.xml"
+        "merged": "com.example.ace.app-merged_res-60:/layout-w936dp_activity_login.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout-w936dp/activity_login.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_activity_dashboard.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/activity_dashboard.xml"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable_ic_launcher_background.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "com.example.ace.app-main-62:/drawable/ic_dashboard_black_24dp.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_camera.png.flat",
+        "source": "com.example.ace.app-main-62:/drawable/camera.png"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable_ic_dashboard_black_24dp.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable/ic_dashboard_black_24dp.xml"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/layout_fragment_home.xml.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/layout/fragment_home.xml"
+        "merged": "com.example.ace.app-merged_res-60:/layout_fragment_home.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/fragment_home.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/drawable_camera_icon.png.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/drawable/camera_icon.png"
+        "merged": "com.example.ace.app-merged_res-60:/drawable_ic_home_black_24dp.xml.flat",
+        "source": "com.example.ace.app-main-62:/drawable/ic_home_black_24dp.xml"
     },
     {
-        "merged": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-merged_res-58:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/Users/emilykissoon/.gradle/daemon/8.0/com.example.ace.app-main-60:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/layout_activity_add_note.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/activity_add_note.xml"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/layout-w1240dp_activity_login.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout-w1240dp/activity_login.xml"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "com.example.ace.app-main-62:/drawable/ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/drawable_eraser.png.flat",
+        "source": "com.example.ace.app-main-62:/drawable/eraser.png"
     }
 ]
