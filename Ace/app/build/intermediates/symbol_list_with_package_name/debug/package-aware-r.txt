@@ -83,8 +83,13 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array material_calendar_day_abbreviations_array
+array material_calendar_months_array
 attr SharedValue
 attr SharedValueId
+attr abbreviationsBarColor
+attr abbreviationsLabelsColor
+attr abbreviationsLabelsSize
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -140,6 +145,7 @@ attr animateMenuItems
 attr animateNavigationIcon
 attr animateRelativeTo
 attr animationMode
+attr anotherMonthsDaysLabelsColor
 attr appBarLayoutStyle
 attr applyMotionScene
 attr arcMode
@@ -454,6 +460,7 @@ attr dayInvalidStyle
 attr daySelectedStyle
 attr dayStyle
 attr dayTodayStyle
+attr daysLabelsColor
 attr defaultDuration
 attr defaultMarginsEnabled
 attr defaultNavHost
@@ -467,6 +474,7 @@ attr destination
 attr dialogCornerRadius
 attr dialogPreferredPadding
 attr dialogTheme
+attr disabledDaysLabelsColor
 attr displayOptions
 attr divider
 attr dividerColor
@@ -527,6 +535,7 @@ attr errorIconTintMode
 attr errorShown
 attr errorTextAppearance
 attr errorTextColor
+attr eventsEnabled
 attr exitAnim
 attr expandActivityOverflowButtonDrawable
 attr expanded
@@ -564,6 +573,7 @@ attr fastScrollVerticalTrackDrawable
 attr finishPrimaryWithSecondary
 attr finishSecondaryWithPrimary
 attr firstBaselineToTopHeight
+attr firstDayOfWeek
 attr floatingActionButtonLargePrimaryStyle
 attr floatingActionButtonLargeSecondaryStyle
 attr floatingActionButtonLargeStyle
@@ -613,6 +623,7 @@ attr fontWeight
 attr forceApplySystemWindowInsetTop
 attr forceDefaultNavigationOnClickListener
 attr foregroundInsidePadding
+attr forwardButtonSrc
 attr framePosition
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
@@ -621,6 +632,8 @@ attr graph
 attr guidelineUseRtl
 attr haloColor
 attr haloRadius
+attr headerColor
+attr headerLabelColor
 attr headerLayout
 attr height
 attr helperText
@@ -632,6 +645,7 @@ attr hideMotionSpec
 attr hideNavigationIcon
 attr hideOnContentScroll
 attr hideOnScroll
+attr highlightedDaysLabelsColor
 attr hintAnimationEnabled
 attr hintEnabled
 attr hintTextAppearance
@@ -868,6 +882,7 @@ attr maxImageSize
 attr maxLines
 attr maxVelocity
 attr maxWidth
+attr maximumDaysRange
 attr measureWithLargestChild
 attr menu
 attr menuAlignmentMode
@@ -963,6 +978,7 @@ attr paddingRightSystemWindowInsets
 attr paddingStart
 attr paddingTopNoTitle
 attr paddingTopSystemWindowInsets
+attr pagesColor
 attr panelBackground
 attr panelMenuListTheme
 attr panelMenuListWidth
@@ -999,6 +1015,7 @@ attr prefixTextAppearance
 attr prefixTextColor
 attr preserveIconSpacing
 attr pressedTranslationZ
+attr previousButtonSrc
 attr primaryActivityName
 attr progressBarPadding
 attr progressBarStyle
@@ -1045,6 +1062,10 @@ attr secondaryActivityName
 attr seekBarStyle
 attr selectableItemBackground
 attr selectableItemBackgroundBorderless
+attr selectionBetweenMonthsEnabled
+attr selectionColor
+attr selectionDisabled
+attr selectionLabelColor
 attr selectionRequired
 attr selectorSize
 attr setsTag
@@ -1138,6 +1159,7 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeEnabled
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -1281,6 +1303,8 @@ attr titleTextAppearance
 attr titleTextColor
 attr titleTextEllipsize
 attr titleTextStyle
+attr todayLabelColor
+attr todayTypeface
 attr toggleCheckedStateOnClick
 attr toolbarId
 attr toolbarNavigationButtonStyle
@@ -1316,6 +1340,8 @@ attr triggerId
 attr triggerReceiver
 attr triggerSlack
 attr ttcIndex
+attr type
+attr typeface
 attr upDuration
 attr uri
 attr useCompatPadding
@@ -1415,6 +1441,10 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color currentMonthDayColor
+color day_item_background_state_color
+color daysLabelColor
+color defaultColor
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1457,12 +1487,15 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color disabledDialogButtonColor
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color itemFocusedColor
+color itemHighlightColor
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2086,10 +2119,14 @@ color mtrl_textinput_disabled_color
 color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
+color nextMonthDayColor
 color notification_action_color_filter
 color notification_icon_bg_color
+color primary
+color primary_dark
 color primary_dark_material_dark
 color primary_dark_material_light
+color primary_light
 color primary_material_dark
 color primary_material_light
 color primary_text_default_material_dark
@@ -2101,6 +2138,8 @@ color purple_500
 color purple_700
 color ripple_material_dark
 color ripple_material_light
+color secondary
+color secondary_light
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -2116,6 +2155,7 @@ color teal_700
 color tooltip_background_dark
 color tooltip_background_light
 color white
+dimen abbreviation_text_size_max
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -2213,6 +2253,10 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen day_label_focus_size_events_disabled
+dimen day_label_focus_size_events_enabled
+dimen day_label_size_events_disabled
+dimen day_label_size_events_enabled
 dimen def_drawer_elevation
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
@@ -2888,6 +2932,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen row_height
 dimen sliding_pane_detail_pane_width
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -2978,6 +3023,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_color_circle_selector
+drawable background_transparent
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3005,14 +3052,19 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable day_item_background
+drawable day_picker_item_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dot
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
+drawable ic_arrow_left
+drawable ic_arrow_right
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -3025,6 +3077,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_outline_note_add_24
 drawable ic_search_black_24
 drawable loginlogo
 drawable m3_appbar_background
@@ -3117,6 +3170,7 @@ id SYM
 id SecondFragment
 id TOP_END
 id TOP_START
+id abbreviationsBar
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3213,6 +3267,11 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
 id cache_measures
+id calendarContainer
+id calendarGridView
+id calendarHeader
+id calendarView
+id calendarViewPager
 id callMeasure
 id cancel_button
 id carryVelocity
@@ -3228,6 +3287,7 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id classic
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3246,12 +3306,16 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id currentDateLabel
 id currentState
 id custom
 id customPanel
 id cut
 id dark
+id dataBinding
 id date_picker_actions
+id dayIcon
+id dayLabel
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -3271,6 +3335,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id divider
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3288,6 +3353,7 @@ id edge
 id edit_query
 id elastic
 id embed
+id emptyStateTextView
 id end
 id endToStart
 id enterAlways
@@ -3295,6 +3361,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fabButton
 id fade
 id fill
 id fill_horizontal
@@ -3309,7 +3376,10 @@ id fixed
 id flip
 id floating
 id forever
+id forwardButton
 id fragment_container_view_tag
+id friday
+id fridayLabel
 id frost
 id fullscreen_header
 id ghost_view
@@ -3361,6 +3431,7 @@ id login
 id logout
 id ltr
 id m3_side_sheet
+id many_days_picker
 id marquee
 id masked
 id match_constraint
@@ -3389,6 +3460,8 @@ id matrix
 id message
 id middle
 id mini
+id monday
+id mondayLabel
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3430,6 +3503,7 @@ id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
+id negativeButton
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3438,12 +3512,17 @@ id noState
 id none
 id normal
 id north
+id noteEditText
+id noteTextView
 id notification_background
 id notification_main_column
 id notification_main_column_container
 id off
 id on
+id onAttachStateChangeListener
+id onDateChanged
 id onInterceptTouchReturnSwipe
+id one_day_picker
 id outline
 id outward
 id overshoot
@@ -3461,11 +3540,14 @@ id peekHeight
 id percent
 id pin
 id position
+id positiveButton
 id postLayout
 id pressed
+id previousButton
 id progress_circular
 id progress_horizontal
 id radio
+id range_picker
 id ratio
 id rectangles
 id reverseSawtooth
@@ -3476,6 +3558,9 @@ id right_side
 id rounded
 id row_index_key
 id rtl
+id saturday
+id saturdayLabel
+id saveButton
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3553,6 +3638,8 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id sunday
+id sundayLabel
 id supportScrollUp
 id tabMode
 id tag_accessibility_actions
@@ -3578,6 +3665,7 @@ id textTop
 id textView
 id textView2
 id textView5
+id textWatcher
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3587,11 +3675,15 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id thursday
+id thursdayLabel
 id time
 id title
 id titleDividerNoCustom
 id title_template
+id todayButton
 id toggle
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -3603,6 +3695,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tuesday
+id tuesdayLabel
 id unchecked
 id uniform
 id unlabeled
@@ -3618,6 +3712,8 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id wednesday
+id wednesdayLabel
 id west
 id wide
 id withText
@@ -3743,12 +3839,20 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_note
+layout activity_calendar
 layout activity_dashboard
 layout activity_login
 layout activity_main
+layout activity_note_preview
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout calendar_view
+layout calendar_view_day
+layout calendar_view_grid
+layout calendar_view_picker_day
 layout custom_dialog
+layout date_picker_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -3929,6 +4033,16 @@ string m3_sys_motion_easing_linear
 string m3_sys_motion_easing_standard
 string m3_sys_motion_easing_standard_accelerate
 string m3_sys_motion_easing_standard_decelerate
+string material_calendar_friday
+string material_calendar_monday
+string material_calendar_negative_button
+string material_calendar_positive_button
+string material_calendar_saturday
+string material_calendar_sunday
+string material_calendar_thursday
+string material_calendar_today_button
+string material_calendar_tuesday
+string material_calendar_wednesday
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_24h_suffix
@@ -4033,6 +4147,7 @@ string second_fragment_label
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
+string title_activity_calendar
 string title_activity_dashboard
 string title_activity_login
 string welcome
@@ -5167,6 +5282,7 @@ styleable BottomAppBar addElevationShadow backgroundTint elevation fabAlignmentM
 styleable BottomNavigationView android_minHeight compatShadowEnabled itemHorizontalTranslationEnabled
 styleable BottomSheetBehavior_Layout android_maxWidth android_maxHeight android_elevation backgroundTint behavior_draggable behavior_expandedOffset behavior_fitToContents behavior_halfExpandedRatio behavior_hideable behavior_peekHeight behavior_saveFlags behavior_significantVelocityThreshold behavior_skipCollapsed gestureInsetBottomIgnored marginLeftSystemWindowInsets marginRightSystemWindowInsets marginTopSystemWindowInsets paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets paddingTopSystemWindowInsets shapeAppearance shapeAppearanceOverlay shouldRemoveExpandedCorners
 styleable ButtonBarLayout allowStacking
+styleable CalendarView abbreviationsBarColor abbreviationsLabelsColor abbreviationsLabelsSize anotherMonthsDaysLabelsColor daysLabelsColor disabledDaysLabelsColor eventsEnabled firstDayOfWeek forwardButtonSrc headerColor headerLabelColor highlightedDaysLabelsColor maximumDaysRange pagesColor previousButtonSrc selectionBetweenMonthsEnabled selectionColor selectionDisabled selectionLabelColor swipeEnabled todayLabelColor todayTypeface type typeface
 styleable Capability queryPatterns shortcutMatchRequired
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Carousel carousel_backwardTransition carousel_emptyViewsBehavior carousel_firstView carousel_forwardTransition carousel_infinite carousel_nextState carousel_previousState carousel_touchUpMode carousel_touchUp_dampeningFactor carousel_touchUp_velocityThreshold

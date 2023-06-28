@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.ace.app-mergeDebugResources-52:/values-w600dp-v13/values-w600dp-v13.xml",
+            "outputFile": "com.example.ace.app-mergeDebugResources-56:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/emilykissoon/Documents/ece452-project/Ace/app/src/main/res/values-w600dp/dimens.xml",
+                    "source": "C:\\Users\\kugle\\Desktop\\ACE-ROOT\\ece452-project\\Ace\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
                     "from": {
                         "startLines": "1,2",
                         "startColumns": "4,4",
-                        "startOffsets": "16,74",
+                        "startOffsets": "17,76",
                         "endColumns": "57,41",
-                        "endOffsets": "69,111"
+                        "endOffsets": "70,113"
                     },
                     "to": {
                         "startLines": "2,3",

@@ -40,7 +40,12 @@
             android:theme="@style/Theme.Ace" />
         <activity
             android:name="com.example.ace.MainActivity"
-            android:exported="true" >
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name="com.example.ace.ui.login.LoginActivity"
+            android:exported="true"
+            android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,9 +53,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.ace.ui.login.LoginActivity"
+            android:name="com.example.ace.calendar.CalendarActivity"
             android:exported="false"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_calendar" >
+        </activity>
 
         <provider
             android:name="androidx.startup.InitializationProvider"
