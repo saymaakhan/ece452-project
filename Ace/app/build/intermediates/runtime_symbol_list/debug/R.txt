@@ -4146,10 +4146,12 @@ int string second_fragment_label 0x7f1200d1
 int string side_sheet_accessibility_pane_title 0x7f1200d2
 int string side_sheet_behavior 0x7f1200d3
 int string status_bar_notification_info_overflow 0x7f1200d4
-int string title_activity_calendar 0x7f1200d5
-int string title_activity_dashboard 0x7f1200d6
-int string title_activity_login 0x7f1200d7
-int string welcome 0x7f1200d8
+int string title_activity_add_note 0x7f1200d5
+int string title_activity_calendar 0x7f1200d6
+int string title_activity_dashboard 0x7f1200d7
+int string title_activity_login 0x7f1200d8
+int string title_activity_note_preview 0x7f1200d9
+int string welcome 0x7f1200da
 int style AlertDialog_AppCompat 0x7f130000
 int style AlertDialog_AppCompat_Light 0x7f130001
 int style Animation_AppCompat_Dialog 0x7f130002

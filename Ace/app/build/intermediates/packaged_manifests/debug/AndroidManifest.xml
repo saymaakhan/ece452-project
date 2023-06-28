@@ -57,6 +57,16 @@
             android:exported="false"
             android:label="@string/title_activity_calendar" >
         </activity>
+        <activity
+            android:name="com.example.ace.calendar.NotePreviewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_note_preview" >
+        </activity>
+        <activity
+            android:name="com.example.ace.calendar.AddNoteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_note" >
+        </activity>
 
         <provider
             android:name="androidx.startup.InitializationProvider"

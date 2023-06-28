@@ -34,7 +34,7 @@
         sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
-    </string><string name="title_activity_calendar">CalendarActivity</string></file><file path="C:\Users\kugle\Desktop\ACE-ROOT\ece452-project\Ace\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.Ace" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    </string><string name="title_activity_calendar">CalendarActivity</string><string name="title_activity_note_preview">NotePreviewActivity</string><string name="title_activity_add_note">AddNoteActivity</string></file><file path="C:\Users\kugle\Desktop\ACE-ROOT\ece452-project\Ace\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.Ace" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

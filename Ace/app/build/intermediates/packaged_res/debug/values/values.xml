@@ -70,9 +70,11 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="title_activity_add_note">AddNoteActivity</string>
     <string name="title_activity_calendar">CalendarActivity</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_note_preview">NotePreviewActivity</string>
     <string name="welcome">"Welcome"</string>
     <style name="Base.Theme.Ace" parent="Theme.Material3.DayNight.NoActionBar">
         

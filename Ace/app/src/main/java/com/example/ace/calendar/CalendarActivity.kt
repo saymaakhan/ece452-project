@@ -3,7 +3,7 @@ package com.example.ace.calendar
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.applandeo.calendarsampleapp.extensions.getDot
+import com.example.ace.calendar.extensions.getDot
 import com.applandeo.materialcalendarview.CalendarView
 import com.applandeo.materialcalendarview.EventDay
 import com.applandeo.materialcalendarview.builders.DatePickerBuilder
@@ -11,7 +11,6 @@ import com.applandeo.materialcalendarview.listeners.OnDayClickListener
 import com.applandeo.materialcalendarview.listeners.OnSelectDateListener
 import com.example.ace.R
 import com.example.ace.databinding.ActivityCalendarBinding
-import com.example.ace.databinding.ActivityMainBinding
 import java.util.*
 
 class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateListener {

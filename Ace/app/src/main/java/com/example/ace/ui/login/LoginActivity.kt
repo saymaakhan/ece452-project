@@ -106,7 +106,7 @@ class LoginActivity : AppCompatActivity() {
 
         val intent = Intent(this, CalendarActivity::class.java)
         startActivity(intent)
-//        finish()
+        finish()
 //        Toast.makeText(
 //            applicationContext,
 //            "$welcome $displayName",

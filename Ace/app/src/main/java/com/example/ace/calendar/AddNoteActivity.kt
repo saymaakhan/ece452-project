@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.ace.calendar.CalendarActivity.Companion.CALENDAR_EXTRA
 import com.example.ace.calendar.CalendarActivity.Companion.NOTE_EXTRA
 //import com.applandeo.calendarsampleapp.databinding.ActivityAddNoteBinding
-import com.applandeo.calendarsampleapp.extensions.toSimpleDate
+import com.example.ace.calendar.extensions.toSimpleDate
 import com.example.ace.databinding.ActivityAddNoteBinding
 import java.util.*
 

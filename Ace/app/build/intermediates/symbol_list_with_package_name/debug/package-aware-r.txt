@@ -4147,9 +4147,11 @@ string second_fragment_label
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
+string title_activity_add_note
 string title_activity_calendar
 string title_activity_dashboard
 string title_activity_login
+string title_activity_note_preview
 string welcome
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

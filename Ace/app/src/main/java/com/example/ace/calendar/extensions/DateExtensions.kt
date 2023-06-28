@@ -1,4 +1,4 @@
-package com.applandeo.calendarsampleapp.extensions
+package com.example.ace.calendar.extensions
 
 import java.text.SimpleDateFormat
 import java.util.*

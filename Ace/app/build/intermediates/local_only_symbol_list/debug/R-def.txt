@@ -72,9 +72,11 @@ string project_id
 string prompt_email
 string prompt_password
 string second_fragment_label
+string title_activity_add_note
 string title_activity_calendar
 string title_activity_dashboard
 string title_activity_login
+string title_activity_note_preview
 string welcome
 style Base.Theme.Ace
 style Theme.Ace

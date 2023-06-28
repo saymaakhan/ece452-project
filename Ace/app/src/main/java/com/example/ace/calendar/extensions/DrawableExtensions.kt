@@ -1,4 +1,4 @@
-package com.applandeo.calendarsampleapp.extensions
+package com.example.ace.calendar.extensions
 
 import android.content.Context
 import android.graphics.drawable.Drawable
