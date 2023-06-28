@@ -13,8 +13,13 @@
         android:theme="@style/Theme.Ace"
         tools:targetApi="28">
         <activity
+            android:name=".ui.login.DashboardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Theme.Ace" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,6 +30,21 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login">
+        </activity>
+        <activity
+            android:name=".calendar.CalendarActivity"
+            android:exported="false"
+            android:label="@string/title_activity_calendar">
+        </activity>
+        <activity
+            android:name=".calendar.NotePreviewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_note_preview">
+        </activity>
+        <activity
+            android:name=".calendar.AddNoteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_note">
         </activity>
     </application>
 
