@@ -6,9 +6,9 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="28"
-8-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml
+8-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml
+9-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
 11-->[com.google.firebase:firebase-auth:21.1.0] /Users/emilykissoon/.gradle/caches/transforms-3/5a3a809e904000a9c1a3b8adc456f752/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:23:5-67
@@ -38,90 +38,90 @@
 21-->[androidx.core:core:1.9.0] /Users/emilykissoon/.gradle/caches/transforms-3/c1c65b990fd1f509002c889b0ad26955/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 22
 23    <application
-23-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:5:5-49:19
+23-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:5:5-49:19
 24        android:allowBackup="true"
-24-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:6:9-35
+24-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:6:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 25-->[androidx.core:core:1.9.0] /Users/emilykissoon/.gradle/caches/transforms-3/c1c65b990fd1f509002c889b0ad26955/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 26        android:dataExtractionRules="@xml/data_extraction_rules"
-26-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:7:9-65
+26-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:7:9-65
 27        android:debuggable="true"
 28        android:extractNativeLibs="false"
 29        android:fullBackupContent="@xml/backup_rules"
-29-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:8:9-54
+29-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:8:9-54
 30        android:icon="@mipmap/ic_launcher"
-30-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:9:9-43
+30-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:9:9-43
 31        android:label="@string/app_name"
-31-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:10:9-41
+31-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:10:9-41
 32        android:roundIcon="@mipmap/ic_launcher_round"
-32-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:11:9-54
+32-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:11:9-54
 33        android:supportsRtl="true"
-33-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:12:9-35
+33-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:12:9-35
 34        android:testOnly="true"
 35        android:theme="@style/Theme.Ace" >
-35-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:13:9-41
+35-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:13:9-41
 36        <activity
-36-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:15:9-19:48
+36-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:15:9-19:48
 37            android:name="com.example.ace.ui.login.DashboardActivity"
-37-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:16:13-55
+37-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:16:13-55
 38            android:exported="false"
-38-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:17:13-37
+38-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:17:13-37
 39            android:label="@string/title_activity_dashboard"
-39-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:18:13-61
+39-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:18:13-61
 40            android:theme="@style/Theme.Ace" />
-40-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:19:13-45
+40-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:19:13-45
 41        <activity
-41-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:20:9-28:20
+41-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:20:9-28:20
 42            android:name="com.example.ace.MainActivity"
-42-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:21:13-41
+42-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:21:13-41
 43            android:exported="true" >
-43-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:22:13-36
+43-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:22:13-36
 44            <intent-filter>
-44-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:23:13-27:29
+44-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:23:13-27:29
 45                <action android:name="android.intent.action.MAIN" />
-45-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:24:17-69
-45-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:24:25-66
+45-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:24:17-69
+45-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:24:25-66
 46
 47                <category android:name="android.intent.category.LAUNCHER" />
-47-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:26:17-77
-47-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:26:27-74
+47-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:26:17-77
+47-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:26:27-74
 48            </intent-filter>
 49        </activity>
 50        <activity
-50-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:29:9-33:20
+50-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:29:9-33:20
 51            android:name="com.example.ace.ui.login.LoginActivity"
-51-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:30:13-51
+51-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:30:13-51
 52            android:exported="false"
-52-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:31:13-37
+52-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:31:13-37
 53            android:label="@string/title_activity_login" >
-53-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:32:13-57
+53-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:32:13-57
 54        </activity>
 55        <activity
-55-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:34:9-38:20
+55-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:34:9-38:20
 56            android:name="com.example.ace.calendar.CalendarActivity"
-56-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:35:13-54
+56-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:35:13-54
 57            android:exported="false"
-57-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:36:13-37
+57-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:36:13-37
 58            android:label="@string/title_activity_calendar" >
-58-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:37:13-60
+58-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:37:13-60
 59        </activity>
 60        <activity
-60-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:39:9-43:20
+60-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:39:9-43:20
 61            android:name="com.example.ace.calendar.NotePreviewActivity"
-61-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:40:13-57
+61-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:40:13-57
 62            android:exported="false"
-62-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:41:13-37
+62-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:41:13-37
 63            android:label="@string/title_activity_note_preview" >
-63-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:42:13-64
+63-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:42:13-64
 64        </activity>
 65        <activity
-65-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:44:9-48:20
+65-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:44:9-48:20
 66            android:name="com.example.ace.calendar.AddNoteActivity"
-66-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:45:13-53
+66-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:45:13-53
 67            android:exported="false"
-67-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:46:13-37
+67-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:46:13-37
 68            android:label="@string/title_activity_add_note" >
-68-->/Users/emilykissoon/Documents/GitHub/ece452-project/Ace/app/src/main/AndroidManifest.xml:47:13-60
+68-->/Users/emilykissoon/Downloads/ece452-project/Ace/app/src/main/AndroidManifest.xml:47:13-60
 69        </activity>
 70
 71        <provider

@@ -4,6 +4,8 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -28,14 +30,22 @@ public final class ActivityCalendarBinding implements ViewBinding {
   public final FloatingActionButton fabButton;
 
   @NonNull
+  public final ImageView imageView1;
+
+  @NonNull
+  public final Button logout;
+
+  @NonNull
   public final Toolbar toolbar;
 
   private ActivityCalendarBinding(@NonNull ConstraintLayout rootView,
       @NonNull CalendarView calendarView, @NonNull FloatingActionButton fabButton,
-      @NonNull Toolbar toolbar) {
+      @NonNull ImageView imageView1, @NonNull Button logout, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.calendarView = calendarView;
     this.fabButton = fabButton;
+    this.imageView1 = imageView1;
+    this.logout = logout;
     this.toolbar = toolbar;
   }
 
@@ -78,6 +88,18 @@ public final class ActivityCalendarBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView1;
+      ImageView imageView1 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView1 == null) {
+        break missingId;
+      }
+
+      id = R.id.logout;
+      Button logout = ViewBindings.findChildViewById(rootView, id);
+      if (logout == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
@@ -85,7 +107,7 @@ public final class ActivityCalendarBinding implements ViewBinding {
       }
 
       return new ActivityCalendarBinding((ConstraintLayout) rootView, calendarView, fabButton,
-          toolbar);
+          imageView1, logout, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
