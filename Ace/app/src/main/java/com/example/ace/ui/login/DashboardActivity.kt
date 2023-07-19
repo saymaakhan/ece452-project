@@ -42,6 +42,7 @@ class DashboardActivity : AppCompatActivity() {
         val logout = binding.logout
         val calendar = binding.calendar
         var camera = binding.camera
+        val profile = binding.profile
 
         logout.setOnClickListener {
             mGoogleSignInClient.signOut().addOnCompleteListener {
@@ -61,5 +62,7 @@ class DashboardActivity : AppCompatActivity() {
             val intent = Intent(this, CameraActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 }
