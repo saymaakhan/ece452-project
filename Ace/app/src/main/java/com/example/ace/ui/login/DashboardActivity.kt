@@ -55,13 +55,11 @@ class DashboardActivity : AppCompatActivity() {
         calendar.setOnClickListener {
             val intent = Intent(this, CalendarActivity::class.java)
             startActivity(intent)
-            finish()
         }
 
         camera.setOnClickListener {
             val intent = Intent(this, CameraActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 }
