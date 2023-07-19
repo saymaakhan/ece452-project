@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
 MERGED from [androidx.databinding:databinding-adapters:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/d725e97841a3b1e86214d5aba73aa848/transformed/databinding-adapters-8.0.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-ktx:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/a832d832ab600449167d5b98224fe197/transformed/jetified-databinding-ktx-8.0.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/f6c358a65e482bd164a05a38cc0383c6/transformed/databinding-runtime-8.0.2/AndroidManifest.xml:2:1-7:12
@@ -110,27 +110,27 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/sidharth/.gradle/c
 MERGED from [androidx.print:print:1.0.0] /Users/sidharth/.gradle/caches/transforms-3/8a93d295755f8e5da86d32d4f3dc8a94/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/sidharth/.gradle/caches/transforms-3/64b8278443f2d80388c6800c0ad6bf30/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/sidharth/.gradle/caches/transforms-3/3b19364dc4ec405727427960a635b639/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
 	package
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-57:12
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:5:5-55:19
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:5:5-55:19
 MERGED from [com.google.android.material:material:1.9.0] /Users/sidharth/.gradle/caches/transforms-3/40b8ddf3d0503b1f081393aea090cb52/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] /Users/sidharth/.gradle/caches/transforms-3/40b8ddf3d0503b1f081393aea090cb52/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/sidharth/.gradle/caches/transforms-3/653e87de863fbb43458a559902b06c08/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -212,93 +212,93 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/sidharth/.gradle/
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /Users/sidharth/.gradle/caches/transforms-3/c1c65b990fd1f509002c889b0ad26955/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:10:9-41
 	android:fullBackupContent
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:8:9-54
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:8:9-54
 	android:roundIcon
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:11:9-54
 	tools:targetApi
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:14:9-29
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:14:9-29
 	android:icon
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:13:9-41
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:13:9-41
 	android:dataExtractionRules
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:7:9-65
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:7:9-65
 activity#com.example.ace.ui.login.DashboardActivity
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:15:9-19:48
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:15:9-19:48
 	android:label
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:18:13-61
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:18:13-61
 	android:exported
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:17:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:17:13-37
 	android:theme
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:19:13-45
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:19:13-45
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:16:13-55
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:16:13-55
 activity#com.example.ace.MainActivity
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:20:9-28:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:20:9-28:20
 	android:exported
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:22:13-36
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:22:13-36
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:21:13-41
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:21:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:23:13-27:29
 action#android.intent.action.MAIN
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:26:27-74
 activity#com.example.ace.ui.login.LoginActivity
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:29:9-33:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:29:9-33:20
 	android:label
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:32:13-57
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:32:13-57
 	android:exported
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:31:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:30:13-51
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:30:13-51
 activity#com.example.ace.calendar.CalendarActivity
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:34:9-38:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:34:9-38:20
 	android:label
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:37:13-60
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:37:13-60
 	android:exported
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:36:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:36:13-37
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:35:13-54
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:35:13-54
 activity#com.example.ace.calendar.NotePreviewActivity
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:39:9-43:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:39:9-43:20
 	android:label
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:42:13-64
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:42:13-64
 	android:exported
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:41:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:41:13-37
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:40:13-57
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:40:13-57
 activity#com.example.ace.calendar.AddNoteActivity
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:44:9-48:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:44:9-48:20
 	android:label
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:47:13-60
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:47:13-60
 	android:exported
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:46:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:46:13-37
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:45:13-53
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:45:13-53
 activity#com.example.ace.ui.camera.CameraActivity
-ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:49:9-53:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:49:9-53:20
 	android:label
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:52:13-58
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:52:13-58
 	android:exported
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:51:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:51:13-37
 	android:name
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml:50:13-53
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:50:13-53
 uses-sdk
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 MERGED from [androidx.databinding:databinding-adapters:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/d725e97841a3b1e86214d5aba73aa848/transformed/databinding-adapters-8.0.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:databinding-adapters:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/d725e97841a3b1e86214d5aba73aa848/transformed/databinding-adapters-8.0.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:databinding-ktx:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/a832d832ab600449167d5b98224fe197/transformed/jetified-databinding-ktx-8.0.2/AndroidManifest.xml:5:5-44
@@ -511,16 +511,16 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/sidharth/
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/sidharth/.gradle/caches/transforms-3/64b8278443f2d80388c6800c0ad6bf30/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/sidharth/.gradle/caches/transforms-3/3b19364dc4ec405727427960a635b639/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/sidharth/.gradle/caches/transforms-3/3b19364dc4ec405727427960a635b639/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 queries
 ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/sidharth/.gradle/caches/transforms-3/13205de9d9d01e94bea22e7e16b65fa0/transformed/jetified-imagepicker-2.1/AndroidManifest.xml:9:5-19:15
 intent#action:name:android.media.action.IMAGE_CAPTURE
