@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/sidharth/Desktop/Waterloo/452App/ece452-project/Ace/app/src/main/res/values-land/dimens.xml",
+                    "source": "/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/res/values-land/dimens.xml",
                     "from": {
                         "startLines": "1,2",
                         "startColumns": "4,4",

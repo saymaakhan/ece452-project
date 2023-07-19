@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.ace.R;
@@ -18,7 +18,7 @@ import java.lang.String;
 
 public final class ActivityDashboardBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final Button calendar;
@@ -27,23 +27,28 @@ public final class ActivityDashboardBinding implements ViewBinding {
   public final Button camera;
 
   @NonNull
+  public final Button grades;
+
+  @NonNull
   public final ImageView imageView5;
 
   @NonNull
   public final Button logout;
 
-  private ActivityDashboardBinding(@NonNull ConstraintLayout rootView, @NonNull Button calendar,
-      @NonNull Button camera, @NonNull ImageView imageView5, @NonNull Button logout) {
+  private ActivityDashboardBinding(@NonNull LinearLayout rootView, @NonNull Button calendar,
+      @NonNull Button camera, @NonNull Button grades, @NonNull ImageView imageView5,
+      @NonNull Button logout) {
     this.rootView = rootView;
     this.calendar = calendar;
     this.camera = camera;
+    this.grades = grades;
     this.imageView5 = imageView5;
     this.logout = logout;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -80,6 +85,12 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.grades;
+      Button grades = ViewBindings.findChildViewById(rootView, id);
+      if (grades == null) {
+        break missingId;
+      }
+
       id = R.id.imageView5;
       ImageView imageView5 = ViewBindings.findChildViewById(rootView, id);
       if (imageView5 == null) {
@@ -92,8 +103,8 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDashboardBinding((ConstraintLayout) rootView, calendar, camera, imageView5,
-          logout);
+      return new ActivityDashboardBinding((LinearLayout) rootView, calendar, camera, grades,
+          imageView5, logout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
