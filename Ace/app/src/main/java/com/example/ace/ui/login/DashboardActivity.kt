@@ -9,6 +9,7 @@ import com.example.ace.R
 import com.example.ace.calendar.CalendarActivity
 import com.example.ace.databinding.ActivityDashboardBinding
 import com.example.ace.ui.camera.CameraActivity
+import com.example.ace.ui.grades.GradesActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -41,7 +42,8 @@ class DashboardActivity : AppCompatActivity() {
 
         val logout = binding.logout
         val calendar = binding.calendar
-        var camera = binding.camera
+        val camera = binding.camera
+        val grades = binding.grades
         val profile = binding.profile
 
         logout.setOnClickListener {
@@ -63,6 +65,10 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        grades.setOnClickListener {
+            val intent = Intent(this, GradesActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this, "grades button clicked", Toast.LENGTH_LONG).show()
+        }
     }
 }

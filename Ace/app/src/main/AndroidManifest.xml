@@ -51,7 +51,11 @@
             android:exported="false"
             android:label="@string/title_camera_activity">
         </activity>
-
+        <activity
+            android:name=".ui.grades.GradesActivity"
+            android:exported="false"
+            android:label="GradesActivity">
+        </activity>
     </application>
 
 </manifest>

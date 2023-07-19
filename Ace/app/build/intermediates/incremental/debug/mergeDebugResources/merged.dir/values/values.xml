@@ -759,6 +759,7 @@
     <color name="foreground_material_light">@android:color/black</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
+    <color name="ic_launcher_background">#2A2A2A</color>
     <color name="itemFocusedColor">#1A000000</color>
     <color name="itemHighlightColor">#1F000000</color>
     <color name="m3_ref_palette_black">#ff000000</color>

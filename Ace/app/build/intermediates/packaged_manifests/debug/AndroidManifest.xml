@@ -85,6 +85,11 @@
             android:label="@string/title_camera_activity" >
         </activity>
         <activity
+            android:name="com.example.ace.ui.grades.GradesActivity"
+            android:exported="false"
+            android:label="GradesActivity" >
+        </activity>
+        <activity
             android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/Theme.Transparent.ImagePicker" />

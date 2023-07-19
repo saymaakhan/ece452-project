@@ -35,15 +35,19 @@ public final class ActivityDashboardBinding implements ViewBinding {
   @NonNull
   public final Button logout;
 
+  @NonNull
+  public final Button profile;
+
   private ActivityDashboardBinding(@NonNull LinearLayout rootView, @NonNull Button calendar,
       @NonNull Button camera, @NonNull Button grades, @NonNull ImageView imageView5,
-      @NonNull Button logout) {
+      @NonNull Button logout, @NonNull Button profile) {
     this.rootView = rootView;
     this.calendar = calendar;
     this.camera = camera;
     this.grades = grades;
     this.imageView5 = imageView5;
     this.logout = logout;
+    this.profile = profile;
   }
 
   @Override
@@ -103,8 +107,14 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.profile;
+      Button profile = ViewBindings.findChildViewById(rootView, id);
+      if (profile == null) {
+        break missingId;
+      }
+
       return new ActivityDashboardBinding((LinearLayout) rootView, calendar, camera, grades,
-          imageView5, logout);
+          imageView5, logout, profile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
