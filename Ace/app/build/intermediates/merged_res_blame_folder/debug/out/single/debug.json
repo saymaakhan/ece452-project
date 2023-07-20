@@ -8,6 +8,10 @@
         "source": "com.example.ace.app-main-62:/drawable/sharp_person_24.xml"
     },
     {
+        "merged": "com.example.ace.app-merged_res-60:/layout_activity_chat_contacts.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/activity_chat_contacts.xml"
+    },
+    {
         "merged": "com.example.ace.app-merged_res-60:/layout_fragment_dashboard.xml.flat",
         "source": "com.example.ace.app-main-62:/layout/fragment_dashboard.xml"
     },

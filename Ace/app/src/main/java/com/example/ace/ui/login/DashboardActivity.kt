@@ -68,7 +68,6 @@ class DashboardActivity : AppCompatActivity() {
         grades.setOnClickListener {
             val intent = Intent(this, GradesActivity::class.java)
             startActivity(intent)
-            Toast.makeText(this, "grades button clicked", Toast.LENGTH_LONG).show()
         }
     }
 }

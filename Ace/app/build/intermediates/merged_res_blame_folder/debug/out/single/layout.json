@@ -24,6 +24,10 @@
         "source": "com.example.ace.app-main-62:/layout/activity_main.xml"
     },
     {
+        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_chat_contacts.xml",
+        "source": "com.example.ace.app-main-62:/layout/activity_chat_contacts.xml"
+    },
+    {
         "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_camera.xml",
         "source": "com.example.ace.app-main-62:/layout/activity_camera.xml"
     },

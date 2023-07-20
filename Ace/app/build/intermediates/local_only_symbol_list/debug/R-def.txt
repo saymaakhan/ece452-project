@@ -52,6 +52,7 @@ id grades
 id imageView
 id imageView1
 id imageView5
+id layout_chat
 id loading
 id login
 id logout
@@ -63,6 +64,7 @@ id password
 id profile
 id profile_picture
 id recgText
+id recycler_chat_contacts
 id saveButton
 id sploginbutton
 id textView
@@ -71,10 +73,12 @@ id textView3
 id textView5
 id text_notifications
 id toolbar
+id toolbar_chatcontacts
 id username
 layout activity_add_note
 layout activity_calendar
 layout activity_camera
+layout activity_chat_contacts
 layout activity_dashboard
 layout activity_grades
 layout activity_login

@@ -3535,6 +3535,7 @@ id jumpToStart
 id labeled
 id layout
 id layout_aspect_ratio
+id layout_chat
 id layout_rotate_wheel
 id layout_scale_wheel
 id left
@@ -3679,6 +3680,7 @@ id range_picker
 id ratio
 id recgText
 id rectangles
+id recycler_chat_contacts
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3823,6 +3825,7 @@ id title_template
 id todayButton
 id toggle
 id toolbar
+id toolbar_chatcontacts
 id toolbar_title
 id top
 id topPanel
@@ -3991,6 +3994,7 @@ layout abc_tooltip
 layout activity_add_note
 layout activity_calendar
 layout activity_camera
+layout activity_chat_contacts
 layout activity_dashboard
 layout activity_grades
 layout activity_login

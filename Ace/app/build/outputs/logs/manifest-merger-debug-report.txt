@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
-INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
-INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
-INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
 MERGED from [androidx.databinding:databinding-adapters:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/d725e97841a3b1e86214d5aba73aa848/transformed/databinding-adapters-8.0.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-ktx:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/a832d832ab600449167d5b98224fe197/transformed/jetified-databinding-ktx-8.0.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:8.0.2] /Users/sidharth/.gradle/caches/transforms-3/f6c358a65e482bd164a05a38cc0383c6/transformed/databinding-runtime-8.0.2/AndroidManifest.xml:2:1-7:12
@@ -115,27 +115,27 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/sidharth/
 MERGED from [io.grpc:grpc-android:1.52.1] /Users/sidharth/.gradle/caches/transforms-3/ad2025bd9d49cc801b57b8510dceb10a/transformed/jetified-grpc-android-1.52.1/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/sidharth/.gradle/caches/transforms-3/e7e4e97bf137d6c452ca7a5e5ef074af/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/sidharth/.gradle/caches/transforms-3/3b19364dc4ec405727427960a635b639/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
-INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
-INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
-INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
 	package
 		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
 		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
 		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-61:12
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:1-60:12
 		INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:5:5-59:19
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:5:5-58:19
 MERGED from [com.google.android.material:material:1.9.0] /Users/sidharth/.gradle/caches/transforms-3/40b8ddf3d0503b1f081393aea090cb52/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] /Users/sidharth/.gradle/caches/transforms-3/40b8ddf3d0503b1f081393aea090cb52/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/sidharth/.gradle/caches/transforms-3/653e87de863fbb43458a559902b06c08/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -238,58 +238,64 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/sidharth/.gradle/
 		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:13:9-41
 	android:dataExtractionRules
 		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:7:9-65
-activity#com.example.ace.ui.login.DashboardActivity
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:15:9-19:48
-	android:label
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:18:13-61
+activity#com.example.ace.ui.chat.ChatContacts
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:15:9-17:40
 	android:exported
 		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:17:13-37
+	android:name
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:16:13-49
+activity#com.example.ace.ui.login.DashboardActivity
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:18:9-22:48
+	android:label
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:21:13-61
+	android:exported
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:20:13-37
 	android:theme
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:19:13-45
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:22:13-45
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:16:13-55
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:19:13-55
 activity#com.example.ace.MainActivity
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:20:9-28:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:23:9-31:20
 	android:exported
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:22:13-36
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:25:13-36
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:21:13-41
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:24:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:29:27-74
 activity#com.example.ace.ui.login.LoginActivity
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:29:9-33:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:32:9-35:69
 	android:label
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:32:13-57
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:35:13-57
 	android:exported
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:31:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:30:13-51
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:33:13-51
 activity#com.example.ace.calendar.CalendarActivity
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:34:9-38:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:36:9-39:72
 	android:label
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:37:13-60
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:39:13-60
 	android:exported
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:36:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:35:13-54
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:37:13-54
 activity#com.example.ace.calendar.NotePreviewActivity
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:39:9-43:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:40:9-43:76
 	android:label
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:42:13-64
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:43:13-64
 	android:exported
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:41:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:40:13-57
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:41:13-57
 activity#com.example.ace.calendar.AddNoteActivity
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:44:9-48:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:44:9-47:72
 	android:label
 		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:47:13-60
 	android:exported
@@ -297,21 +303,21 @@ ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidMan
 	android:name
 		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:45:13-53
 activity#com.example.ace.ui.camera.CameraActivity
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:49:9-53:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:48:9-52:20
 	android:label
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:52:13-58
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:51:13-58
 	android:exported
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:51:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:50:13-37
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:50:13-53
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:49:13-53
 activity#com.example.ace.ui.grades.GradesActivity
-ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:54:9-58:20
+ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:53:9-57:20
 	android:label
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:57:13-43
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:56:13-43
 	android:exported
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:56:13-37
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:55:13-37
 	android:name
-		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:55:13-53
+		ADDED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml:54:13-53
 uses-sdk
 INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/AndroidManifest.xml

@@ -3534,6 +3534,7 @@ int id jumpToStart 0x7f090116
 int id labeled 0x7f090117
 int id layout 0x7f090118
 int id layout_aspect_ratio 0x7f090119
+int id layout_chat 0x7f09026b
 int id layout_rotate_wheel 0x7f09011a
 int id layout_scale_wheel 0x7f09011b
 int id left 0x7f09011c
@@ -3678,6 +3679,7 @@ int id range_picker 0x7f0901a6
 int id ratio 0x7f0901a7
 int id recgText 0x7f0901a8
 int id rectangles 0x7f0901a9
+int id recycler_chat_contacts 0x7f09026c
 int id reverseSawtooth 0x7f0901aa
 int id right 0x7f0901ab
 int id rightToLeft 0x7f0901ac
@@ -3822,6 +3824,7 @@ int id title_template 0x7f090236
 int id todayButton 0x7f090237
 int id toggle 0x7f090238
 int id toolbar 0x7f090239
+int id toolbar_chatcontacts 0x7f09026d
 int id toolbar_title 0x7f09023a
 int id top 0x7f09023b
 int id topPanel 0x7f09023c
@@ -3990,6 +3993,7 @@ int layout abc_tooltip 0x7f0c001b
 int layout activity_add_note 0x7f0c001c
 int layout activity_calendar 0x7f0c001d
 int layout activity_camera 0x7f0c001e
+int layout activity_chat_contacts 0x7f0c0084
 int layout activity_dashboard 0x7f0c001f
 int layout activity_grades 0x7f0c0020
 int layout activity_login 0x7f0c0021
