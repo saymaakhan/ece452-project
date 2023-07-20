@@ -4,32 +4,20 @@
         "source": "com.example.ace.app-main-62:/layout/fragment_notifications.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-xxxhdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "com.example.ace.app-merged_res-60:/drawable_dot.xml.flat",
         "source": "com.example.ace.app-main-62:/drawable/dot.xml"
-    },
-    {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/drawable_ic_launcher_background.xml.flat",
         "source": "com.example.ace.app-main-62:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-xhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/layout_fragment_dashboard.xml.flat",
@@ -44,16 +32,32 @@
         "source": "com.example.ace.app-main-62:/layout/activity_login.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/layout_activity_calendar.xml.flat",
         "source": "com.example.ace.app-main-62:/layout/activity_calendar.xml"
     },
     {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "com.example.ace.app-merged_res-60:/drawable_scan.png.flat",
         "source": "com.example.ace.app-main-62:/drawable/scan.png"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/xml_data_extraction_rules.xml.flat",
@@ -64,10 +68,6 @@
         "source": "com.example.ace.app-main-62:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-mdpi/ic_launcher.webp"
-    },
-    {
         "merged": "com.example.ace.app-merged_res-60:/navigation_nav_graph.xml.flat",
         "source": "com.example.ace.app-main-62:/navigation/nav_graph.xml"
     },
@@ -76,8 +76,20 @@
         "source": "com.example.ace.app-main-62:/drawable/loginlogo.png"
     },
     {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
         "merged": "com.example.ace.app-merged_res-60:/layout_activity_note_preview.xml.flat",
         "source": "com.example.ace.app-main-62:/layout/activity_note_preview.xml"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/drawable_copy2.png.flat",
@@ -92,6 +104,10 @@
         "source": "com.example.ace.app-main-62:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "com.example.ace.app-merged_res-60:/layout_activity_dashboard.xml.flat",
         "source": "com.example.ace.app-main-62:/layout/activity_dashboard.xml"
     },
@@ -104,8 +120,12 @@
         "source": "com.example.ace.app-main-62:/drawable/ic_outline_note_add_24.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/layout_activity_main.xml.flat",
@@ -128,8 +148,8 @@
         "source": "com.example.ace.app-main-62:/drawable/camera.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/layout_fragment_home.xml.flat",
@@ -140,8 +160,8 @@
         "source": "com.example.ace.app-main-62:/drawable/ic_home_black_24dp.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-60:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.ace.app-main-62:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.ace.app-merged_res-60:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.ace.app-main-62:/mipmap-xhdpi/ic_launcher.png"
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/layout_activity_add_note.xml.flat",
