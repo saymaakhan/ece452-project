@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Ace"
         tools:targetApi="28">
         <activity
+            android:name=".ui.chat.ChatContacts"
+            android:exported="false" />
+        <activity
             android:name=".ui.login.DashboardActivity"
             android:exported="false"
             android:label="@string/title_activity_dashboard"
@@ -29,29 +32,23 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login">
-        </activity>
+            android:label="@string/title_activity_login"></activity>
         <activity
             android:name=".calendar.CalendarActivity"
             android:exported="false"
-            android:label="@string/title_activity_calendar">
-        </activity>
+            android:label="@string/title_activity_calendar"></activity>
         <activity
             android:name=".calendar.NotePreviewActivity"
             android:exported="false"
-            android:label="@string/title_activity_note_preview">
-        </activity>
+            android:label="@string/title_activity_note_preview"></activity>
         <activity
             android:name=".calendar.AddNoteActivity"
             android:exported="false"
-            android:label="@string/title_activity_add_note">
-        </activity>
+            android:label="@string/title_activity_add_note"></activity>
         <activity
             android:name=".ui.camera.CameraActivity"
             android:exported="false"
-            android:label="@string/title_camera_activity">
-        </activity>
-
+            android:label="@string/title_camera_activity"></activity>
     </application>
 
 </manifest>
