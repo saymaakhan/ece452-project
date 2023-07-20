@@ -1,19 +1,11 @@
 [
     {
-        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_dashboard.xml",
-        "source": "com.example.ace.app-main-62:/layout/activity_dashboard.xml"
-    },
-    {
-        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_login.xml",
-        "source": "com.example.ace.app-main-62:/layout/activity_login.xml"
-    },
-    {
         "merged": "com.example.ace.app-mergeDebugResources-59:/layout/fragment_dashboard.xml",
         "source": "com.example.ace.app-main-62:/layout/fragment_dashboard.xml"
     },
     {
-        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/fragment_home.xml",
-        "source": "com.example.ace.app-main-62:/layout/fragment_home.xml"
+        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_login.xml",
+        "source": "com.example.ace.app-main-62:/layout/activity_login.xml"
     },
     {
         "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_grades.xml",
@@ -22,10 +14,6 @@
     {
         "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_calendar.xml",
         "source": "com.example.ace.app-main-62:/layout/activity_calendar.xml"
-    },
-    {
-        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_note_preview.xml",
-        "source": "com.example.ace.app-main-62:/layout/activity_note_preview.xml"
     },
     {
         "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_add_note.xml",
@@ -42,5 +30,21 @@
     {
         "merged": "com.example.ace.app-mergeDebugResources-59:/layout/fragment_notifications.xml",
         "source": "com.example.ace.app-main-62:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_dashboard.xml",
+        "source": "com.example.ace.app-main-62:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/fragment_home.xml",
+        "source": "com.example.ace.app-main-62:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_note_preview.xml",
+        "source": "com.example.ace.app-main-62:/layout/activity_note_preview.xml"
+    },
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/item_chat_contact.xml",
+        "source": "com.example.ace.app-main-62:/layout/item_chat_contact.xml"
     }
 ]
