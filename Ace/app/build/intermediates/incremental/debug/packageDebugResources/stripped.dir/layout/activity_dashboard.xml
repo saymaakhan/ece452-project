@@ -52,6 +52,16 @@
             android:backgroundTint="#7a7a7a" />
 
         <Button
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Profile"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:backgroundTint="#7a7a7a" />
+
+        <Button
             android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
