@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class MainActivity : AppCompatActivity() {
@@ -87,9 +88,36 @@ class MainActivity : AppCompatActivity() {
             if (task.isSuccessful) {
 //                SavedPreference.setEmail(this, account.email.toString())
 //                SavedPreference.setUsername(this, account.displayName.toString())
+                val isNewUser = task.result?.additionalUserInfo?.isNewUser ?: true
+
+                if (isNewUser) {
+                    // The user is new, add their data to Firestore
+                    val currentUser = firebaseAuth.currentUser
+                    currentUser?.let {
+                        val firestore = FirebaseFirestore.getInstance()
+                        val userDocumentRef = firestore.collection("users").document(currentUser.uid)
+
+                        val userMap = hashMapOf(
+                            "uid" to currentUser.uid,
+                            "email" to currentUser.email,
+                            "displayName" to currentUser.displayName
+                        )
+
+                        userDocumentRef.set(userMap)
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Added user succesfully to firestore", Toast.LENGTH_SHORT).show()
+                            }
+                            .addOnFailureListener {
+                                Toast.makeText(this, "Failed to add user to firestore", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                }
+
+                // Continue with your existing code to navigate to the DashboardActivity
                 val intent = Intent(this, DashboardActivity::class.java)
                 startActivity(intent)
                 finish()
+
             }
         }
     }
