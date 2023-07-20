@@ -34,10 +34,13 @@
     {
         "merged": "com.example.ace.app-merged_res-60:/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "com.example.ace.app-main-62:/mipmap-xxhdpi/ic_launcher.png"
+<<<<<<< HEAD
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/layout_activity_grades.xml.flat",
         "source": "com.example.ace.app-main-62:/layout/activity_grades.xml"
+=======
+>>>>>>> origin/main
     },
     {
         "merged": "com.example.ace.app-merged_res-60:/layout_activity_calendar.xml.flat",

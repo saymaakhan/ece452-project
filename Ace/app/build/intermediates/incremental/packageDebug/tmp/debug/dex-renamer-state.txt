@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Wed Jul 19 15:50:44 EDT 2023
 base.0=/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
@@ -9,12 +10,25 @@ base.6=/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/build/intermediates/dex
 base.7=/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
 base.8=/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex
 base.9=/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+=======
+#Wed Jul 19 22:54:46 PDT 2023
+base.0=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.4=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.5=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.6=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
+base.7=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.8=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.9=W\:\\00_452_WORKSPACE\\Chat_app\\ece452-project\\Ace\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+>>>>>>> origin/main
 path.0=classes.dex
 path.1=0/classes.dex
-path.2=1/classes.dex
-path.3=10/classes.dex
-path.4=11/classes.dex
-path.5=12/classes.dex
+path.2=10/classes.dex
+path.3=11/classes.dex
+path.4=12/classes.dex
+path.5=1/classes.dex
 path.6=2/classes.dex
 path.7=8/classes.dex
 path.8=9/classes.dex
