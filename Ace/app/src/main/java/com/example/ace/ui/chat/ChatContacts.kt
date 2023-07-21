@@ -31,7 +31,11 @@ class ChatContacts : AppCompatActivity() {
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_chat_contacts)
         recyclerview.layoutManager= LinearLayoutManager(this)
         val adapter = ChatContactAdapter(users){user:ChatUser, position: Int ->
-            // -- Launch single chat activity here
+            val userName = user.userName
+            val intent = Intent(this, SingleChat::class.java)
+            intent.putExtra("ChatUser", userName )
+            startActivity(intent)
+            finish()
         }
         recyclerview.adapter = adapter
     }

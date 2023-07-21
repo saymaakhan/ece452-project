@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#323131"
     tools:context=".ui.chat.ChatContacts">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -18,7 +19,9 @@
             android:id="@+id/toolbar_chatcontacts"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Chat Contacts">
+            android:background="#323131"
+            app:title="Chat Contacts"
+            app:titleTextColor="#FFFFFF">
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
