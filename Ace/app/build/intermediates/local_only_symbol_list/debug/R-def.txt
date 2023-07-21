@@ -30,6 +30,7 @@ drawable ic_notifications_black_24dp
 drawable ic_outline_note_add_24
 drawable loginlogo
 drawable scan
+drawable sharp_person_24
 id FirstFragment
 id SecondFragment
 id action_FirstFragment_to_SecondFragment
@@ -39,6 +40,7 @@ id calendarView
 id camera
 id clear
 id constraintLayout
+id contact_name
 id container
 id copy
 id emptyStateTextView
@@ -50,6 +52,7 @@ id grades
 id imageView
 id imageView1
 id imageView5
+id layout_chat
 id loading
 id login
 id logout
@@ -59,7 +62,9 @@ id noteEditText
 id noteTextView
 id password
 id profile
+id profile_picture
 id recgText
+id recycler_chat_contacts
 id saveButton
 id sploginbutton
 id textView
@@ -68,17 +73,21 @@ id textView3
 id textView5
 id text_notifications
 id toolbar
+id toolbar_chatcontacts
 id username
 layout activity_add_note
 layout activity_calendar
 layout activity_camera
+layout activity_chat_contacts
 layout activity_dashboard
+layout activity_grades
 layout activity_login
 layout activity_main
 layout activity_note_preview
 layout fragment_dashboard
 layout fragment_home
 layout fragment_notifications
+layout item_chat_contact
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
