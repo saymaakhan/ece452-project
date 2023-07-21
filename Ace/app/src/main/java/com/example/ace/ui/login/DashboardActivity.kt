@@ -9,6 +9,7 @@ import com.example.ace.R
 import com.example.ace.calendar.CalendarActivity
 import com.example.ace.databinding.ActivityDashboardBinding
 import com.example.ace.ui.camera.CameraActivity
+import com.example.ace.ui.chat.ChatContacts
 import com.example.ace.ui.grades.GradesActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -45,6 +46,8 @@ class DashboardActivity : AppCompatActivity() {
         val camera = binding.camera
         val grades = binding.grades
         val profile = binding.profile
+        val dm = binding.dm
+        val forum = binding.forum
 
         logout.setOnClickListener {
             mGoogleSignInClient.signOut().addOnCompleteListener {
@@ -68,6 +71,15 @@ class DashboardActivity : AppCompatActivity() {
         grades.setOnClickListener {
             val intent = Intent(this, GradesActivity::class.java)
             startActivity(intent)
+        }
+
+        dm.setOnClickListener {
+            val intent = Intent(this, ChatContacts::class.java)
+            startActivity(intent)
+        }
+
+        forum.setOnClickListener {
+
         }
     }
 }
