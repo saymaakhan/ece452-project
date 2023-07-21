@@ -18,7 +18,9 @@
             android:id="@+id/toolbar_chatcontacts"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Chat Contacts">
+            android:background="#323131"
+            app:title="Chat Contacts"
+            app:titleTextColor="#FFFFFF">
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
