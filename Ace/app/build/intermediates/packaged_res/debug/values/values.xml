@@ -74,6 +74,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="title_activity_add_note">AddNoteActivity</string>
     <string name="title_activity_calendar">CalendarActivity</string>
+    <string name="title_activity_create_class">CreateClassActivity</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_note_preview">NotePreviewActivity</string>

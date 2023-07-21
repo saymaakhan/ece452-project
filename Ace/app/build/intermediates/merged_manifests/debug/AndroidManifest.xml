@@ -46,6 +46,11 @@
         android:testOnly="true"
         android:theme="@style/Theme.Ace" >
         <activity
+            android:name="com.example.ace.ui.grades.CreateClassActivity"
+            android:exported="false"
+            android:label="@string/title_activity_create_class"
+            android:theme="@style/Theme.Ace" />
+        <activity
             android:name="com.example.ace.ui.chat.ChatContacts"
             android:exported="false" />
         <activity
@@ -81,13 +86,11 @@
         <activity
             android:name="com.example.ace.ui.camera.CameraActivity"
             android:exported="false"
-            android:label="@string/title_camera_activity" >
-        </activity>
+            android:label="@string/title_camera_activity" />
         <activity
             android:name="com.example.ace.ui.grades.GradesActivity"
             android:exported="false"
-            android:label="GradesActivity" >
-        </activity>
+            android:label="GradesActivity" />
         <activity
             android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
             android:screenOrientation="unspecified"
@@ -120,6 +123,10 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            android:exported="true" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
@@ -275,6 +282,10 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="androidx.activity.ComponentActivity"
+            android:exported="true" />
 
         <uses-library
             android:name="androidx.window.extensions"

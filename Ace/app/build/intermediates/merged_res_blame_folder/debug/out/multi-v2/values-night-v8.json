@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.ace.app-mergeDebugResources-58:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.ace.app-mergeDebugResources-80:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/res/values-night/themes.xml",

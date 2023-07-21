@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.ace.app-mergeDebugResources-58:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "outputFile": "com.example.ace.app-mergeDebugResources-80:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/res/values-w1240dp/dimens.xml",

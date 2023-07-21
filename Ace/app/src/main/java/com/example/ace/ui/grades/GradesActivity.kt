@@ -1,11 +1,13 @@
 package com.example.ace.ui.grades
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ace.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -28,5 +30,14 @@ class GradesActivity : AppCompatActivity() {
         }?.addOnFailureListener { exception ->
             Log.e(TAG, "Error retrieving user document: $exception")
         }
+
+        val fabAdd: FloatingActionButton = findViewById(R.id.fabAdd)
+
+        fabAdd.setOnClickListener {
+            // Launch the CreateClassActivity
+            val intent = Intent(this, CreateClassActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
