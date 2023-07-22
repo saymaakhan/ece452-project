@@ -76,6 +76,10 @@
         "source": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-main-62:/xml/data_extraction_rules.xml"
     },
     {
+        "merged": "com.example.ace.app-merged_res-60:/layout_item_discussion_forum_peers.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/item_discussion_forum_peers.xml"
+    },
+    {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-merged_res-60:/layout_activity_single_chat.xml.flat",
         "source": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-main-62:/layout/activity_single_chat.xml"
     },
@@ -90,10 +94,6 @@
     {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-merged_res-60:/drawable_ic_outline_note_add_24.xml.flat",
         "source": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-main-62:/drawable/ic_outline_note_add_24.xml"
-    },
-    {
-        "merged": "com.example.ace.app-merged_res-60:/layout_activity_dashboard.xml.flat",
-        "source": "com.example.ace.app-main-62:/layout/activity_dashboard.xml"
     },
     {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-merged_res-60:/drawable_scan.png.flat",
@@ -138,6 +138,10 @@
     {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-merged_res-60:/drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-main-62:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-60:/layout_item_discussion_forum_self.xml.flat",
+        "source": "com.example.ace.app-main-62:/layout/item_discussion_forum_self.xml"
     },
     {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-merged_res-60:/drawable_sms_48px.xml.flat",
