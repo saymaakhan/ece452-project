@@ -46,6 +46,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.Ace" >
         <activity
+            android:name="com.example.ace.ui.grades.AddGradesActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.ace.ui.grades.AddClassDialogActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.ace.ui.chat.DiscussionForumTopics"
             android:exported="false" />
         <activity
@@ -71,27 +77,33 @@
         <activity
             android:name="com.example.ace.ui.login.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login" >
+        </activity>
         <activity
             android:name="com.example.ace.calendar.CalendarActivity"
             android:exported="false"
-            android:label="@string/title_activity_calendar" />
+            android:label="@string/title_activity_calendar" >
+        </activity>
         <activity
             android:name="com.example.ace.calendar.NotePreviewActivity"
             android:exported="false"
-            android:label="@string/title_activity_note_preview" />
+            android:label="@string/title_activity_note_preview" >
+        </activity>
         <activity
             android:name="com.example.ace.calendar.AddNoteActivity"
             android:exported="false"
-            android:label="@string/title_activity_add_note" />
+            android:label="@string/title_activity_add_note" >
+        </activity>
         <activity
             android:name="com.example.ace.ui.camera.CameraActivity"
             android:exported="false"
-            android:label="@string/title_camera_activity" />
+            android:label="@string/title_camera_activity" >
+        </activity>
         <activity
             android:name="com.example.ace.ui.grades.GradesActivity"
             android:exported="false"
-            android:label="GradesActivity" />
+            android:label="GradesActivity" >
+        </activity>
         <activity
             android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
             android:screenOrientation="unspecified"
@@ -125,6 +137,10 @@
                 android:value="androidx.startup" />
         </provider>
 
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            android:exported="true" />
+
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"
@@ -134,6 +150,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
@@ -279,6 +298,10 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="androidx.activity.ComponentActivity"
+            android:exported="true" />
 
         <uses-library
             android:name="androidx.window.extensions"

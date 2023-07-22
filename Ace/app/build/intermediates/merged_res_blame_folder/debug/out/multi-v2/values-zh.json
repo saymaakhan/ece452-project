@@ -4,7 +4,7 @@
             "outputFile": "com.example.ace.app-mergeDebugResources-80:/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "/Users/saymakhan/.gradle/caches/transforms-3/2f6680a7f880612138a1b16336578960/transformed/jetified-ucrop-2.2.6/res/values-zh/values-zh.xml",
+                    "source": "/Users/sidharth/.gradle/caches/transforms-3/2f6680a7f880612138a1b16336578960/transformed/jetified-ucrop-2.2.6/res/values-zh/values-zh.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
