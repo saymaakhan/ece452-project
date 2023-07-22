@@ -3262,6 +3262,7 @@ drawable ucrop_vector_ic_crop
 drawable ucrop_vector_loader
 drawable ucrop_vector_loader_animated
 drawable ucrop_wrapper_controls_shape
+drawable wallpaper
 id ALT
 id BOTTOM_END
 id BOTTOM_START

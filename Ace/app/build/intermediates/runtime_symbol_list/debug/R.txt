@@ -3261,6 +3261,7 @@ int drawable ucrop_vector_ic_crop 0x7f080120
 int drawable ucrop_vector_loader 0x7f080121
 int drawable ucrop_vector_loader_animated 0x7f080122
 int drawable ucrop_wrapper_controls_shape 0x7f080123
+int drawable wallpaper 0x7f080124
 int id ALT 0x7f090000
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002
