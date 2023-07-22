@@ -60,7 +60,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-
         <EditText
             android:id="@+id/edit_chat_message"
             android:layout_width="wrap_content"
@@ -95,6 +94,21 @@
             android:background="?attr/selectableItemBackground"
             android:text="Close"
             android:textColor="@color/primary" />
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/progressBar"-->
+<!--            style="?android:attr/progressBarStyleLarge"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_centerVertical="true" />-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/messageRecyclerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@android:color/white"-->
+<!--            android:paddingHorizontal="16dp" />-->
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

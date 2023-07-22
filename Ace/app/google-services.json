@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "228812162316",
+    "firebase_url": "https://ace-4593a-default-rtdb.firebaseio.com",
     "project_id": "ace-4593a",
     "storage_bucket": "ace-4593a.appspot.com"
   },
@@ -14,7 +15,47 @@
       },
       "oauth_client": [
         {
-          "client_id": "228812162316-s2gdtioj5i6gm722chf9662ippckctrq.apps.googleusercontent.com",
+          "client_id": "228812162316-002eocogo25j4bn6istkgfj0oa6chdlo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ace",
+            "certificate_hash": "2b96cdcbbe1ad008d8d5d2911cbc26ed2d124a42"
+          }
+        },
+        {
+          "client_id": "228812162316-33ahe9blf0ff99ntt94isclpnen96rgi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ace",
+            "certificate_hash": "2d0f2114b32d9717f915b65f84186488690be6ce"
+          }
+        },
+        {
+          "client_id": "228812162316-f0jo3puek5jj3dkvobrn680jmoil1p6b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ace",
+            "certificate_hash": "edc3f88b12f534f95f2e0fc2e824411907bd3bb8"
+          }
+        },
+        {
+          "client_id": "228812162316-favpmv81tfefinfa4mbnpuvt9glhtsac.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ace",
+            "certificate_hash": "cef2f9b73c1ff9c91dda7cbbe8ad524491f8bae9"
+          }
+        },
+        {
+          "client_id": "228812162316-qieilmajhnboao0hmc10se7qatn5q0p4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ace",
+            "certificate_hash": "8e2eac7f8325652d504549f427971d65e6432dd3"
+          }
+        },
+        {
+          "client_id": "228812162316-udpnob0fnlv7namu39so24p7v46vm4vi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.ace",
