@@ -3372,6 +3372,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnAddSyllabusItem
 id buttonPanel
 id button_chat_close
 id button_chat_send

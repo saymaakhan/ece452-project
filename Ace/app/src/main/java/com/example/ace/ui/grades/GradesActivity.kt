@@ -101,15 +101,15 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                         if (documentSnapshot.exists()) {
                             documentSnapshot.data["className"]?.let { it ->
                                 // Create a new TextView to represent the class name
+                                val className = it as CharSequence?
                                 val classEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerClasses, false)
-                                classEntryView.findViewById<TextView>(R.id.tvClassName).text = it as CharSequence?
+                                classEntryView.findViewById<TextView>(R.id.tvClassName).text = className
                                 containerClasses.addView(classEntryView)
 
                                 // Set an onClickListener for the class entry to open the GradesActivity
                                 classEntryView.setOnClickListener {
                                     // Launch the activity to add grades for the selected class
                                     val intent = Intent(this, AddGradesActivity::class.java)
-                                    val className = it as CharSequence?
                                     intent.putExtra("class_name", className)
                                     startActivity(intent)
                                 }

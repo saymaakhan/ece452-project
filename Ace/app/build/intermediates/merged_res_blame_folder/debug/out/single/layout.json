@@ -60,6 +60,10 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_grades.xml"
     },
     {
+        "merged": "com.example.ace.app-mergeDebugResources-81:/layout/activity_add_grades.xml",
+        "source": "com.example.ace.app-main-84:/layout/activity_add_grades.xml"
+    },
+    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/activity_chat_contacts.xml",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_chat_contacts.xml"
     },
@@ -78,9 +82,5 @@
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/dialog_add_class.xml",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/dialog_add_class.xml"
-    },
-    {
-        "merged": "com.example.ace.app-mergeDebugResources-81:/layout/class_item_layout.xml",
-        "source": "com.example.ace.app-main-84:/layout/class_item_layout.xml"
     }
 ]

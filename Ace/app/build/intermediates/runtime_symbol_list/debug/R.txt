@@ -3371,6 +3371,7 @@ int id browser_actions_menu_item_icon 0x7f09006c
 int id browser_actions_menu_item_text 0x7f09006d
 int id browser_actions_menu_items 0x7f09006e
 int id browser_actions_menu_view 0x7f09006f
+int id btnAddSyllabusItem 0x7f09028f
 int id buttonPanel 0x7f090070
 int id button_chat_close 0x7f090071
 int id button_chat_send 0x7f090072

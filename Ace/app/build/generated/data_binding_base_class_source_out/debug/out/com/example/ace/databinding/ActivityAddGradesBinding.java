@@ -4,25 +4,38 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.ace.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityAddGradesBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final RelativeLayout rootView;
 
-  private ActivityAddGradesBinding(@NonNull ConstraintLayout rootView) {
+  @NonNull
+  public final Button btnAddSyllabusItem;
+
+  @NonNull
+  public final Toolbar toolbar;
+
+  private ActivityAddGradesBinding(@NonNull RelativeLayout rootView,
+      @NonNull Button btnAddSyllabusItem, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
+    this.btnAddSyllabusItem = btnAddSyllabusItem;
+    this.toolbar = toolbar;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +56,25 @@ public final class ActivityAddGradesBinding implements ViewBinding {
 
   @NonNull
   public static ActivityAddGradesBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnAddSyllabusItem;
+      Button btnAddSyllabusItem = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddSyllabusItem == null) {
+        break missingId;
+      }
 
-    return new ActivityAddGradesBinding((ConstraintLayout) rootView);
+      id = R.id.toolbar;
+      Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
+      if (toolbar == null) {
+        break missingId;
+      }
+
+      return new ActivityAddGradesBinding((RelativeLayout) rootView, btnAddSyllabusItem, toolbar);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
