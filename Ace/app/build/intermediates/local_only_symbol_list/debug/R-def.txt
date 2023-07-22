@@ -52,6 +52,8 @@ id calendarView
 id camera
 id card_chat_message_peer
 id card_chat_message_self
+id card_forum_message_peer
+id card_forum_message_self
 id clear
 id constraintLayout
 id contact_name
@@ -77,6 +79,8 @@ id layout_chat_chatbox
 id layout_chat_container_peer
 id layout_chat_container_self
 id layout_discussion_forum
+id layout_forum_container_peer
+id layout_forum_container_self
 id loading
 id login
 id logout
@@ -103,6 +107,11 @@ id text_chat_message_self
 id text_chat_timestamp_peer
 id text_chat_timestamp_self
 id text_chat_user_peer
+id text_forum_message_peer
+id text_forum_message_self
+id text_forum_timestamp_peer
+id text_forum_timestamp_self
+id text_forum_user_peer
 id text_notifications
 id toolbar
 id toolbar_chatchannel
@@ -127,6 +136,8 @@ layout fragment_notifications
 layout item_chat_contact
 layout item_chat_peer
 layout item_chat_self
+layout item_discussion_forum_peers
+layout item_discussion_forum_self
 layout item_forum_topic
 mipmap ic_launcher
 mipmap ic_launcher_foreground

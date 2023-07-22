@@ -48,16 +48,16 @@
         "source": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-main-62:/layout/item_forum_topic.xml"
     },
     {
-        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/activity_dashboard.xml",
-        "source": "com.example.ace.app-main-62:/layout/activity_dashboard.xml"
-    },
-    {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-59:/layout/activity_discussion_forum_topics.xml",
         "source": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-main-62:/layout/activity_discussion_forum_topics.xml"
     },
     {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-59:/layout/activity_camera.xml",
         "source": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-main-62:/layout/activity_camera.xml"
+    },
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/item_discussion_forum_self.xml",
+        "source": "com.example.ace.app-main-62:/layout/item_discussion_forum_self.xml"
     },
     {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-59:/layout/item_chat_peer.xml",
@@ -74,5 +74,9 @@
     {
         "merged": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-59:/layout/activity_main.xml",
         "source": "/Users/saymakhan/.gradle/daemon/8.0/com.example.ace.app-main-62:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-59:/layout/item_discussion_forum_peers.xml",
+        "source": "com.example.ace.app-main-62:/layout/item_discussion_forum_peers.xml"
     }
 ]

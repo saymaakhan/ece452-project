@@ -45,6 +45,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/calendar"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -53,7 +54,6 @@
                     android:src="@drawable/calendar" />
 
                 <Button
-                    android:id="@+id/calendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Calendar"
@@ -72,6 +72,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/camera"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -80,7 +81,6 @@
                     android:src="@drawable/camera" />
 
                 <Button
-                    android:id="@+id/camera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Camera"
@@ -108,6 +108,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/grades"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -116,7 +117,6 @@
                     android:src="@drawable/grades" />
 
                 <Button
-                    android:id="@+id/grades"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Grades"
@@ -135,6 +135,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/dm"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -143,7 +144,6 @@
                     android:src="@drawable/chat" />
 
                 <Button
-                    android:id="@+id/dm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chat"
@@ -171,6 +171,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/forum"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/forum"
@@ -179,7 +180,6 @@
                     android:layout_gravity="center" />
 
                 <Button
-                    android:id="@+id/forum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Forum"
@@ -198,6 +198,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/profile"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/profile"
@@ -206,7 +207,6 @@
                     android:layout_gravity="center" />
 
                 <Button
-                    android:id="@+id/profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Profile"
@@ -238,6 +238,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/logout"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/logout"
@@ -246,7 +247,6 @@
                     android:layout_gravity="center" />
 
                 <Button
-                    android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Logout"
