@@ -3106,6 +3106,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable camera
 drawable camera_icon
+drawable class_item_background
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3135,6 +3136,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable dot
 drawable eraser
+drawable forum_48px
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
@@ -3232,8 +3234,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable outline_menu_open_24
 drawable scan
 drawable sharp_person_24
+drawable sms_48px
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3368,8 +3372,9 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id btnAddItem
 id buttonPanel
+id button_chat_close
+id button_chat_send
 id cache_measures
 id calendar
 id calendarContainer
@@ -3380,6 +3385,8 @@ id calendarViewPager
 id callMeasure
 id camera
 id cancel_button
+id card_chat_message_peer
+id card_chat_message_self
 id carryVelocity
 id center
 id centerCrop
@@ -3409,7 +3416,7 @@ id constraintLayout
 id consume_window_insets_tag
 id contact_name
 id container
-id containerCourseItems
+id containerClasses
 id content
 id contentPanel
 id contiguous
@@ -3451,6 +3458,7 @@ id disablePostScroll
 id disableScroll
 id disjoint
 id divider
+id dm
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3465,7 +3473,7 @@ id easeInOut
 id easeOut
 id east
 id edge
-id editClassName
+id edit_chat_message
 id edit_query
 id elastic
 id embed
@@ -3474,8 +3482,6 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
-id etCourseName
-id etCourseWeight
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3497,6 +3503,9 @@ id floating
 id floatingActionButton
 id floatingActionButton4
 id forever
+id forum
+id forum_topic_name
+id forum_topic_picture
 id forwardButton
 id fragment_container_view_tag
 id friday
@@ -3551,6 +3560,9 @@ id labeled
 id layout
 id layout_aspect_ratio
 id layout_chat
+id layout_chat_chatbox
+id layout_chat_container_peer
+id layout_chat_container_self
 id layout_rotate_wheel
 id layout_scale_wheel
 id left
@@ -3697,6 +3709,7 @@ id ratio
 id recgText
 id rectangles
 id recycler_chat_contacts
+id recycler_chat_space
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3810,6 +3823,7 @@ id tag_window_insets_animation_callback
 id text
 id text2
 id textEnd
+id textInputLayoutClassName
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -3819,6 +3833,12 @@ id textView2
 id textView3
 id textView5
 id textWatcher
+id text_chat_indicator
+id text_chat_message_peer
+id text_chat_message_self
+id text_chat_timestamp_peer
+id text_chat_timestamp_self
+id text_chat_user_peer
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3841,6 +3861,7 @@ id title_template
 id todayButton
 id toggle
 id toolbar
+id toolbar_chatchannel
 id toolbar_chatcontacts
 id toolbar_title
 id top
@@ -3856,6 +3877,7 @@ id transition_transform
 id triangle
 id tuesday
 id tuesdayLabel
+id tvClassName
 id ucrop
 id ucrop_frame
 id ucrop_photobox
@@ -3866,6 +3888,7 @@ id up
 id useLogo
 id username
 id vertical_only
+id view
 id view_offset_helper
 id view_overlay
 id view_transition
@@ -4008,23 +4031,24 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_grades
 layout activity_add_note
 layout activity_calendar
 layout activity_camera
 layout activity_chat_contacts
-layout activity_create_class
 layout activity_dashboard
 layout activity_grades
 layout activity_login
 layout activity_main
 layout activity_note_preview
+layout activity_single_chat
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout calendar_view
 layout calendar_view_day
 layout calendar_view_grid
 layout calendar_view_picker_day
-layout course_item_layout
+layout class_item_layout
 layout custom_dialog
 layout date_picker_dialog
 layout design_bottom_navigation_item
@@ -4042,11 +4066,15 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_add_class
 layout dialog_choose_app
 layout fragment_dashboard
 layout fragment_home
 layout fragment_notifications
 layout item_chat_contact
+layout item_chat_peer
+layout item_chat_self
+layout item_forum_topic
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

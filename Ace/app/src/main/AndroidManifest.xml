@@ -13,10 +13,11 @@
         android:theme="@style/Theme.Ace"
         tools:targetApi="28">
         <activity
-            android:name=".ui.grades.CreateClassActivity"
-            android:exported="false"
-            android:label="@string/title_activity_create_class"
-            android:theme="@style/Theme.Ace" />
+            android:name=".ui.grades.AddGradesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.grades.AddClassDialogActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.chat.SingleChat"
             android:exported="false" />
@@ -40,28 +41,23 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login" >
-        </activity>
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".calendar.CalendarActivity"
             android:exported="false"
-            android:label="@string/title_activity_calendar" >
-        </activity>
+            android:label="@string/title_activity_calendar" />
         <activity
             android:name=".calendar.NotePreviewActivity"
             android:exported="false"
-            android:label="@string/title_activity_note_preview" >
-        </activity>
+            android:label="@string/title_activity_note_preview" />
         <activity
             android:name=".calendar.AddNoteActivity"
             android:exported="false"
-            android:label="@string/title_activity_add_note" >
-        </activity>
+            android:label="@string/title_activity_add_note" />
         <activity
             android:name=".ui.camera.CameraActivity"
             android:exported="false"
-            android:label="@string/title_camera_activity" >
-        </activity>
+            android:label="@string/title_camera_activity" />
         <activity
             android:name=".ui.grades.GradesActivity"
             android:exported="false"

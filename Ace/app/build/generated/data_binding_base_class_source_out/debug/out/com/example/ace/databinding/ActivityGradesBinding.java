@@ -4,6 +4,7 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,14 +22,19 @@ public final class ActivityGradesBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final LinearLayout containerClasses;
+
+  @NonNull
   public final FloatingActionButton fabAdd;
 
   @NonNull
   public final Toolbar toolbar;
 
   private ActivityGradesBinding(@NonNull RelativeLayout rootView,
-      @NonNull FloatingActionButton fabAdd, @NonNull Toolbar toolbar) {
+      @NonNull LinearLayout containerClasses, @NonNull FloatingActionButton fabAdd,
+      @NonNull Toolbar toolbar) {
     this.rootView = rootView;
+    this.containerClasses = containerClasses;
     this.fabAdd = fabAdd;
     this.toolbar = toolbar;
   }
@@ -60,6 +66,12 @@ public final class ActivityGradesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.containerClasses;
+      LinearLayout containerClasses = ViewBindings.findChildViewById(rootView, id);
+      if (containerClasses == null) {
+        break missingId;
+      }
+
       id = R.id.fabAdd;
       FloatingActionButton fabAdd = ViewBindings.findChildViewById(rootView, id);
       if (fabAdd == null) {
@@ -72,7 +84,8 @@ public final class ActivityGradesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityGradesBinding((RelativeLayout) rootView, fabAdd, toolbar);
+      return new ActivityGradesBinding((RelativeLayout) rootView, containerClasses, fabAdd,
+          toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

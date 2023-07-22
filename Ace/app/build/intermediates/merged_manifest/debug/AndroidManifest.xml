@@ -46,10 +46,14 @@
         android:testOnly="true"
         android:theme="@style/Theme.Ace" >
         <activity
-            android:name="com.example.ace.ui.grades.CreateClassActivity"
-            android:exported="false"
-            android:label="@string/title_activity_create_class"
-            android:theme="@style/Theme.Ace" />
+            android:name="com.example.ace.ui.grades.AddGradesActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.ace.ui.grades.AddClassDialogActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.ace.ui.chat.SingleChat"
+            android:exported="false" />
         <activity
             android:name="com.example.ace.ui.chat.ChatContacts"
             android:exported="false" />
@@ -137,6 +141,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
