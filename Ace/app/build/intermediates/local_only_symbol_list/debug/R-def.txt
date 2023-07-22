@@ -2,6 +2,7 @@ R_DEF: Internal format may change without notice
 local
 color background
 color black
+color ic_launcher_background
 color primary
 color primary_dark
 color primary_light
@@ -36,6 +37,7 @@ id action_SecondFragment_to_FirstFragment
 id calendar
 id calendarView
 id camera
+id cardView
 id clear
 id constraintLayout
 id container
@@ -57,6 +59,8 @@ id nav_graph
 id noteEditText
 id noteTextView
 id password
+id pdf
+id profile
 id recgText
 id saveButton
 id sploginbutton
@@ -78,6 +82,7 @@ layout fragment_dashboard
 layout fragment_home
 layout fragment_notifications
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 string action_sign_in

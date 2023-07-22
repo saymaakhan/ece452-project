@@ -4,11 +4,13 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -20,6 +22,9 @@ import java.lang.String;
 public final class ActivityCameraBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final CardView cardView;
 
   @NonNull
   public final ImageView clear;
@@ -34,6 +39,9 @@ public final class ActivityCameraBinding implements ViewBinding {
   public final ImageView getImage;
 
   @NonNull
+  public final Button pdf;
+
+  @NonNull
   public final EditText recgText;
 
   @NonNull
@@ -42,15 +50,17 @@ public final class ActivityCameraBinding implements ViewBinding {
   @NonNull
   public final TextView textView3;
 
-  private ActivityCameraBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView clear,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ImageView copy,
-      @NonNull ImageView getImage, @NonNull EditText recgText, @NonNull TextView textView2,
-      @NonNull TextView textView3) {
+  private ActivityCameraBinding(@NonNull ConstraintLayout rootView, @NonNull CardView cardView,
+      @NonNull ImageView clear, @NonNull ConstraintLayout constraintLayout, @NonNull ImageView copy,
+      @NonNull ImageView getImage, @NonNull Button pdf, @NonNull EditText recgText,
+      @NonNull TextView textView2, @NonNull TextView textView3) {
     this.rootView = rootView;
+    this.cardView = cardView;
     this.clear = clear;
     this.constraintLayout = constraintLayout;
     this.copy = copy;
     this.getImage = getImage;
+    this.pdf = pdf;
     this.recgText = recgText;
     this.textView2 = textView2;
     this.textView3 = textView3;
@@ -83,6 +93,12 @@ public final class ActivityCameraBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cardView;
+      CardView cardView = ViewBindings.findChildViewById(rootView, id);
+      if (cardView == null) {
+        break missingId;
+      }
+
       id = R.id.clear;
       ImageView clear = ViewBindings.findChildViewById(rootView, id);
       if (clear == null) {
@@ -107,6 +123,12 @@ public final class ActivityCameraBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.pdf;
+      Button pdf = ViewBindings.findChildViewById(rootView, id);
+      if (pdf == null) {
+        break missingId;
+      }
+
       id = R.id.recgText;
       EditText recgText = ViewBindings.findChildViewById(rootView, id);
       if (recgText == null) {
@@ -125,8 +147,8 @@ public final class ActivityCameraBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityCameraBinding((ConstraintLayout) rootView, clear, constraintLayout, copy,
-          getImage, recgText, textView2, textView3);
+      return new ActivityCameraBinding((ConstraintLayout) rootView, cardView, clear,
+          constraintLayout, copy, getImage, pdf, recgText, textView2, textView3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
