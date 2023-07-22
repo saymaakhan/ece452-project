@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#292929"
+    android:background="@drawable/wallpaper"
     android:orientation="vertical">
 
-    <!-- Image View -->
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
@@ -13,12 +12,11 @@
         android:layout_weight="1"
         android:src="@drawable/loginlogo" />
 
-    <!-- Home Text -->
     <TextView
         android:id="@+id/homeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HOME"
+        android:text="Welcome,"
         android:textSize="30sp"
         android:textColor="#fff"
         android:layout_gravity="center_horizontal" />
@@ -47,12 +45,12 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/calendar"
+                    android:layout_gravity="center"
                     android:paddingTop="8dp"
                     android:paddingBottom="4dp"
-                    android:layout_gravity="center" />
+                    android:src="@drawable/calendar" />
 
                 <Button
                     android:id="@+id/calendar"
@@ -74,12 +72,12 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/camera"
+                    android:layout_gravity="center"
                     android:paddingTop="8dp"
                     android:paddingBottom="4dp"
-                    android:layout_gravity="center" />
+                    android:src="@drawable/camera" />
 
                 <Button
                     android:id="@+id/camera"
@@ -94,7 +92,6 @@
         </LinearLayout>
 
         <!-- Second Row of Buttons -->
-        <!-- Add similar LinearLayouts with ImageView and Button for the 'Grades' and 'Chat' buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -111,12 +108,12 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/grades"
+                    android:layout_gravity="center"
                     android:paddingTop="8dp"
                     android:paddingBottom="4dp"
-                    android:layout_gravity="center" />
+                    android:src="@drawable/grades" />
 
                 <Button
                     android:id="@+id/grades"
@@ -138,12 +135,12 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/chat"
+                    android:layout_gravity="center"
                     android:paddingTop="8dp"
                     android:paddingBottom="4dp"
-                    android:layout_gravity="center" />
+                    android:src="@drawable/chat" />
 
                 <Button
                     android:id="@+id/dm"
@@ -158,7 +155,6 @@
         </LinearLayout>
 
         <!-- Third Row of Buttons -->
-        <!-- Add similar LinearLayouts with ImageView and Button for the 'Forum' and 'Profile' buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -175,7 +171,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/forum"
                     android:paddingTop="8dp"
@@ -202,7 +198,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/profile"
                     android:paddingTop="8dp"
@@ -222,7 +218,6 @@
         </LinearLayout>
 
         <!-- Fourth Row of Buttons -->
-        <!-- Add an empty space to center the Logout button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -243,7 +238,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/logout"
                     android:paddingTop="8dp"

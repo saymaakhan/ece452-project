@@ -1622,6 +1622,7 @@ com.example.ace:styleable/AppBarLayoutStates = 0x7f15000e
 com.example.ace:id/FirstFragment = 0x7f090005
 com.example.ace:id/FUNCTION = 0x7f090004
 com.example.ace:id/CTRL = 0x7f090003
+com.example.ace:drawable/wallpaper = 0x7f080124
 com.example.ace:id/text_view_rotate = 0x7f090241
 com.example.ace:id/text_chat_user_peer = 0x7f09023b
 com.example.ace:drawable/ucrop_wrapper_controls_shape = 0x7f080123

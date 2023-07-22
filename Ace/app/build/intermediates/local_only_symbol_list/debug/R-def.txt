@@ -40,6 +40,7 @@ drawable profile
 drawable scan
 drawable sharp_person_24
 drawable sms_48px
+drawable wallpaper
 id FirstFragment
 id SecondFragment
 id action_FirstFragment_to_SecondFragment

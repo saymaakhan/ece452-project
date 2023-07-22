@@ -84,4 +84,11 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    private fun getUserName(): String? {
+        val user = auth.currentUser
+        return if (user != null) {
+            user.displayName
+        } else "anonymous"
+    }
 }
