@@ -4,9 +4,9 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,38 +21,43 @@ public final class ActivityDashboardBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final Button calendar;
+  public final ImageView calendar;
 
   @NonNull
-  public final Button camera;
+  public final ImageView camera;
 
   @NonNull
-  public final Button dm;
+  public final ImageView dm;
 
   @NonNull
-  public final Button forum;
+  public final ImageView forum;
 
   @NonNull
-  public final Button grades;
+  public final ImageView grades;
+
+  @NonNull
+  public final TextView homeText;
 
   @NonNull
   public final ImageView imageView5;
 
   @NonNull
-  public final Button logout;
+  public final ImageView logout;
 
   @NonNull
-  public final Button profile;
+  public final ImageView profile;
 
-  private ActivityDashboardBinding(@NonNull LinearLayout rootView, @NonNull Button calendar,
-      @NonNull Button camera, @NonNull Button dm, @NonNull Button forum, @NonNull Button grades,
-      @NonNull ImageView imageView5, @NonNull Button logout, @NonNull Button profile) {
+  private ActivityDashboardBinding(@NonNull LinearLayout rootView, @NonNull ImageView calendar,
+      @NonNull ImageView camera, @NonNull ImageView dm, @NonNull ImageView forum,
+      @NonNull ImageView grades, @NonNull TextView homeText, @NonNull ImageView imageView5,
+      @NonNull ImageView logout, @NonNull ImageView profile) {
     this.rootView = rootView;
     this.calendar = calendar;
     this.camera = camera;
     this.dm = dm;
     this.forum = forum;
     this.grades = grades;
+    this.homeText = homeText;
     this.imageView5 = imageView5;
     this.logout = logout;
     this.profile = profile;
@@ -86,32 +91,38 @@ public final class ActivityDashboardBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.calendar;
-      Button calendar = ViewBindings.findChildViewById(rootView, id);
+      ImageView calendar = ViewBindings.findChildViewById(rootView, id);
       if (calendar == null) {
         break missingId;
       }
 
       id = R.id.camera;
-      Button camera = ViewBindings.findChildViewById(rootView, id);
+      ImageView camera = ViewBindings.findChildViewById(rootView, id);
       if (camera == null) {
         break missingId;
       }
 
       id = R.id.dm;
-      Button dm = ViewBindings.findChildViewById(rootView, id);
+      ImageView dm = ViewBindings.findChildViewById(rootView, id);
       if (dm == null) {
         break missingId;
       }
 
       id = R.id.forum;
-      Button forum = ViewBindings.findChildViewById(rootView, id);
+      ImageView forum = ViewBindings.findChildViewById(rootView, id);
       if (forum == null) {
         break missingId;
       }
 
       id = R.id.grades;
-      Button grades = ViewBindings.findChildViewById(rootView, id);
+      ImageView grades = ViewBindings.findChildViewById(rootView, id);
       if (grades == null) {
+        break missingId;
+      }
+
+      id = R.id.homeText;
+      TextView homeText = ViewBindings.findChildViewById(rootView, id);
+      if (homeText == null) {
         break missingId;
       }
 
@@ -122,19 +133,19 @@ public final class ActivityDashboardBinding implements ViewBinding {
       }
 
       id = R.id.logout;
-      Button logout = ViewBindings.findChildViewById(rootView, id);
+      ImageView logout = ViewBindings.findChildViewById(rootView, id);
       if (logout == null) {
         break missingId;
       }
 
       id = R.id.profile;
-      Button profile = ViewBindings.findChildViewById(rootView, id);
+      ImageView profile = ViewBindings.findChildViewById(rootView, id);
       if (profile == null) {
         break missingId;
       }
 
       return new ActivityDashboardBinding((LinearLayout) rootView, calendar, camera, dm, forum,
-          grades, imageView5, logout, profile);
+          grades, homeText, imageView5, logout, profile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

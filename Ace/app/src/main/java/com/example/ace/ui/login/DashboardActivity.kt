@@ -10,6 +10,7 @@ import com.example.ace.calendar.CalendarActivity
 import com.example.ace.databinding.ActivityDashboardBinding
 import com.example.ace.ui.camera.CameraActivity
 import com.example.ace.ui.chat.ChatContacts
+import com.example.ace.ui.chat.DiscussionForumTopics
 import com.example.ace.ui.grades.GradesActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -79,7 +80,15 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         forum.setOnClickListener {
-
+            val intent = Intent(this, DiscussionForumTopics::class.java)
+            startActivity(intent)
         }
+    }
+
+    private fun getUserName(): String? {
+        val user = auth.currentUser
+        return if (user != null) {
+            user.displayName
+        } else "anonymous"
     }
 }

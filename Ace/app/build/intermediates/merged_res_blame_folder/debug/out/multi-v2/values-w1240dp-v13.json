@@ -4,7 +4,7 @@
             "outputFile": "com.example.ace.app-mergeDebugResources-80:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/sidharth/AndroidStudioProjects/Ace/Ace/app/src/main/res/values-w1240dp/dimens.xml",
+                    "source": "/Users/saymakhan/Documents/ECE/StudyTerm/4A/ECE452/ece452-project/Ace/app/src/main/res/values-w1240dp/dimens.xml",
                     "from": {
                         "startLines": "1,2",
                         "startColumns": "4,4",

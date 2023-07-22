@@ -27,6 +27,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="15dp"
             android:text="Discussion Topic"
+            android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold" />
 

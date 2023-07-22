@@ -2201,8 +2201,6 @@ color ucrop_color_widget_rotate_angle
 color ucrop_color_widget_rotate_mid_line
 color ucrop_color_widget_text
 color ucrop_scale_text_view_selector
-color vector_tint_color
-color vector_tint_theme_color
 color white
 dimen abbreviation_text_size_max
 dimen abc_action_bar_content_inset_material
@@ -3104,9 +3102,10 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable calendar
 drawable camera
 drawable camera_icon
-drawable class_item_background
+drawable chat
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3136,9 +3135,11 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable dot
 drawable eraser
+drawable forum
 drawable forum_48px
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable grades
 drawable ic_arrow_back_black_24
 drawable ic_arrow_left
 drawable ic_arrow_right
@@ -3161,8 +3162,8 @@ drawable ic_outline_note_add_24
 drawable ic_photo_black_48dp
 drawable ic_photo_camera_black_48dp
 drawable ic_search_black_24
-drawable ic_vector_add_24dp
 drawable loginlogo
+drawable logout
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3235,6 +3236,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable outline_menu_open_24
+drawable profile
 drawable scan
 drawable sharp_person_24
 drawable sms_48px
@@ -3260,6 +3262,7 @@ drawable ucrop_vector_ic_crop
 drawable ucrop_vector_loader
 drawable ucrop_vector_loader_animated
 drawable ucrop_wrapper_controls_shape
+drawable wallpaper
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3343,7 +3346,6 @@ id aligned
 id all
 id allStates
 id always
-id androidx_compose_ui_view_composition_context
 id androidx_window_activity_scope
 id animateToEnd
 id animateToStart
@@ -3372,7 +3374,6 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id btnAddSyllabusItem
 id buttonPanel
 id button_chat_close
 id button_chat_send
@@ -3388,6 +3389,8 @@ id camera
 id cancel_button
 id card_chat_message_peer
 id card_chat_message_self
+id card_forum_message_peer
+id card_forum_message_self
 id carryVelocity
 id center
 id centerCrop
@@ -3409,15 +3412,12 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
-id compose_view_saveable_id_tag
 id compress
 id confirm_button
 id constraint
 id constraintLayout
-id consume_window_insets_tag
 id contact_name
 id container
-id containerClasses
 id content
 id contentPanel
 id contiguous
@@ -3486,7 +3486,6 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fabAdd
 id fabButton
 id fade
 id fill
@@ -3524,10 +3523,10 @@ id group_divider
 id grouping
 id groups
 id header_title
-id hide_in_inspector_tag
 id hideable
 id home
 id homeAsUp
+id homeText
 id honorRequest
 id horizontal_only
 id icon
@@ -3549,10 +3548,8 @@ id immediateStop
 id included
 id indeterminate
 id info
-id inspection_slot_table_set
 id invisible
 id inward
-id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
@@ -3564,6 +3561,9 @@ id layout_chat
 id layout_chat_chatbox
 id layout_chat_container_peer
 id layout_chat_container_self
+id layout_discussion_forum
+id layout_forum_container_peer
+id layout_forum_container_self
 id layout_rotate_wheel
 id layout_scale_wheel
 id left
@@ -3694,7 +3694,6 @@ id pathRelative
 id peekHeight
 id percent
 id pin
-id pooling_container_listener_holder_tag
 id position
 id positiveButton
 id postLayout
@@ -3711,6 +3710,7 @@ id recgText
 id rectangles
 id recycler_chat_contacts
 id recycler_chat_space
+id recycler_discussion_forum_topics
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3824,7 +3824,6 @@ id tag_window_insets_animation_callback
 id text
 id text2
 id textEnd
-id textInputLayoutClassName
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -3840,6 +3839,11 @@ id text_chat_message_self
 id text_chat_timestamp_peer
 id text_chat_timestamp_self
 id text_chat_user_peer
+id text_forum_message_peer
+id text_forum_message_self
+id text_forum_timestamp_peer
+id text_forum_timestamp_self
+id text_forum_user_peer
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3864,6 +3868,7 @@ id toggle
 id toolbar
 id toolbar_chatchannel
 id toolbar_chatcontacts
+id toolbar_discussion_forum
 id toolbar_title
 id top
 id topPanel
@@ -3878,7 +3883,6 @@ id transition_transform
 id triangle
 id tuesday
 id tuesdayLabel
-id tvClassName
 id ucrop
 id ucrop_frame
 id ucrop_photobox
@@ -3909,7 +3913,6 @@ id withinBounds
 id wrap
 id wrap_content
 id wrap_content_constrained
-id wrapped_composition_tag
 id wrapper_controls
 id wrapper_reset_rotate
 id wrapper_rotate_by_angle
@@ -4032,12 +4035,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_add_grades
 layout activity_add_note
 layout activity_calendar
 layout activity_camera
 layout activity_chat_contacts
 layout activity_dashboard
+layout activity_discussion_forum_topics
 layout activity_grades
 layout activity_login
 layout activity_main
@@ -4049,7 +4052,6 @@ layout calendar_view
 layout calendar_view_day
 layout calendar_view_grid
 layout calendar_view_picker_day
-layout class_item_layout
 layout custom_dialog
 layout date_picker_dialog
 layout design_bottom_navigation_item
@@ -4067,7 +4069,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout dialog_add_class
 layout dialog_choose_app
 layout fragment_dashboard
 layout fragment_home
@@ -4075,6 +4076,8 @@ layout fragment_notifications
 layout item_chat_contact
 layout item_chat_peer
 layout item_chat_self
+layout item_discussion_forum_peers
+layout item_discussion_forum_self
 layout item_forum_topic
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -4194,9 +4197,6 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
-string close_drawer
-string close_sheet
-string collapsed
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -4216,12 +4216,8 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
-string default_error_message
-string default_popup_window_title
 string default_web_client_id
 string dest_title
-string dialog
-string dropdown_menu
 string error_a11y_label
 string error_camera_app_not_found
 string error_failed_pick_gallery_image
@@ -4230,7 +4226,6 @@ string error_failed_to_create_camera_image_file
 string error_failed_to_crop_image
 string error_icon_content_description
 string error_task_cancelled
-string expanded
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -4246,8 +4241,6 @@ string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string image_picker_provider_authority_suffix
-string in_progress
-string indeterminate
 string invalid_password
 string invalid_username
 string item_view_role_description
@@ -4364,11 +4357,7 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
-string navigation_menu
 string next
-string not_selected
-string off
-string on
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4379,22 +4368,16 @@ string previous
 string project_id
 string prompt_email
 string prompt_password
-string range_end
-string range_start
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string second_fragment_label
-string selected
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
-string tab
-string template_percent
 string title_activity_add_note
 string title_activity_calendar
-string title_activity_create_class
 string title_activity_dashboard
 string title_activity_login
 string title_activity_note_preview
@@ -4696,9 +4679,6 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
-style DialogWindowTheme
-style FloatingDialogTheme
-style FloatingDialogWindowTheme
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Animation
 style MaterialAlertDialog_Material3_Body_Text
