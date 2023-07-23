@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Background with a light grey color -->
-<!--    <item android:drawable="@android:color/darker_gray" />-->
     <!-- Background with rounded corners and grey border at the bottom -->
     <item android:left="0dp" android:right="0dp" android:top="70dp" android:bottom="0dp">
         <shape android:shape="line">

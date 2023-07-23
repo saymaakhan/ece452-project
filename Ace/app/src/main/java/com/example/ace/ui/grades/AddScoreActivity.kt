@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -76,6 +77,7 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
                 val scoreEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerScore, false)
 
                 scoreEntryView.findViewById<TextView>(R.id.tvClassName).text = itemName
+                scoreEntryView.findViewById<ImageView>(R.id.letterGradeImageView).visibility = View.GONE
 
                 val roundedGrade = BigDecimal(grade.toString()).setScale(2, RoundingMode.HALF_EVEN)
                 scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: $roundedGrade%"
@@ -123,6 +125,7 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
                         scoreEntryView.findViewById<TextView>(R.id.tvClassName).text = scoreItemName as CharSequence?
                         val roundedGrade = BigDecimal(grade.toString()).setScale(2, RoundingMode.HALF_EVEN)
                         scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: $roundedGrade%"
+                        scoreEntryView.findViewById<ImageView>(R.id.letterGradeImageView).visibility = View.GONE
                         containerScore.addView(scoreEntryView)
                     }
                 }
