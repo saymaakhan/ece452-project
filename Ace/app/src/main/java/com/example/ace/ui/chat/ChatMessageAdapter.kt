@@ -28,11 +28,11 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     var received = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        if( viewType == SENT_MESSAGE && messagesSent.isNotEmpty() && sent < messagesSent.size) {
+        if( viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_self, parent, false)
             return SentMessageHolder(view)
         }
-        else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty() && received < messagesReceived.size) {
+        else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty()) {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_peer, parent, false)
             return ReceivedMessageHolder(view)
         }
@@ -56,28 +56,15 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, model: ChatMessage) {
         val viewType = getItemViewType(position)
 
-//        val message = getItem(position)
-//        if ((message.sender == currentUserName && message.receiver == otherUser) ||
-//            (message.sender == otherUser && message.receiver == currentUserName)) {
-
-                if (viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
-                    val sentPosition = position - messagesReceived.size
-                    if (sent < messagesSent.size) {
-                        val message = messagesSent[sent]
-                        val sentHolder = holder as SentMessageHolder
-                        sentHolder.bind(message)
-                        sent += 1
-                    }
-                } else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty()) {
-                    val receivedPosition = position
-                    if (received < messagesReceived.size) {
-                        val message = messagesReceived[received]
-                        val receivedHolder = holder as ReceivedMessageHolder
-                        receivedHolder.bind(message)
-                        received += 1
-                    }
-                }
-//            }
+        if (viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
+            val message = getItem(position)
+            val sentHolder = holder as SentMessageHolder
+            sentHolder.bind(message)
+        } else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty()) {
+            val message = getItem(position)
+            val receivedHolder = holder as ReceivedMessageHolder
+            receivedHolder.bind(message)
+        }
     }
 
     open class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
