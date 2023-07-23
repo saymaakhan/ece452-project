@@ -9,6 +9,13 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.text.Editable
+import android.graphics.Color
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
+import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -85,13 +92,17 @@ class CameraActivity : AppCompatActivity() {
         if(pdf is Button){
             pdf.setOnClickListener{
                 //Toast.makeText(this@CameraActivity, "Button Clicked", Toast.LENGTH_SHORT).show()
-                val pdfByteArray = generatePdfByteArray()
 
-                uploadPdfToFirebase(pdfByteArray)
+                val textValue = recgText
+                val textContent = textValue?.text.toString()
+                if (textContent.isEmpty()){
+                    Toast.makeText(this@CameraActivity, "Text box is empty", Toast.LENGTH_SHORT).show()
+                } else {
+                    val pdfByteArray = generatePdfByteArray()
+                    uploadPdfToFirebase(pdfByteArray)
+                }
             }
         }
-
-
 
 
         val image = getImage
@@ -164,14 +175,32 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun uploadPdfToFirebase(pdfByteArray: ByteArray) {
-        val pdfRef = mStorage.child("pdfs/ace.pdf")
+        val textValue = recgText
+        val mFileName = SimpleDateFormat("yyyMMdd_HHmmss", Locale.getDefault())
+            .format(System.currentTimeMillis())
+        val websiteText = "Your PDF is ready!"
+        val pdfRef = mStorage.child("pdfs/ace_" + mFileName + ".pdf")
+        val spannableString = SpannableString(websiteText)
+
+
 
         pdfRef.putBytes(pdfByteArray).addOnSuccessListener {
             Toast.makeText(this@CameraActivity, "File Upload Successful!" , Toast.LENGTH_SHORT).show()
 
             pdfRef.downloadUrl.addOnSuccessListener { downloadUrl ->
                 val url = downloadUrl.toString()
-                pasteDownloadLink(url)
+                //textValue?.setText(url)
+                val clickableSpan = object : ClickableSpan() {
+                    override fun onClick(view: View) {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                        startActivity(intent)
+                    }
+                }
+                spannableString.setSpan(clickableSpan, 0, websiteText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                val redColor = Color.RED
+                spannableString.setSpan(ForegroundColorSpan(redColor), 0, websiteText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                textValue?.text = spannableString.toEditable()
+                textValue?.movementMethod = LinkMovementMethod.getInstance()
             }
 
         }.addOnFailureListener{ e: Exception ->
@@ -181,10 +210,7 @@ class CameraActivity : AppCompatActivity() {
 
     }
 
-    private fun pasteDownloadLink(url: String) {
-
-
-    }
+    private fun SpannableString.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 
 
 //    private fun savePDF() {
