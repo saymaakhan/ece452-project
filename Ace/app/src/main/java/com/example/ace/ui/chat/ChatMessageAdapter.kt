@@ -24,8 +24,6 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     private final val SENT_MESSAGE : Int = 1
     private final val RECEIVE_MESSAGE: Int = 2
     private final val NONE: Int = 0
-    var sent = 0
-    var received = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         if( viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
@@ -85,7 +83,6 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     }
 
     class ReceivedMessageHolder(ItemView: View) : ViewHolder(ItemView) {
-//        val userTextView : TextView = itemView.findViewById(R.id.text_chat_user_peer)
         val messageTextView : TextView =  itemView.findViewById(R.id.text_chat_message_peer)
         val timeTextView : TextView = itemView.findViewById(R.id.text_chat_timestamp_peer)
 

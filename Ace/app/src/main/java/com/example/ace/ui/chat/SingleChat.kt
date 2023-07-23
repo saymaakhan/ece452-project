@@ -30,7 +30,6 @@ import java.sql.Timestamp
 class SingleChat : AppCompatActivity() {
     private lateinit var binding: ActivitySingleChatBinding
     private lateinit var manager: LinearLayoutManager
-    private var responseIndex : Int = 0
     private var peerName : String = "John Smith"
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseDatabase
@@ -65,7 +64,6 @@ class SingleChat : AppCompatActivity() {
             .build()
         manager = LinearLayoutManager(this)
         manager.stackFromEnd = true
-//        adapter = ChatMessageAdapter(options, getUserName());
 
 
 
@@ -74,18 +72,14 @@ class SingleChat : AppCompatActivity() {
 
         getUserMessages(messagesRef, peerName);
 
-        // Scroll down when a new message arrives
-        // See MyScrollToBottomObserver for details
-//        adapter.registerAdapterDataObserver(
-//            MyScrollToBottomObserver(binding.messageRecyclerView, adapter, manager)
-//        )
-
-//        val chatMessageSrc = ChatMessageSource()
-
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_chat_space)
         recyclerview.layoutManager=LinearLayoutManager(this)
         adapter = ChatMessageAdapter(options, messagesReceivedList, messagesSentList, getUserName(), peerName);
         recyclerview.adapter = adapter
+
+        adapter.registerAdapterDataObserver(
+            ScrollToBottom(binding.recyclerChatSpace, adapter, manager)
+        )
 
         val directMessageUserName  = findViewById<Toolbar>(R.id.toolbar_chatchannel)
         directMessageUserName.title = peerName
