@@ -84,7 +84,7 @@ class SingleChat : AppCompatActivity() {
 
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_chat_space)
         recyclerview.layoutManager=LinearLayoutManager(this)
-        adapter = ChatMessageAdapter(options, messagesReceivedList, messagesSentList, getUserName());
+        adapter = ChatMessageAdapter(options, messagesReceivedList, messagesSentList, getUserName(), peerName);
         recyclerview.adapter = adapter
 
         val directMessageUserName  = findViewById<Toolbar>(R.id.toolbar_chatchannel)
