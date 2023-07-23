@@ -1,3 +1,4 @@
+// Reference: https://firebase.google.com/codelabs/firebase-android#7
 package com.example.ace.ui.chat
 
 import androidx.recyclerview.widget.LinearLayoutManager
