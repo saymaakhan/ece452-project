@@ -10,7 +10,7 @@ import com.example.ace.R
 
 import com.example.ace.data.model.ChatUser
 
-class ChatContactAdapter(private val mList: MutableList<ChatUser>, val clickListener : (ChatUser, Int) -> Unit) : RecyclerView.Adapter<ChatContactAdapter.ViewHolder>() {
+class ChatContactAdapter(private val mList: MutableList<String>, val clickListener : (String, Int) -> Unit) : RecyclerView.Adapter<ChatContactAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_contact, parent, false)
@@ -31,8 +31,8 @@ class ChatContactAdapter(private val mList: MutableList<ChatUser>, val clickList
     open class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         private val profilePicImage : ImageView =  itemView.findViewById(R.id.profile_picture)
         private val contactNameText : TextView = itemView.findViewById(R.id.contact_name)
-        open fun bind (user : ChatUser) {
-            contactNameText.setText(user.userName)
+        open fun bind (user : String) {
+            contactNameText.setText(user)
             profilePicImage.setImageResource(R.drawable.sharp_person_24)
         }
     }

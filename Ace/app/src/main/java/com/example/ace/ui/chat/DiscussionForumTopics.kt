@@ -21,9 +21,9 @@ class DiscussionForumTopics : AppCompatActivity() {
 
         // -- Create a list of discussion thread topics
         val topics : MutableList<DiscussionForumTopic> = mutableListOf()
-        val topic1 = DiscussionForumTopic(topicName = "Campus Events: When is eng day?")
+        val topic1 = DiscussionForumTopic(topicName = "ECE 452: Question about exam?")
         val topic2 = DiscussionForumTopic(topicName = "CLAS 104: Textbook for course?")
-        val topic3 = DiscussionForumTopic(topicName = "ECE 452: Question about exam?")
+        val topic3 = DiscussionForumTopic(topicName = "Campus Events: When is semi?")
         topics.add(topic1)
         topics.add(topic2)
         topics.add(topic3)
@@ -31,7 +31,10 @@ class DiscussionForumTopics : AppCompatActivity() {
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_discussion_forum_topics)
         recyclerview.layoutManager= LinearLayoutManager(this)
         val adapter = DiscussionForumTopicsAdapter(topics){ topic: DiscussionForumTopic, position: Int ->
-            // -- Link to discussion forum chat
+            val topicName = topic.topicName
+            val intent = Intent(this, DiscussionForumChat::class.java)
+            intent.putExtra("topic", topicName )
+            startActivity(intent)
             finish()
         }
         recyclerview.adapter = adapter

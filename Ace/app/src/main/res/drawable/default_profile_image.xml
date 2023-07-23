@@ -1,0 +1,24 @@
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Background circle -->
+    <path
+        android:pathData="M50,100
+                          a50,50 0 1,0 0,-0.01"
+        android:fillColor="#D3D3D3" />
+
+    <!-- Initials text -->
+    <text
+        android:text="JD"
+        android:textSize="40sp"
+        android:fontFamily="sans-serif"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</vector>
