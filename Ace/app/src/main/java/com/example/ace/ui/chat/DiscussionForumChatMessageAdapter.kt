@@ -3,6 +3,7 @@ package com.example.ace.ui.chat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.R
@@ -77,12 +78,14 @@ class DiscussionForumChatMessageAdapter(private val mList: MutableList<ChatMessa
         val userTextView : TextView = itemView.findViewById(R.id.text_forum_user_peer)
         val messageTextView : TextView =  itemView.findViewById(R.id.text_forum_message_peer)
         val timeTextView : TextView = itemView.findViewById(R.id.text_forum_timestamp_peer)
+        val peerPictureImageView : ImageView =  itemView.findViewById(R.id.profile_picture)
 
         override fun bind(message : ChatMessage) {
             messageTextView.setText(message.message)
             val dt = message.timestamp?.let { Date(it) }
             userTextView.setText(message.sender)
             timeTextView.setText(dt.toString())
+            peerPictureImageView.setImageResource(R.drawable.face_48px)
         }
     }
 }
