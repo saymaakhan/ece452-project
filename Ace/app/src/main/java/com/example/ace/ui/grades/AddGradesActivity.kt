@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -29,6 +30,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
     private lateinit var containerSyllabus: LinearLayout
     private lateinit var tvCumulativeGrade: TextView
     private lateinit var tvSyllabusSum: TextView
+    private lateinit var tvNoSyllabusMessage: TextView
 
 
     override fun onResume() {
@@ -42,6 +44,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
         containerSyllabus = findViewById(R.id.containerSyllabus)
         tvCumulativeGrade = findViewById(R.id.tvCumulativeGrade)
         tvSyllabusSum = findViewById(R.id.tvSyllabusSum)
+        tvNoSyllabusMessage = findViewById(R.id.tvNoSyllabusMessage)
 
         className = intent.getStringExtra("class_name")
 
@@ -86,6 +89,9 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                     syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "-- / $itemWeight: ??%"
 
                     containerSyllabus.addView(syllabusEntryView)
+
+                    tvNoSyllabusMessage.visibility = View.GONE
+                    containerSyllabus.visibility = View.VISIBLE
 
                     // Set an onClickListener for the class entry to open the GradesActivity
                     syllabusEntryView.setOnClickListener {
@@ -142,6 +148,9 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
                 for (documentSnapshot in it) {
                     if (documentSnapshot.exists()) {
+                        tvNoSyllabusMessage.visibility = View.GONE
+                        containerSyllabus.visibility = View.VISIBLE
+                        
                         val syllabusItemName = documentSnapshot.data["syllabusItemName"]
                         val weight = documentSnapshot.data["weight"]
                         val syllabusGrade = documentSnapshot.data["syllabusGrade"]

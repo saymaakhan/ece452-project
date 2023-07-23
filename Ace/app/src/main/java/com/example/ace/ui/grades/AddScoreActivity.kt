@@ -3,6 +3,7 @@ package com.example.ace.ui.grades
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -24,6 +25,7 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
     private var className: String? = null
     private var syllabusItemName: String? = null
     private lateinit var containerScore: LinearLayout
+    private lateinit var tvNoScoreMessage: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,7 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
         className = intent.getStringExtra("class_name")
         syllabusItemName = intent.getStringExtra("syllabus_name")
         containerScore = findViewById(R.id.containerScore)
+        tvNoScoreMessage = findViewById(R.id.tvNoScoreMessage)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"))
@@ -78,6 +81,9 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
                 scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: $roundedGrade%"
                 containerScore.addView(scoreEntryView)
 
+                tvNoScoreMessage.visibility = View.GONE
+                containerScore.visibility = View.VISIBLE
+
                 updateGradesOnFireStore()
 
             }?.addOnFailureListener {
@@ -106,6 +112,9 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
 
                 for (documentSnapshot in it) {
                     if (documentSnapshot.exists()) {
+                        tvNoScoreMessage.visibility = View.GONE
+                        containerScore.visibility = View.VISIBLE
+
                         val scoreItemName = documentSnapshot.data["scoreItemName"]
                         val grade = documentSnapshot.data["grade"]
 

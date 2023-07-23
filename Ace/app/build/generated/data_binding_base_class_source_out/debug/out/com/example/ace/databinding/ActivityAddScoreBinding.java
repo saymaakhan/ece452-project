@@ -4,8 +4,10 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -25,18 +27,27 @@ public final class ActivityAddScoreBinding implements ViewBinding {
   public final FloatingActionButton btnAddScoreItem;
 
   @NonNull
+  public final FrameLayout containerFrameLayout;
+
+  @NonNull
   public final LinearLayout containerScore;
 
   @NonNull
   public final Toolbar toolbar;
 
+  @NonNull
+  public final TextView tvNoScoreMessage;
+
   private ActivityAddScoreBinding(@NonNull RelativeLayout rootView,
-      @NonNull FloatingActionButton btnAddScoreItem, @NonNull LinearLayout containerScore,
-      @NonNull Toolbar toolbar) {
+      @NonNull FloatingActionButton btnAddScoreItem, @NonNull FrameLayout containerFrameLayout,
+      @NonNull LinearLayout containerScore, @NonNull Toolbar toolbar,
+      @NonNull TextView tvNoScoreMessage) {
     this.rootView = rootView;
     this.btnAddScoreItem = btnAddScoreItem;
+    this.containerFrameLayout = containerFrameLayout;
     this.containerScore = containerScore;
     this.toolbar = toolbar;
+    this.tvNoScoreMessage = tvNoScoreMessage;
   }
 
   @Override
@@ -72,6 +83,12 @@ public final class ActivityAddScoreBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.containerFrameLayout;
+      FrameLayout containerFrameLayout = ViewBindings.findChildViewById(rootView, id);
+      if (containerFrameLayout == null) {
+        break missingId;
+      }
+
       id = R.id.containerScore;
       LinearLayout containerScore = ViewBindings.findChildViewById(rootView, id);
       if (containerScore == null) {
@@ -84,8 +101,14 @@ public final class ActivityAddScoreBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddScoreBinding((RelativeLayout) rootView, btnAddScoreItem, containerScore,
-          toolbar);
+      id = R.id.tvNoScoreMessage;
+      TextView tvNoScoreMessage = ViewBindings.findChildViewById(rootView, id);
+      if (tvNoScoreMessage == null) {
+        break missingId;
+      }
+
+      return new ActivityAddScoreBinding((RelativeLayout) rootView, btnAddScoreItem,
+          containerFrameLayout, containerScore, toolbar, tvNoScoreMessage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

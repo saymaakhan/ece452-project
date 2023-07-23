@@ -14,13 +14,38 @@
         android:elevation="4dp"/>
 
     <!-- Other views for adding syllabus items go here -->
-    <LinearLayout
-        android:id="@+id/containerScore"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
-        android:padding="16dp" />
+        android:padding="16dp">
+        <FrameLayout
+            android:id="@+id/containerFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Add the TextView for the message -->
+            <TextView
+                android:layout_marginTop="0dp"
+                android:id="@+id/tvNoScoreMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="You have no grades added at the moment. Hit the Plus (+) button below to add."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:visibility="visible" />
+            <LinearLayout
+                android:id="@+id/containerScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/toolbar"
+                android:padding="16dp"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAddScoreItem"

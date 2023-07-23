@@ -4,6 +4,7 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,6 +27,9 @@ public final class ActivityGradesBinding implements ViewBinding {
   public final LinearLayout containerClasses;
 
   @NonNull
+  public final FrameLayout containerFrameLayout;
+
+  @NonNull
   public final FloatingActionButton fabAdd;
 
   @NonNull
@@ -34,14 +38,20 @@ public final class ActivityGradesBinding implements ViewBinding {
   @NonNull
   public final TextView tvCumulativeAverage;
 
+  @NonNull
+  public final TextView tvNoClassesMessage;
+
   private ActivityGradesBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout containerClasses, @NonNull FloatingActionButton fabAdd,
-      @NonNull Toolbar toolbar, @NonNull TextView tvCumulativeAverage) {
+      @NonNull LinearLayout containerClasses, @NonNull FrameLayout containerFrameLayout,
+      @NonNull FloatingActionButton fabAdd, @NonNull Toolbar toolbar,
+      @NonNull TextView tvCumulativeAverage, @NonNull TextView tvNoClassesMessage) {
     this.rootView = rootView;
     this.containerClasses = containerClasses;
+    this.containerFrameLayout = containerFrameLayout;
     this.fabAdd = fabAdd;
     this.toolbar = toolbar;
     this.tvCumulativeAverage = tvCumulativeAverage;
+    this.tvNoClassesMessage = tvNoClassesMessage;
   }
 
   @Override
@@ -77,6 +87,12 @@ public final class ActivityGradesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.containerFrameLayout;
+      FrameLayout containerFrameLayout = ViewBindings.findChildViewById(rootView, id);
+      if (containerFrameLayout == null) {
+        break missingId;
+      }
+
       id = R.id.fabAdd;
       FloatingActionButton fabAdd = ViewBindings.findChildViewById(rootView, id);
       if (fabAdd == null) {
@@ -95,8 +111,14 @@ public final class ActivityGradesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityGradesBinding((RelativeLayout) rootView, containerClasses, fabAdd, toolbar,
-          tvCumulativeAverage);
+      id = R.id.tvNoClassesMessage;
+      TextView tvNoClassesMessage = ViewBindings.findChildViewById(rootView, id);
+      if (tvNoClassesMessage == null) {
+        break missingId;
+      }
+
+      return new ActivityGradesBinding((RelativeLayout) rootView, containerClasses,
+          containerFrameLayout, fabAdd, toolbar, tvCumulativeAverage, tvNoClassesMessage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

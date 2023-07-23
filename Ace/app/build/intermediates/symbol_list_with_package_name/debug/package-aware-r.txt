@@ -3428,6 +3428,7 @@ id consume_window_insets_tag
 id contact_name
 id container
 id containerClasses
+id containerFrameLayout
 id containerScore
 id containerSyllabus
 id content
@@ -3911,6 +3912,9 @@ id tuesdayLabel
 id tvClassName
 id tvCumulativeAverage
 id tvCumulativeGrade
+id tvNoClassesMessage
+id tvNoScoreMessage
+id tvNoSyllabusMessage
 id tvSyllabusSum
 id tvWeight
 id ucrop

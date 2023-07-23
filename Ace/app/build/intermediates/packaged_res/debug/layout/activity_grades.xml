@@ -46,14 +46,33 @@
         android:layout_above="@id/fabAdd"
         android:layout_below="@id/tvCumulativeAverage"
         android:padding="16dp">
-        <LinearLayout
-            android:id="@+id/containerClasses"
+        <!-- Use FrameLayout as the direct child for ScrollView -->
+        <FrameLayout
+            android:id="@+id/containerFrameLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/fabAdd"
-            android:orientation="vertical"
-            android:layout_below="@id/tvCumulativeAverage"
-            android:padding="16dp" />
+            android:layout_height="wrap_content">
+            <!-- Add the TextView for the message -->
+            <TextView
+                android:id="@+id/tvNoClassesMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="You have no classes at the moment. Hit the Plus (+) button below to add."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:visibility="visible" />
+            <LinearLayout
+                android:id="@+id/containerClasses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fabAdd"
+                android:orientation="vertical"
+                android:layout_below="@id/tvCumulativeAverage"
+                android:padding="16dp"
+                android:visibility="gone"/>
+        </FrameLayout>
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

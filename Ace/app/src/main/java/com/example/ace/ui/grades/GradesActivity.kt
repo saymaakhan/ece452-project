@@ -2,6 +2,7 @@ package com.example.ace.ui.grades
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -22,6 +23,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
 
     private lateinit var containerClasses: LinearLayout
     private lateinit var tvCumulativeAverage: TextView
+    private lateinit var tvNoClassesMessage: TextView
 
     override fun onResume() {
         super.onResume()
@@ -33,6 +35,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
 
         containerClasses = findViewById(R.id.containerClasses)
         tvCumulativeAverage = findViewById(R.id.tvCumulativeAverage)
+        tvNoClassesMessage = findViewById(R.id.tvNoClassesMessage)
 
         loadClassesFromFirestore()
 
@@ -72,6 +75,9 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
 
                     containerClasses.addView(classEntryView)
 
+                    tvNoClassesMessage.visibility = View.GONE
+                    containerClasses.visibility = View.VISIBLE
+
                     // Set an onClickListener for the class entry to open the GradesActivity
                     classEntryView.setOnClickListener {
                         // Launch the activity to add grades for the selected class
@@ -108,6 +114,8 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                 .addOnSuccessListener { querySnapshot ->
                     // Clear existing views before displaying new classes
                     containerClasses.removeAllViews()
+                    tvNoClassesMessage.visibility = View.GONE
+                    containerClasses.visibility = View.VISIBLE
 
                     var gradesSum = 0.0
                     var classCounter = 0.0

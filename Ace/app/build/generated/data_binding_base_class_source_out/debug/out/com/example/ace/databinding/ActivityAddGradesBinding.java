@@ -4,6 +4,7 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,6 +27,9 @@ public final class ActivityAddGradesBinding implements ViewBinding {
   public final FloatingActionButton btnAddSyllabusItem;
 
   @NonNull
+  public final FrameLayout containerFrameLayout;
+
+  @NonNull
   public final LinearLayout containerSyllabus;
 
   @NonNull
@@ -35,17 +39,23 @@ public final class ActivityAddGradesBinding implements ViewBinding {
   public final TextView tvCumulativeGrade;
 
   @NonNull
+  public final TextView tvNoSyllabusMessage;
+
+  @NonNull
   public final TextView tvSyllabusSum;
 
   private ActivityAddGradesBinding(@NonNull RelativeLayout rootView,
-      @NonNull FloatingActionButton btnAddSyllabusItem, @NonNull LinearLayout containerSyllabus,
-      @NonNull Toolbar toolbar, @NonNull TextView tvCumulativeGrade,
+      @NonNull FloatingActionButton btnAddSyllabusItem, @NonNull FrameLayout containerFrameLayout,
+      @NonNull LinearLayout containerSyllabus, @NonNull Toolbar toolbar,
+      @NonNull TextView tvCumulativeGrade, @NonNull TextView tvNoSyllabusMessage,
       @NonNull TextView tvSyllabusSum) {
     this.rootView = rootView;
     this.btnAddSyllabusItem = btnAddSyllabusItem;
+    this.containerFrameLayout = containerFrameLayout;
     this.containerSyllabus = containerSyllabus;
     this.toolbar = toolbar;
     this.tvCumulativeGrade = tvCumulativeGrade;
+    this.tvNoSyllabusMessage = tvNoSyllabusMessage;
     this.tvSyllabusSum = tvSyllabusSum;
   }
 
@@ -82,6 +92,12 @@ public final class ActivityAddGradesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.containerFrameLayout;
+      FrameLayout containerFrameLayout = ViewBindings.findChildViewById(rootView, id);
+      if (containerFrameLayout == null) {
+        break missingId;
+      }
+
       id = R.id.containerSyllabus;
       LinearLayout containerSyllabus = ViewBindings.findChildViewById(rootView, id);
       if (containerSyllabus == null) {
@@ -100,6 +116,12 @@ public final class ActivityAddGradesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvNoSyllabusMessage;
+      TextView tvNoSyllabusMessage = ViewBindings.findChildViewById(rootView, id);
+      if (tvNoSyllabusMessage == null) {
+        break missingId;
+      }
+
       id = R.id.tvSyllabusSum;
       TextView tvSyllabusSum = ViewBindings.findChildViewById(rootView, id);
       if (tvSyllabusSum == null) {
@@ -107,7 +129,8 @@ public final class ActivityAddGradesBinding implements ViewBinding {
       }
 
       return new ActivityAddGradesBinding((RelativeLayout) rootView, btnAddSyllabusItem,
-          containerSyllabus, toolbar, tvCumulativeGrade, tvSyllabusSum);
+          containerFrameLayout, containerSyllabus, toolbar, tvCumulativeGrade, tvNoSyllabusMessage,
+          tvSyllabusSum);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

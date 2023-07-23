@@ -63,6 +63,7 @@ id constraintLayout
 id contact_name
 id container
 id containerClasses
+id containerFrameLayout
 id containerScore
 id containerSyllabus
 id copy
@@ -136,6 +137,9 @@ id toolbar_discussion_forum
 id tvClassName
 id tvCumulativeAverage
 id tvCumulativeGrade
+id tvNoClassesMessage
+id tvNoScoreMessage
+id tvNoSyllabusMessage
 id tvSyllabusSum
 id tvWeight
 id username

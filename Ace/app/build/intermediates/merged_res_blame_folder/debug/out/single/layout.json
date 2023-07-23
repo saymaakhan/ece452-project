@@ -20,6 +20,10 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_dashboard.xml"
     },
     {
+        "merged": "com.example.ace.app-mergeDebugResources-81:/layout/activity_add_score.xml",
+        "source": "com.example.ace.app-main-84:/layout/activity_add_score.xml"
+    },
+    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/item_discussion_forum_peers.xml",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_discussion_forum_peers.xml"
     },
@@ -54,10 +58,6 @@
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/activity_discussion_forum_topics.xml",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_discussion_forum_topics.xml"
-    },
-    {
-        "merged": "com.example.ace.app-mergeDebugResources-81:/layout/activity_grades.xml",
-        "source": "com.example.ace.app-main-84:/layout/activity_grades.xml"
     },
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/dialog_add_item_grade.xml",
