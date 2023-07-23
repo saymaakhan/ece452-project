@@ -12,10 +12,12 @@ import androidx.appcompat.widget.Toolbar
 import com.example.ace.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 data class SyllabusItem(
     var syllabusItemName: String? = null,
-    var weight: Int? = 0,
+    var weight: Double? = 0.0,
     var syllabusGrade: Double? = 420.0
 )
 
@@ -23,6 +25,11 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
     private var className: String? = null
     private lateinit var containerSyllabus: LinearLayout
+
+    override fun onResume() {
+        super.onResume()
+        loadClassesFromFirestore()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_grades)
@@ -58,7 +65,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
             val syllabusDocumentRef = classDocumentRef?.collection("syllabus_items")?.document(itemName)
 
-            val syllabusItem = SyllabusItem(itemName, itemWeight.toInt())
+            val syllabusItem = SyllabusItem(itemName, itemWeight.toDouble())
 
             syllabusDocumentRef?.set(syllabusItem)
                 ?.addOnSuccessListener {
@@ -112,8 +119,12 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                         if (syllabusGrade == 420.0) {
                             syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "-- / $weight: ??%"
                         } else {
-                            val weightGrade = syllabusGrade as Double * (weight as Double / 100)
-                            syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "$weightGrade / $weight: $syllabusGrade%"
+                            val weightPercentage = BigDecimal(weight.toString()) // Convert weight to BigDecimal
+                            val weightFraction = weightPercentage.divide(BigDecimal(100), 2, RoundingMode.HALF_EVEN) // Divide by 100
+                            val weightGrade = BigDecimal(syllabusGrade.toString()).multiply(weightFraction)
+                            val roundedWeightGrade = weightGrade.setScale(2, RoundingMode.HALF_EVEN)
+
+                            syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "$roundedWeightGrade / $weight: $syllabusGrade%"
                         }
                         containerSyllabus.addView(syllabusEntryView)
 
