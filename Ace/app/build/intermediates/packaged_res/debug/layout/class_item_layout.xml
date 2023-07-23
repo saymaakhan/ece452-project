@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:src="@drawable/letter_f_grade"/>
+        android:id="@+id/letterGradeImageView"
+        android:src="@drawable/letter_unknown"/>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"

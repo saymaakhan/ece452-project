@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -48,8 +49,6 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
         className = intent.getStringExtra("class_name")
 
-
-
         // Set the class name as the title in the Toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"))
@@ -89,6 +88,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
                     syllabusEntryView.findViewById<TextView>(R.id.tvClassName).text = itemName
                     syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "-- / $itemWeight: ??%"
+                    syllabusEntryView.findViewById<ImageView>(R.id.letterGradeImageView).visibility = View.GONE
 
                     containerSyllabus.addView(syllabusEntryView)
 
@@ -160,6 +160,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                         val syllabusEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerSyllabus, false)
 
                         syllabusEntryView.findViewById<TextView>(R.id.tvClassName).text = syllabusItemName as CharSequence?
+                        syllabusEntryView.findViewById<ImageView>(R.id.letterGradeImageView).visibility = View.GONE
 
                         if (syllabusGrade == 420.0) {
                             syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "-- / $weight: ??%"

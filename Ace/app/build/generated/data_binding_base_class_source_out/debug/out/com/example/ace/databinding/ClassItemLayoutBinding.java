@@ -4,6 +4,7 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -20,14 +21,19 @@ public final class ClassItemLayoutBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageView letterGradeImageView;
+
+  @NonNull
   public final TextView tvClassName;
 
   @NonNull
   public final TextView tvWeight;
 
-  private ClassItemLayoutBinding(@NonNull LinearLayout rootView, @NonNull TextView tvClassName,
+  private ClassItemLayoutBinding(@NonNull LinearLayout rootView,
+      @NonNull ImageView letterGradeImageView, @NonNull TextView tvClassName,
       @NonNull TextView tvWeight) {
     this.rootView = rootView;
+    this.letterGradeImageView = letterGradeImageView;
     this.tvClassName = tvClassName;
     this.tvWeight = tvWeight;
   }
@@ -59,6 +65,12 @@ public final class ClassItemLayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.letterGradeImageView;
+      ImageView letterGradeImageView = ViewBindings.findChildViewById(rootView, id);
+      if (letterGradeImageView == null) {
+        break missingId;
+      }
+
       id = R.id.tvClassName;
       TextView tvClassName = ViewBindings.findChildViewById(rootView, id);
       if (tvClassName == null) {
@@ -71,7 +83,8 @@ public final class ClassItemLayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ClassItemLayoutBinding((LinearLayout) rootView, tvClassName, tvWeight);
+      return new ClassItemLayoutBinding((LinearLayout) rootView, letterGradeImageView, tvClassName,
+          tvWeight);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
