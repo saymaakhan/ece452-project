@@ -16,10 +16,14 @@ import com.firebase.ui.database.FirebaseRecyclerOptions
 import java.util.Date
 
 class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessage>,
+<<<<<<< HEAD
                          private val messagesReceived: ArrayList<ChatMessage>,
                          private val messagesSent: ArrayList<ChatMessage>,
                          private val currentUserName: String?,
                          private val otherUser: String?
+=======
+                         private val currentUserName: String?
+>>>>>>> 0c9dc5c (load users and save sent messages)
 ) : FirebaseRecyclerAdapter<ChatMessage, RecyclerView.ViewHolder>(options) {
     private final val SENT_MESSAGE : Int = 1
     private final val RECEIVE_MESSAGE: Int = 2
@@ -41,6 +45,7 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
         return PlaceHolder(view)
     }
 
+<<<<<<< HEAD
     override fun getItemViewType(position: Int): Int {
         // Implement your logic to determine whether the message is sent or received
         // For example, you can check if the message sender is the current user
@@ -52,10 +57,23 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
         }
         return NONE
     }
+=======
+//    override fun getItemViewType(position: Int) : Int {
+//        val message : ChatMessage = mList[position]
+//
+//        if (message.sender.userName.equals("self") ) {
+//            return SENT_MESSAGE
+//        }
+//        else {
+//            return RECEIVE_MESSAGE
+//        }
+//    }
+>>>>>>> 0c9dc5c (load users and save sent messages)
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, model: ChatMessage) {
         val viewType = getItemViewType(position)
 
+<<<<<<< HEAD
         if (viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
             val message = getItem(position)
             val sentHolder = holder as SentMessageHolder
@@ -66,19 +84,44 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
             receivedHolder.bind(message)
         }
     }
+=======
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, model: ChatMessage) {
+//        val message = mList[position]
+
+        if (holder.getItemViewType() == SENT_MESSAGE ) {
+            val h : SentMessageHolder = holder as SentMessageHolder
+            h.bind(model)
+        }
+        else {
+            val h : ReceivedMessageHolder = holder as ReceivedMessageHolder
+            h.bind(model)
+        }
+    }
+
+//    override fun getItemCount(): Int {
+//        return mList.size
+//    }
+>>>>>>> 0c9dc5c (load users and save sent messages)
 
     open class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         open fun bind (message : ChatMessage) {
         }
     }
 
+<<<<<<< HEAD
     class SentMessageHolder(ItemView: View) : ViewHolder(ItemView) {
+=======
+    class SentMessageHolder(ItemView: View) : ChatMessageAdapter.ViewHolder(ItemView) {
+>>>>>>> 0c9dc5c (load users and save sent messages)
         val messageTextView : TextView =  itemView.findViewById(R.id.text_chat_message_self)
         val timeTextView : TextView = itemView.findViewById(R.id.text_chat_timestamp_self)
 
         override fun bind (message : ChatMessage) {
             messageTextView.text = message.message
+<<<<<<< HEAD
             Log.d(TAG, "MessageTextView: ${messageTextView.text}")
+=======
+>>>>>>> 0c9dc5c (load users and save sent messages)
             val dt = message.timestamp?.let { Date(it) }
             timeTextView.text = dt.toString()
         }
@@ -91,14 +134,22 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
 
         override fun bind(message : ChatMessage) {
             messageTextView.text = message.message
+<<<<<<< HEAD
             Log.d(TAG, "Received MessageTextView: ${messageTextView.text}")
             val dt = message.timestamp?.let { Date(it) }
+=======
+            val dt = message.timestamp?.let { Date(it) }
+            userTextView.text = ""
+>>>>>>> 0c9dc5c (load users and save sent messages)
             timeTextView.text = dt.toString()
         }
     }
 
+<<<<<<< HEAD
     class PlaceHolder(ItemView: View) : ViewHolder(ItemView) {
 
     }
 
+=======
+>>>>>>> 0c9dc5c (load users and save sent messages)
 }

@@ -1,7 +1,10 @@
 //Reference: https://firebase.google.com/codelabs/firebase-android#6
 
 package com.example.ace.ui.chat
+<<<<<<< HEAD
 import android.content.ContentValues.TAG
+=======
+>>>>>>> 0c9dc5c (load users and save sent messages)
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,8 +38,11 @@ class SingleChat : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseDatabase
     private lateinit var adapter: ChatMessageAdapter
+<<<<<<< HEAD
     private lateinit var messagesReceivedList: ArrayList<ChatMessage>
     private lateinit var messagesSentList: ArrayList<ChatMessage>
+=======
+>>>>>>> 0c9dc5c (load users and save sent messages)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,8 +61,11 @@ class SingleChat : AppCompatActivity() {
         // Initialize Realtime Database
         db = Firebase.database
         val messagesRef = db.reference.child(MESSAGES_CHILD)
+<<<<<<< HEAD
         messagesReceivedList = ArrayList()
         messagesSentList = ArrayList()
+=======
+>>>>>>> 0c9dc5c (load users and save sent messages)
 
         // The FirebaseRecyclerAdapter class and options come from the FirebaseUI library
         // See: https://github.com/firebase/FirebaseUI-Android
@@ -65,9 +74,21 @@ class SingleChat : AppCompatActivity() {
             .build()
         manager = LinearLayoutManager(this)
         manager.stackFromEnd = true
+<<<<<<< HEAD
 //        adapter = ChatMessageAdapter(options, getUserName());
 
 
+=======
+        adapter = ChatMessageAdapter(options, getUserName());
+//        binding.messageRecyclerView.layoutManager = manager
+//        binding.messageRecyclerView.adapter = adapter
+
+        // Scroll down when a new message arrives
+        // See MyScrollToBottomObserver for details
+//        adapter.registerAdapterDataObserver(
+//            MyScrollToBottomObserver(binding.messageRecyclerView, adapter, manager)
+//        )
+>>>>>>> 0c9dc5c (load users and save sent messages)
 
         val userName = intent.getSerializableExtra("ChatUser" ) as String
         peerName = userName
@@ -84,7 +105,11 @@ class SingleChat : AppCompatActivity() {
 
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_chat_space)
         recyclerview.layoutManager=LinearLayoutManager(this)
+<<<<<<< HEAD
         adapter = ChatMessageAdapter(options, messagesReceivedList, messagesSentList, getUserName(), peerName);
+=======
+        adapter = ChatMessageAdapter(options, getUserName());
+>>>>>>> 0c9dc5c (load users and save sent messages)
         recyclerview.adapter = adapter
 
         val directMessageUserName  = findViewById<Toolbar>(R.id.toolbar_chatchannel)
@@ -106,8 +131,24 @@ class SingleChat : AppCompatActivity() {
         val textView = binding.editChatMessage.text.toString()
         val timeStamp = Timestamp(System.currentTimeMillis()).time
         val user = getUserName() as String
+<<<<<<< HEAD
         val newMessage = ChatMessage(sender =user, timestamp =timeStamp, message =textView, receiver = userName)
 
+=======
+        val newMessage = ChatMessage(sender=user, timestamp=timeStamp, message=textView)
+
+//        val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_chat_space)
+//        val adapter = recyclerview.adapter as ChatMessageAdapter
+//        val index = adapter.itemCount
+//        adapter.addMessage(newMessage)
+
+//        val messageSrc = ChatMessageSource()
+//        val responseMessage = messageSrc.getResponseMessage(responseIndex, peerName)
+//        adapter.addMessage(responseMessage)
+
+//        adapter.notifyItemRangeChanged(index, 2)
+//        responseIndex = responseIndex + 1
+>>>>>>> 0c9dc5c (load users and save sent messages)
         db.reference.child(MESSAGES_CHILD).push().setValue(newMessage)
         binding.editChatMessage.text.clear()
     }
@@ -119,6 +160,7 @@ class SingleChat : AppCompatActivity() {
         } else ANONYMOUS
     }
 
+<<<<<<< HEAD
     private fun getUserMessages(dbref : DatabaseReference, peer : String ) {
         val list = dbref.child("sender")
         val userName = getUserName()
@@ -150,6 +192,8 @@ class SingleChat : AppCompatActivity() {
         })
     }
 
+=======
+>>>>>>> 0c9dc5c (load users and save sent messages)
     public override fun onPause() {
         adapter.stopListening()
         super.onPause()
