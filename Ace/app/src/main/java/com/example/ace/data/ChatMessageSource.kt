@@ -25,7 +25,7 @@ class ChatMessageSource {
     fun getMessage(topic : String, user : String, text : String) : ChatMessage {
         val sendinguser = ChatUser(userName = user, profileUrl = "")
         val ts = Timestamp(System.currentTimeMillis()).time
-        val msg = ChatMessage(topic=topic, sender=sendinguser, timestamp=ts, message=text)
+        val msg = ChatMessage(sender =sendinguser.toString(), timestamp =ts, message =text)
         return msg
     }
 
