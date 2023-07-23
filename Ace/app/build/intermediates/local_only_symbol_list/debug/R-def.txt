@@ -24,6 +24,7 @@ drawable chat
 drawable copy2
 drawable dot
 drawable eraser
+drawable face_48px
 drawable forum
 drawable forum_48px
 drawable grades
@@ -47,6 +48,8 @@ id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
 id button_chat_close
 id button_chat_send
+id button_discussion_forum_close
+id button_discussion_forum_send
 id calendar
 id calendarView
 id camera
@@ -61,6 +64,7 @@ id container
 id copy
 id dm
 id edit_chat_message
+id edit_discussion_forum_message
 id emptyStateTextView
 id fabButton
 id floatingActionButton
@@ -71,6 +75,7 @@ id forum_topic_picture
 id getImage
 id grades
 id homeText
+id horizontal_barrier
 id imageView
 id imageView1
 id imageView5
@@ -79,6 +84,7 @@ id layout_chat_chatbox
 id layout_chat_container_peer
 id layout_chat_container_self
 id layout_discussion_forum
+id layout_discussion_forum_chatbox
 id layout_forum_container_peer
 id layout_forum_container_self
 id loading
@@ -94,6 +100,7 @@ id profile_picture
 id recgText
 id recycler_chat_contacts
 id recycler_chat_space
+id recycler_discussion_forum_space
 id recycler_discussion_forum_topics
 id saveButton
 id sploginbutton
@@ -107,6 +114,7 @@ id text_chat_message_self
 id text_chat_timestamp_peer
 id text_chat_timestamp_self
 id text_chat_user_peer
+id text_discussion_forum_indicator
 id text_forum_message_peer
 id text_forum_message_self
 id text_forum_timestamp_peer
@@ -117,6 +125,7 @@ id toolbar
 id toolbar_chatchannel
 id toolbar_chatcontacts
 id toolbar_discussion_forum
+id toolbar_discussion_forum_channel
 id username
 id view
 layout activity_add_note
@@ -124,11 +133,13 @@ layout activity_calendar
 layout activity_camera
 layout activity_chat_contacts
 layout activity_dashboard
+layout activity_discussion_forum_chat
 layout activity_discussion_forum_topics
 layout activity_grades
 layout activity_login
 layout activity_main
 layout activity_note_preview
+layout activity_profile
 layout activity_single_chat
 layout fragment_dashboard
 layout fragment_home

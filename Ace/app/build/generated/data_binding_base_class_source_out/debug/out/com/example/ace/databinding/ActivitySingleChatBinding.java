@@ -35,6 +35,9 @@ public final class ActivitySingleChatBinding implements ViewBinding {
   public final EditText editChatMessage;
 
   @NonNull
+  public final Button horizontalBarrier;
+
+  @NonNull
   public final AppBarLayout layoutChat;
 
   @NonNull
@@ -54,14 +57,15 @@ public final class ActivitySingleChatBinding implements ViewBinding {
 
   private ActivitySingleChatBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button buttonChatClose, @NonNull Button buttonChatSend,
-      @NonNull EditText editChatMessage, @NonNull AppBarLayout layoutChat,
-      @NonNull RelativeLayout layoutChatChatbox, @NonNull RecyclerView recyclerChatSpace,
-      @NonNull TextView textChatIndicator, @NonNull Toolbar toolbarChatchannel,
-      @NonNull View view) {
+      @NonNull EditText editChatMessage, @NonNull Button horizontalBarrier,
+      @NonNull AppBarLayout layoutChat, @NonNull RelativeLayout layoutChatChatbox,
+      @NonNull RecyclerView recyclerChatSpace, @NonNull TextView textChatIndicator,
+      @NonNull Toolbar toolbarChatchannel, @NonNull View view) {
     this.rootView = rootView;
     this.buttonChatClose = buttonChatClose;
     this.buttonChatSend = buttonChatSend;
     this.editChatMessage = editChatMessage;
+    this.horizontalBarrier = horizontalBarrier;
     this.layoutChat = layoutChat;
     this.layoutChatChatbox = layoutChatChatbox;
     this.recyclerChatSpace = recyclerChatSpace;
@@ -115,6 +119,12 @@ public final class ActivitySingleChatBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.horizontal_barrier;
+      Button horizontalBarrier = ViewBindings.findChildViewById(rootView, id);
+      if (horizontalBarrier == null) {
+        break missingId;
+      }
+
       id = R.id.layout_chat;
       AppBarLayout layoutChat = ViewBindings.findChildViewById(rootView, id);
       if (layoutChat == null) {
@@ -152,8 +162,8 @@ public final class ActivitySingleChatBinding implements ViewBinding {
       }
 
       return new ActivitySingleChatBinding((ConstraintLayout) rootView, buttonChatClose,
-          buttonChatSend, editChatMessage, layoutChat, layoutChatChatbox, recyclerChatSpace,
-          textChatIndicator, toolbarChatchannel, view);
+          buttonChatSend, editChatMessage, horizontalBarrier, layoutChat, layoutChatChatbox,
+          recyclerChatSpace, textChatIndicator, toolbarChatchannel, view);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

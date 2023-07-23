@@ -3135,6 +3135,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable dot
 drawable eraser
+drawable face_48px
 drawable forum
 drawable forum_48px
 drawable googleg_disabled_color_18
@@ -3377,6 +3378,8 @@ id browser_actions_menu_view
 id buttonPanel
 id button_chat_close
 id button_chat_send
+id button_discussion_forum_close
+id button_discussion_forum_send
 id cache_measures
 id calendar
 id calendarContainer
@@ -3475,6 +3478,7 @@ id easeOut
 id east
 id edge
 id edit_chat_message
+id edit_discussion_forum_message
 id edit_query
 id elastic
 id embed
@@ -3528,6 +3532,7 @@ id home
 id homeAsUp
 id homeText
 id honorRequest
+id horizontal_barrier
 id horizontal_only
 id icon
 id icon_group
@@ -3562,6 +3567,7 @@ id layout_chat_chatbox
 id layout_chat_container_peer
 id layout_chat_container_self
 id layout_discussion_forum
+id layout_discussion_forum_chatbox
 id layout_forum_container_peer
 id layout_forum_container_self
 id layout_rotate_wheel
@@ -3710,6 +3716,7 @@ id recgText
 id rectangles
 id recycler_chat_contacts
 id recycler_chat_space
+id recycler_discussion_forum_space
 id recycler_discussion_forum_topics
 id reverseSawtooth
 id right
@@ -3839,6 +3846,7 @@ id text_chat_message_self
 id text_chat_timestamp_peer
 id text_chat_timestamp_self
 id text_chat_user_peer
+id text_discussion_forum_indicator
 id text_forum_message_peer
 id text_forum_message_self
 id text_forum_timestamp_peer
@@ -3869,6 +3877,7 @@ id toolbar
 id toolbar_chatchannel
 id toolbar_chatcontacts
 id toolbar_discussion_forum
+id toolbar_discussion_forum_channel
 id toolbar_title
 id top
 id topPanel
@@ -4040,11 +4049,13 @@ layout activity_calendar
 layout activity_camera
 layout activity_chat_contacts
 layout activity_dashboard
+layout activity_discussion_forum_chat
 layout activity_discussion_forum_topics
 layout activity_grades
 layout activity_login
 layout activity_main
 layout activity_note_preview
+layout activity_profile
 layout activity_single_chat
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
