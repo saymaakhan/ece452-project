@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.Placeholder
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.R
 
@@ -23,14 +24,17 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     private final val RECEIVE_MESSAGE: Int = 2
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        if( viewType == SENT_MESSAGE ) {
+        if( viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_self, parent, false)
             return SentMessageHolder(view)
         }
-        else {
+        else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty()) {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_peer, parent, false)
             return ReceivedMessageHolder(view)
         }
+        val view = View(parent.context)
+        view.visibility = View.GONE
+        return PlaceHolder(view)
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -47,14 +51,14 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, model: ChatMessage) {
         val viewType = getItemViewType(position)
 
-        if (viewType == SENT_MESSAGE) {
+        if (viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
             val sentPosition = position - messagesReceived.size
             if (sentPosition >= 0 && sentPosition < messagesSent.size) {
                 val message = messagesSent[sentPosition]
                 val sentHolder = holder as SentMessageHolder
                 sentHolder.bind(message)
             }
-        } else if (viewType == RECEIVE_MESSAGE) {
+        } else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty()) {
             val receivedPosition = position
             if (receivedPosition >= 0 && receivedPosition < messagesReceived.size) {
                 val message = messagesReceived[receivedPosition]
@@ -92,6 +96,10 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
             val dt = message.timestamp?.let { Date(it) }
             timeTextView.text = dt.toString()
         }
+    }
+
+    class PlaceHolder(ItemView: View) : ViewHolder(ItemView) {
+
     }
 
 }

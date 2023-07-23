@@ -67,16 +67,18 @@ class SingleChat : AppCompatActivity() {
         manager.stackFromEnd = true
 //        adapter = ChatMessageAdapter(options, getUserName());
 
-        getUserMessages(messagesRef);
+
+
+        val userName = intent.getSerializableExtra("ChatUser" ) as String
+        peerName = userName
+
+        getUserMessages(messagesRef, peerName);
 
         // Scroll down when a new message arrives
         // See MyScrollToBottomObserver for details
 //        adapter.registerAdapterDataObserver(
 //            MyScrollToBottomObserver(binding.messageRecyclerView, adapter, manager)
 //        )
-
-        val userName = intent.getSerializableExtra("ChatUser" ) as String
-        peerName = userName
 
 //        val chatMessageSrc = ChatMessageSource()
 
@@ -117,7 +119,7 @@ class SingleChat : AppCompatActivity() {
         } else ANONYMOUS
     }
 
-    private fun getUserMessages(dbref : DatabaseReference ) {
+    private fun getUserMessages(dbref : DatabaseReference, peer : String ) {
         val list = dbref.child("sender")
         Log.d(TAG, "yoooooo")
         Log.d(TAG, "list: $list.toString()")
@@ -131,10 +133,10 @@ class SingleChat : AppCompatActivity() {
                     val child = childSnapshot.getValue(ChatMessage::class.java)
                     // Access the data for each child
                     if (child != null) {
-                        if (child.receiver == userName) {
+                        if (child.receiver == userName && child.sender == peer) {
                             messagesReceivedList.add(child)
                         }
-                        if (child.sender == userName) {
+                        if (child.sender == userName && child.receiver == peer) {
                             messagesSentList.add(child)
                         }
                         Log.d(TAG, "child: $child")
