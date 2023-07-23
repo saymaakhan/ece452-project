@@ -121,8 +121,6 @@ class SingleChat : AppCompatActivity() {
 
     private fun getUserMessages(dbref : DatabaseReference, peer : String ) {
         val list = dbref.child("sender")
-        Log.d(TAG, "yoooooo")
-        Log.d(TAG, "list: $list.toString()")
         val userName = getUserName()
         dbref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
