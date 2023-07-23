@@ -12,6 +12,7 @@ import com.example.ace.ui.camera.CameraActivity
 import com.example.ace.ui.chat.ChatContacts
 import com.example.ace.ui.chat.DiscussionForumTopics
 import com.example.ace.ui.grades.GradesActivity
+import com.example.ace.ui.profile.ProfileActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -81,6 +82,10 @@ class DashboardActivity : AppCompatActivity() {
 
         forum.setOnClickListener {
             val intent = Intent(this, DiscussionForumTopics::class.java)
+            startActivity(intent)
+        }
+        profile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
     }
