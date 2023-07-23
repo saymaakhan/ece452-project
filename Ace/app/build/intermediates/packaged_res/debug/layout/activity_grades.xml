@@ -40,14 +40,21 @@
         android:textStyle="bold" />
 
     <!-- Container for dynamically added classes -->
-    <LinearLayout
-        android:id="@+id/containerClasses"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_above="@id/fabAdd"
-        android:orientation="vertical"
         android:layout_below="@id/tvCumulativeAverage"
-        android:padding="16dp" />
+        android:padding="16dp">
+        <LinearLayout
+            android:id="@+id/containerClasses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fabAdd"
+            android:orientation="vertical"
+            android:layout_below="@id/tvCumulativeAverage"
+            android:padding="16dp" />
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"

@@ -40,13 +40,19 @@
         android:textSize="14sp" />
 
     <!-- Other views for adding syllabus items go here -->
-    <LinearLayout
-        android:id="@+id/containerSyllabus"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_below="@id/tvSyllabusSum"
-        android:padding="16dp" />
+        android:padding="16dp">
+        <LinearLayout
+            android:id="@+id/containerSyllabus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/tvSyllabusSum"
+            android:padding="16dp" />
+    </ScrollView>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
