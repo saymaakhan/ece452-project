@@ -1,5 +1,6 @@
 package com.example.ace.ui.grades
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,6 +35,8 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = className
+
+        loadClassesFromFirestore()
 
         // Set click listener for "Add Syllabus Item" button
         findViewById<Button>(R.id.btnAddSyllabusItem).setOnClickListener {
@@ -79,6 +82,45 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                 }?.addOnFailureListener {
                     Toast.makeText(this, "Error retrieving syllabus items: ${it.message}", Toast.LENGTH_SHORT).show()
                 }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun loadClassesFromFirestore() {
+        val firebaseAuth = FirebaseAuth.getInstance()
+        val userId = firebaseAuth.currentUser?.uid
+
+        // Check if the user is logged in and the UID is not null
+        if (userId != null) {
+            // Get a reference to the user's document in the "classes" collection
+            val firestore = FirebaseFirestore.getInstance()
+            val classDocumentRef = className?.let { firestore.collection("classes").document(userId).collection("user_classes").document(it) }
+            val syllabusDocumentRef = classDocumentRef?.collection("syllabus_items")
+
+            syllabusDocumentRef?.get()?.addOnSuccessListener {
+                containerSyllabus.removeAllViews()
+
+                for (documentSnapshot in it) {
+                    if (documentSnapshot.exists()) {
+                        val syllabusItemName = documentSnapshot.data["syllabusItemName"]
+                        val weight = documentSnapshot.data["weight"]
+
+                        val syllabusEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerSyllabus, false)
+
+                        syllabusEntryView.findViewById<TextView>(R.id.tvClassName).text = syllabusItemName as CharSequence?
+                        syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "Weight: $weight"
+                        containerSyllabus.addView(syllabusEntryView)
+
+                        // Set an onClickListener for the class entry to open the GradesActivity
+                        syllabusEntryView.setOnClickListener {
+                            // Launch the activity to add grades for the selected class
+                            val intent = Intent(this, AddScoreActivity::class.java)
+                            intent.putExtra("syllabus_name", syllabusItemName)
+                            startActivity(intent)
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -24,12 +24,12 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/calendar.png"
     },
     {
-        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_wallpaper.png.flat",
-        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/wallpaper.png"
-    },
-    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_grades.xml.flat",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_grades.xml"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_wallpaper.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/wallpaper.png"
     },
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_grades.png.flat",
@@ -240,10 +240,6 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_class_item_layout.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/class_item_layout.xml"
-    },
-    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout-w936dp_activity_login.xml.flat",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout-w936dp/activity_login.xml"
     },
@@ -278,6 +274,10 @@
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/navigation_nav_graph.xml.flat",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-82:/layout_activity_add_score.xml.flat",
+        "source": "com.example.ace.app-main-84:/layout/activity_add_score.xml"
     },
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_calendar.xml.flat",

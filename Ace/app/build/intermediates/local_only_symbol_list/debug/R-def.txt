@@ -47,6 +47,7 @@ id FirstFragment
 id SecondFragment
 id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
+id btnAddScoreItem
 id btnAddSyllabusItem
 id button_chat_close
 id button_chat_send
@@ -62,6 +63,7 @@ id constraintLayout
 id contact_name
 id container
 id containerClasses
+id containerScore
 id containerSyllabus
 id copy
 id dm
@@ -134,6 +136,7 @@ id username
 id view
 layout activity_add_grades
 layout activity_add_note
+layout activity_add_score
 layout activity_calendar
 layout activity_camera
 layout activity_chat_contacts

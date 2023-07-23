@@ -3378,6 +3378,7 @@ int id browser_actions_menu_item_icon 0x7f09006c
 int id browser_actions_menu_item_text 0x7f09006d
 int id browser_actions_menu_items 0x7f09006e
 int id browser_actions_menu_view 0x7f09006f
+int id btnAddScoreItem 0x7f0902a3
 int id btnAddSyllabusItem 0x7f090070
 int id buttonPanel 0x7f090071
 int id button_chat_close 0x7f090072
@@ -3426,6 +3427,7 @@ int id consume_window_insets_tag 0x7f09009c
 int id contact_name 0x7f09009d
 int id container 0x7f09009e
 int id containerClasses 0x7f09009f
+int id containerScore 0x7f0902a4
 int id containerSyllabus 0x7f0902a1
 int id content 0x7f0900a0
 int id contentPanel 0x7f0900a1
@@ -4059,6 +4061,7 @@ int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_add_grades 0x7f0c001c
 int layout activity_add_note 0x7f0c001d
+int layout activity_add_score 0x7f0c0090
 int layout activity_calendar 0x7f0c001e
 int layout activity_camera 0x7f0c001f
 int layout activity_chat_contacts 0x7f0c0020

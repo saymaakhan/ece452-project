@@ -46,6 +46,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Ace" >
         <activity
+            android:name="com.example.ace.ui.grades.AddScoreActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.ace.ui.grades.AddSyllabusItemDialogFragment"
             android:exported="false" />
         <activity
