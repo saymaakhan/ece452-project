@@ -12,13 +12,20 @@
         android:elevation="4dp"/>
 
     <!-- Other views for adding syllabus items go here -->
+    <LinearLayout
+        android:id="@+id/containerSyllabus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/toolbar"
+        android:padding="16dp" />
 
     <!-- Add Syllabus Item button -->
     <Button
         android:id="@+id/btnAddSyllabusItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/containerSyllabus"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:text="Add Syllabus Item" />

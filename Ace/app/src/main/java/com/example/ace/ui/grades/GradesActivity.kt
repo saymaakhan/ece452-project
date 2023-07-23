@@ -12,7 +12,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 data class ClassInfo(
-    var className: String? = null
+    var className: String? = null,
+    var grade: Int? = 100
 )
 
 class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickListener {
@@ -74,6 +75,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                     // Error saving class data
                     Toast.makeText(this, "Error saving class: ${exception.message}", Toast.LENGTH_SHORT).show()
                 }
+
         } else {
             // User is not logged in, handle this case if needed
         }

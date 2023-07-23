@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,12 +25,17 @@ public final class ActivityAddGradesBinding implements ViewBinding {
   public final Button btnAddSyllabusItem;
 
   @NonNull
+  public final LinearLayout containerSyllabus;
+
+  @NonNull
   public final Toolbar toolbar;
 
   private ActivityAddGradesBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button btnAddSyllabusItem, @NonNull Toolbar toolbar) {
+      @NonNull Button btnAddSyllabusItem, @NonNull LinearLayout containerSyllabus,
+      @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.btnAddSyllabusItem = btnAddSyllabusItem;
+    this.containerSyllabus = containerSyllabus;
     this.toolbar = toolbar;
   }
 
@@ -66,13 +72,20 @@ public final class ActivityAddGradesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.containerSyllabus;
+      LinearLayout containerSyllabus = ViewBindings.findChildViewById(rootView, id);
+      if (containerSyllabus == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
         break missingId;
       }
 
-      return new ActivityAddGradesBinding((RelativeLayout) rootView, btnAddSyllabusItem, toolbar);
+      return new ActivityAddGradesBinding((RelativeLayout) rootView, btnAddSyllabusItem,
+          containerSyllabus, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

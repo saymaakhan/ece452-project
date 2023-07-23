@@ -1,286 +1,294 @@
 [
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_outline_menu_open_24.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/outline_menu_open_24.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_grades.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_grades.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_single_chat.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_single_chat.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xhdpi/ic_launcher_foreground.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_dot.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/dot.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_main.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_main.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_sharp_person_24.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/sharp_person_24.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_ic_notifications_black_24dp.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/ic_notifications_black_24dp.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_calendar.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/calendar.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_class_item_background.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/class_item_background.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_wallpaper.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/wallpaper.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_calendar.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/calendar.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_grades.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_grades.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout-w936dp_activity_login.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout-w936dp/activity_login.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_grades.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/grades.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_copy2.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/copy2.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_single_chat.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_single_chat.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_fragment_notifications.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/fragment_notifications.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_logout.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/logout.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_fragment_dashboard.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/fragment_dashboard.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_eraser.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/eraser.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_camera.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_camera.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_camera.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/camera.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_copy2.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/copy2.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_fragment_dashboard.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/fragment_dashboard.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/ic_launcher_background.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_loginlogo.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/loginlogo.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_camera_icon.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/camera_icon.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_discussion_forum_topics.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_discussion_forum_topics.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-hdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_fragment_home.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/fragment_home.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_camera.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_camera.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_forum_48px.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/forum_48px.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_chat.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/chat.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/ic_dashboard_black_24dp.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout-w1240dp_activity_login.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout-w1240dp/activity_login.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_item_chat_contact.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/item_chat_contact.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_dashboard.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_dashboard.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_dialog_add_class.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/dialog_add_class.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_login.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_login.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_scan.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/scan.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_eraser.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/eraser.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_fragment_notifications.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/fragment_notifications.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_sharp_person_24.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/sharp_person_24.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_item_discussion_forum_peers.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_discussion_forum_peers.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/xml_backup_rules.xml.flat",
-        "source": "com.example.ace.app-main-84:/xml/backup_rules.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/ic_notifications_black_24dp.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_item_forum_topic.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_forum_topic.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_wallpaper.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/wallpaper.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_dashboard.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_dashboard.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_item_forum_topic.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/item_forum_topic.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_class_item_background.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/class_item_background.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_discussion_forum_topics.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_discussion_forum_topics.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_logout.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/logout.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_sms_48px.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/sms_48px.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_calendar.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_calendar.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_note_preview.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_note_preview.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_item_chat_contact.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_chat_contact.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_item_chat_peer.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/item_chat_peer.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_item_chat_self.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_chat_self.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_grades.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/grades.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-hdpi/ic_launcher_foreground.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_ic_outline_note_add_24.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/ic_outline_note_add_24.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.ace.app-main-84:/xml/data_extraction_rules.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-mdpi/ic_launcher.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_main.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_profile.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/profile.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_profile.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/profile.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_item_discussion_forum_peers.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/item_discussion_forum_peers.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_camera_icon.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/camera_icon.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_dialog_add_class.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/dialog_add_class.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_dialog_add_syllabus_item.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/dialog_add_syllabus_item.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_item_discussion_forum_self.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/item_discussion_forum_self.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_ic_vector_add_24dp.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/ic_vector_add_24dp.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_forum.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/forum.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_ic_home_black_24dp.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/ic_home_black_24dp.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_sms_48px.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/sms_48px.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_ic_outline_note_add_24.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/ic_outline_note_add_24.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_class_item_layout.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/class_item_layout.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_outline_menu_open_24.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/outline_menu_open_24.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_class_item_layout.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/class_item_layout.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_ic_dashboard_black_24dp.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/ic_dashboard_black_24dp.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_ic_vector_add_24dp.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/ic_vector_add_24dp.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_forum.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/forum.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/navigation_nav_graph.xml.flat",
-        "source": "com.example.ace.app-main-84:/navigation/nav_graph.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_chat_contacts.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_chat_contacts.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout-w1240dp_activity_login.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout-w1240dp/activity_login.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_add_note.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_add_note.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_note_preview.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_note_preview.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/xml_backup_rules.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_loginlogo.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/loginlogo.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_item_chat_peer.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_chat_peer.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout-w936dp_activity_login.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout-w936dp/activity_login.xml"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_fragment_home.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_item_discussion_forum_self.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_discussion_forum_self.xml"
     },
     {
         "merged": "com.example.ace.app-merged_res-82:/layout_activity_add_grades.xml.flat",
         "source": "com.example.ace.app-main-84:/layout/activity_add_grades.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_add_note.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_add_note.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_chat.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/chat.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_forum_48px.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/forum_48px.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/navigation_nav_graph.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/navigation/nav_graph.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_calendar.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_calendar.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_chat_contacts.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_chat_contacts.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_add_grades.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_add_grades.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_dot.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/dot.xml"
-    },
-    {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_camera.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/camera.png"
-    },
-    {
-        "merged": "com.example.ace.app-merged_res-82:/layout_item_chat_self.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/item_chat_self.xml"
-    },
-    {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_ic_home_black_24dp.xml.flat",
-        "source": "com.example.ace.app-main-84:/drawable/ic_home_black_24dp.xml"
-    },
-    {
-        "merged": "com.example.ace.app-merged_res-82:/drawable_scan.png.flat",
-        "source": "com.example.ace.app-main-84:/drawable/scan.png"
-    },
-    {
-        "merged": "com.example.ace.app-merged_res-82:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.ace.app-main-84:/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_login.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_login.xml"
     }
 ]

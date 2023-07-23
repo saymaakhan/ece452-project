@@ -62,8 +62,11 @@ id constraintLayout
 id contact_name
 id container
 id containerClasses
+id containerSyllabus
 id copy
 id dm
+id editItemName
+id editItemWeight
 id edit_chat_message
 id emptyStateTextView
 id fabAdd
@@ -103,6 +106,8 @@ id recycler_discussion_forum_topics
 id saveButton
 id sploginbutton
 id textInputLayoutClassName
+id textInputLayoutItemName
+id textInputLayoutItemWeight
 id textView
 id textView2
 id textView3
@@ -140,6 +145,7 @@ layout activity_note_preview
 layout activity_single_chat
 layout class_item_layout
 layout dialog_add_class
+layout dialog_add_syllabus_item
 layout fragment_dashboard
 layout fragment_home
 layout fragment_notifications
