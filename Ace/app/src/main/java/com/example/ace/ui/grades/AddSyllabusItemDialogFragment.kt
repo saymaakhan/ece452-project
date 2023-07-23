@@ -21,6 +21,7 @@ class AddSyllabusItemDialogFragment : DialogFragment() {
         onSaveClickListener = listener
     }
 
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireContext())
         val inflater = LayoutInflater.from(requireContext())

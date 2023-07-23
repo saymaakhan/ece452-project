@@ -13,12 +13,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 data class ClassInfo(
     var className: String? = null,
-    var grade: Int? = 100
+    var grade: Double? = 420.0
 )
 
 class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickListener {
 
     private lateinit var containerClasses: LinearLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grades)
@@ -59,7 +60,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                 .addOnSuccessListener {
                     val classEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerClasses, false)
                     classEntryView.findViewById<TextView>(R.id.tvClassName).text = className
-                    classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: ${classInfo.grade}"
+                    classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: --%"
 
                     containerClasses.addView(classEntryView)
 
@@ -108,7 +109,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                                 val className = it as CharSequence?
                                 val classEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerClasses, false)
                                 classEntryView.findViewById<TextView>(R.id.tvClassName).text = className
-                                classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: ${documentSnapshot.data["grade"]}"
+                                classEntryView.findViewById<TextView>(R.id.tvWeight).text = if (documentSnapshot.data["grade"] == 420.0) "Grade: - %" else "Grade: ${documentSnapshot.data["grade"]}%"
                                 containerClasses.addView(classEntryView)
 
                                 // Set an onClickListener for the class entry to open the GradesActivity

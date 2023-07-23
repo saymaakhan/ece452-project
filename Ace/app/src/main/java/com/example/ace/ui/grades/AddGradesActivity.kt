@@ -16,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 data class SyllabusItem(
     var syllabusItemName: String? = null,
     var weight: Int? = 0,
-    var syllabusGrade: Int? = 100
+    var syllabusGrade: Double? = 420.0
 )
 
 class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnSaveClickListener {
@@ -65,13 +65,14 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                     val syllabusEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerSyllabus, false)
 
                     syllabusEntryView.findViewById<TextView>(R.id.tvClassName).text = itemName
-                    syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "Weight: $itemWeight"
+                    syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "-- / $itemWeight: ??%"
+
                     containerSyllabus.addView(syllabusEntryView)
 
                     // Set an onClickListener for the class entry to open the GradesActivity
                     syllabusEntryView.setOnClickListener {
                         // Launch the activity to add grades for the selected class
-                        val intent = Intent(this, AddGradesActivity::class.java)
+                        val intent = Intent(this, AddScoreActivity::class.java)
                         intent.putExtra("syllabus_name", itemName)
                         intent.putExtra("class_name", className)
                         startActivity(intent)
@@ -84,7 +85,6 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
         }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun loadClassesFromFirestore() {
         val firebaseAuth = FirebaseAuth.getInstance()
         val userId = firebaseAuth.currentUser?.uid
@@ -103,11 +103,18 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                     if (documentSnapshot.exists()) {
                         val syllabusItemName = documentSnapshot.data["syllabusItemName"]
                         val weight = documentSnapshot.data["weight"]
+                        val syllabusGrade = documentSnapshot.data["syllabusGrade"]
 
                         val syllabusEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerSyllabus, false)
 
                         syllabusEntryView.findViewById<TextView>(R.id.tvClassName).text = syllabusItemName as CharSequence?
-                        syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "Weight: $weight"
+
+                        if (syllabusGrade == 420.0) {
+                            syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "-- / $weight: ??%"
+                        } else {
+                            val weightGrade = syllabusGrade as Double * (weight as Double / 100)
+                            syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "$weightGrade / $weight: $syllabusGrade%"
+                        }
                         containerSyllabus.addView(syllabusEntryView)
 
                         // Set an onClickListener for the class entry to open the GradesActivity
