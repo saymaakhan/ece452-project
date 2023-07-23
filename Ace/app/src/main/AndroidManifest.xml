@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Ace"
         tools:targetApi="28">
         <activity
+            android:name=".ui.grades.AddItemGradeDialogFragment"
+            android:exported="false" />
+        <activity
             android:name=".ui.grades.AddScoreActivity"
             android:exported="false" />
         <activity

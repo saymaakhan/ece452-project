@@ -67,8 +67,11 @@ id containerScore
 id containerSyllabus
 id copy
 id dm
+id editDenominator
 id editItemName
 id editItemWeight
+id editNumerator
+id editPercentage
 id edit_chat_message
 id emptyStateTextView
 id fabAdd
@@ -149,6 +152,7 @@ layout activity_note_preview
 layout activity_single_chat
 layout class_item_layout
 layout dialog_add_class
+layout dialog_add_item_grade
 layout dialog_add_syllabus_item
 layout fragment_dashboard
 layout fragment_home

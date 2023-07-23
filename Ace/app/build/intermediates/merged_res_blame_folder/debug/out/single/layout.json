@@ -20,12 +20,12 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_dashboard.xml"
     },
     {
-        "merged": "com.example.ace.app-mergeDebugResources-81:/layout/activity_add_score.xml",
-        "source": "com.example.ace.app-main-84:/layout/activity_add_score.xml"
-    },
-    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/item_discussion_forum_peers.xml",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_discussion_forum_peers.xml"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/activity_add_score.xml",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_add_score.xml"
     },
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/item_chat_self.xml",
@@ -56,6 +56,10 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_discussion_forum_topics.xml"
     },
     {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/dialog_add_item_grade.xml",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/dialog_add_item_grade.xml"
+    },
+    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/activity_single_chat.xml",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_single_chat.xml"
     },
@@ -66,6 +70,10 @@
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/class_item_layout.xml",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/class_item_layout.xml"
+    },
+    {
+        "merged": "com.example.ace.app-mergeDebugResources-81:/layout/dialog_add_item_grade.xml",
+        "source": "com.example.ace.app-main-84:/layout/dialog_add_item_grade.xml"
     },
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-mergeDebugResources-81:/layout/activity_camera.xml",

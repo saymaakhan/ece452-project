@@ -3485,8 +3485,11 @@ int id easeInOut 0x7f0900d4
 int id easeOut 0x7f0900d5
 int id east 0x7f0900d6
 int id edge 0x7f0900d7
+int id editDenominator 0x7f0902a5
 int id editItemName 0x7f09029d
 int id editItemWeight 0x7f09029e
+int id editNumerator 0x7f0902a6
+int id editPercentage 0x7f0902a7
 int id edit_chat_message 0x7f0900d8
 int id edit_query 0x7f0900d9
 int id elastic 0x7f0900da
@@ -4097,6 +4100,7 @@ int layout design_navigation_menu_item 0x7f0c003d
 int layout design_text_input_end_icon 0x7f0c003e
 int layout design_text_input_start_icon 0x7f0c003f
 int layout dialog_add_class 0x7f0c0040
+int layout dialog_add_item_grade 0x7f0c0091
 int layout dialog_add_syllabus_item 0x7f0c008f
 int layout dialog_choose_app 0x7f0c0041
 int layout fragment_dashboard 0x7f0c0042

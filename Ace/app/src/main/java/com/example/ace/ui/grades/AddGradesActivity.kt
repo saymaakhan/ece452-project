@@ -47,8 +47,6 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
     }
 
     override fun onSaveClicked(itemName: String, itemWeight: String) {
-        println("Syllabus Item Name: $itemName, Weight: $itemWeight")
-
         val firebaseAuth = FirebaseAuth.getInstance()
         val userId = firebaseAuth.currentUser?.uid
 
@@ -75,6 +73,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                         // Launch the activity to add grades for the selected class
                         val intent = Intent(this, AddGradesActivity::class.java)
                         intent.putExtra("syllabus_name", itemName)
+                        intent.putExtra("class_name", className)
                         startActivity(intent)
                     }
 
@@ -116,6 +115,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                             // Launch the activity to add grades for the selected class
                             val intent = Intent(this, AddScoreActivity::class.java)
                             intent.putExtra("syllabus_name", syllabusItemName)
+                            intent.putExtra("class_name", className)
                             startActivity(intent)
                         }
                     }

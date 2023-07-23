@@ -104,6 +104,10 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/scan.png"
     },
     {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_dialog_add_item_grade.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/dialog_add_item_grade.xml"
+    },
+    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_fragment_notifications.xml.flat",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/fragment_notifications.xml"
     },
@@ -208,6 +212,10 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "com.example.ace.app-merged_res-82:/layout_dialog_add_item_grade.xml.flat",
+        "source": "com.example.ace.app-main-84:/layout/dialog_add_item_grade.xml"
+    },
+    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
@@ -276,8 +284,8 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/navigation/nav_graph.xml"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_activity_add_score.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/activity_add_score.xml"
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_add_score.xml.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/activity_add_score.xml"
     },
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_activity_calendar.xml.flat",

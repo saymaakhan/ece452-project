@@ -3486,8 +3486,11 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editDenominator
 id editItemName
 id editItemWeight
+id editNumerator
+id editPercentage
 id edit_chat_message
 id edit_query
 id elastic
@@ -4098,6 +4101,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_add_class
+layout dialog_add_item_grade
 layout dialog_add_syllabus_item
 layout dialog_choose_app
 layout fragment_dashboard
