@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.ace.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.math.BigDecimal
@@ -45,8 +46,10 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
         loadClassesFromFirestore()
 
+        val btnAddSyllabusItem: FloatingActionButton = findViewById(R.id.btnAddSyllabusItem)
+
         // Set click listener for "Add Syllabus Item" button
-        findViewById<Button>(R.id.btnAddSyllabusItem).setOnClickListener {
+        btnAddSyllabusItem.setOnClickListener {
             val addSyllabusItemDialog = AddSyllabusItemDialogFragment()
             addSyllabusItemDialog.setOnSaveClickListener(this)
             addSyllabusItemDialog.show(supportFragmentManager, "AddSyllabusItemDialogFragment")

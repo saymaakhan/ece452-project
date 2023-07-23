@@ -134,6 +134,7 @@ id toolbar_chatchannel
 id toolbar_chatcontacts
 id toolbar_discussion_forum
 id tvClassName
+id tvCumulativeAverage
 id tvWeight
 id username
 id view

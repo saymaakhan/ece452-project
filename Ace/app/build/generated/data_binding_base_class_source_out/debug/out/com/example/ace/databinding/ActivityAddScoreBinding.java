@@ -4,7 +4,6 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
@@ -13,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.ace.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,7 +22,7 @@ public final class ActivityAddScoreBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final Button btnAddScoreItem;
+  public final FloatingActionButton btnAddScoreItem;
 
   @NonNull
   public final LinearLayout containerScore;
@@ -30,8 +30,9 @@ public final class ActivityAddScoreBinding implements ViewBinding {
   @NonNull
   public final Toolbar toolbar;
 
-  private ActivityAddScoreBinding(@NonNull RelativeLayout rootView, @NonNull Button btnAddScoreItem,
-      @NonNull LinearLayout containerScore, @NonNull Toolbar toolbar) {
+  private ActivityAddScoreBinding(@NonNull RelativeLayout rootView,
+      @NonNull FloatingActionButton btnAddScoreItem, @NonNull LinearLayout containerScore,
+      @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.btnAddScoreItem = btnAddScoreItem;
     this.containerScore = containerScore;
@@ -66,7 +67,7 @@ public final class ActivityAddScoreBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnAddScoreItem;
-      Button btnAddScoreItem = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton btnAddScoreItem = ViewBindings.findChildViewById(rootView, id);
       if (btnAddScoreItem == null) {
         break missingId;
       }

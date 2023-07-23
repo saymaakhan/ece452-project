@@ -24,6 +24,19 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- Modern text field for displaying cumulative average and GPA -->
+    <TextView
+        android:id="@+id/tvCumulativeAverage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Cumulative Average: -- %"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
     <!-- Container for dynamically added classes -->
     <LinearLayout
         android:id="@+id/containerClasses"
@@ -31,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/fabAdd"
         android:orientation="vertical"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/tvCumulativeAverage"
         android:padding="16dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

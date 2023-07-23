@@ -4,7 +4,6 @@ package com.example.ace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
@@ -13,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.ace.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,7 +22,7 @@ public final class ActivityAddGradesBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final Button btnAddSyllabusItem;
+  public final FloatingActionButton btnAddSyllabusItem;
 
   @NonNull
   public final LinearLayout containerSyllabus;
@@ -31,7 +31,7 @@ public final class ActivityAddGradesBinding implements ViewBinding {
   public final Toolbar toolbar;
 
   private ActivityAddGradesBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button btnAddSyllabusItem, @NonNull LinearLayout containerSyllabus,
+      @NonNull FloatingActionButton btnAddSyllabusItem, @NonNull LinearLayout containerSyllabus,
       @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.btnAddSyllabusItem = btnAddSyllabusItem;
@@ -67,7 +67,7 @@ public final class ActivityAddGradesBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnAddSyllabusItem;
-      Button btnAddSyllabusItem = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton btnAddSyllabusItem = ViewBindings.findChildViewById(rootView, id);
       if (btnAddSyllabusItem == null) {
         break missingId;
       }

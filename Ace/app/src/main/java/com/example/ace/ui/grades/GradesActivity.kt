@@ -21,6 +21,7 @@ data class ClassInfo(
 class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickListener {
 
     private lateinit var containerClasses: LinearLayout
+    private lateinit var tvCumulativeAverage: TextView
 
     override fun onResume() {
         super.onResume()
@@ -31,6 +32,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         setContentView(R.layout.activity_grades)
 
         containerClasses = findViewById(R.id.containerClasses)
+        tvCumulativeAverage = findViewById(R.id.tvCumulativeAverage)
 
         loadClassesFromFirestore()
 
@@ -107,6 +109,9 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                     // Clear existing views before displaying new classes
                     containerClasses.removeAllViews()
 
+                    var gradesSum = 0.0
+                    var classCounter = 0.0
+
                     // Iterate through the class documents and display them
                     for (documentSnapshot in querySnapshot) {
                         if (documentSnapshot.exists()) {
@@ -127,7 +132,18 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                                     startActivity(intent)
                                 }
                             }
+
+                            if (documentSnapshot.data["grade"] != 420.0) {
+                                classCounter += 1.0
+                                gradesSum += BigDecimal(documentSnapshot.data["grade"].toString()).toDouble()
+                            }
                         }
+                    }
+
+                    if (classCounter > 0) {
+                        val cumulativeGrade = gradesSum / classCounter
+                        val roundCumulativeGrade = BigDecimal(cumulativeGrade.toString()).setScale(2, RoundingMode.HALF_EVEN)
+                        tvCumulativeAverage.text = "Cumulative Average: $roundCumulativeGrade%"
                     }
                 }
                 .addOnFailureListener { exception ->

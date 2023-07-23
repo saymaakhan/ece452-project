@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -30,13 +31,17 @@ public final class ActivityGradesBinding implements ViewBinding {
   @NonNull
   public final Toolbar toolbar;
 
+  @NonNull
+  public final TextView tvCumulativeAverage;
+
   private ActivityGradesBinding(@NonNull RelativeLayout rootView,
       @NonNull LinearLayout containerClasses, @NonNull FloatingActionButton fabAdd,
-      @NonNull Toolbar toolbar) {
+      @NonNull Toolbar toolbar, @NonNull TextView tvCumulativeAverage) {
     this.rootView = rootView;
     this.containerClasses = containerClasses;
     this.fabAdd = fabAdd;
     this.toolbar = toolbar;
+    this.tvCumulativeAverage = tvCumulativeAverage;
   }
 
   @Override
@@ -84,8 +89,14 @@ public final class ActivityGradesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityGradesBinding((RelativeLayout) rootView, containerClasses, fabAdd,
-          toolbar);
+      id = R.id.tvCumulativeAverage;
+      TextView tvCumulativeAverage = ViewBindings.findChildViewById(rootView, id);
+      if (tvCumulativeAverage == null) {
+        break missingId;
+      }
+
+      return new ActivityGradesBinding((RelativeLayout) rootView, containerClasses, fabAdd, toolbar,
+          tvCumulativeAverage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

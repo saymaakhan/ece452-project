@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.ace.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.math.BigDecimal
@@ -37,7 +38,9 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
 
         loadClassesFromFirestore()
 
-        findViewById<Button>(R.id.btnAddScoreItem).setOnClickListener {
+        val btnAddScoreItem: FloatingActionButton = findViewById(R.id.btnAddScoreItem)
+
+        btnAddScoreItem.setOnClickListener {
             val addItemGradeDialog = AddItemGradeDialogFragment()
             addItemGradeDialog.setOnSaveClickListener(this)
             addItemGradeDialog.show(supportFragmentManager, "AddItemGradeDialogFragment")

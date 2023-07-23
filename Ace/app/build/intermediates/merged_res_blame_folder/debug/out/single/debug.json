@@ -100,12 +100,12 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/dialog_add_class.xml"
     },
     {
-        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_scan.png.flat",
-        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/scan.png"
-    },
-    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_dialog_add_item_grade.xml.flat",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/dialog_add_item_grade.xml"
+    },
+    {
+        "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_scan.png.flat",
+        "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/drawable/scan.png"
     },
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_fragment_notifications.xml.flat",
@@ -212,10 +212,6 @@
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.ace.app-merged_res-82:/layout_dialog_add_item_grade.xml.flat",
-        "source": "com.example.ace.app-main-84:/layout/dialog_add_item_grade.xml"
-    },
-    {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
@@ -274,6 +270,10 @@
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/layout_item_discussion_forum_self.xml.flat",
         "source": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-main-84:/layout/item_discussion_forum_self.xml"
+    },
+    {
+        "merged": "com.example.ace.app-merged_res-82:/layout_activity_add_grades.xml.flat",
+        "source": "com.example.ace.app-main-84:/layout/activity_add_grades.xml"
     },
     {
         "merged": "/Users/sidharth/.gradle/daemon/8.0/com.example.ace.app-merged_res-82:/drawable_chat.png.flat",
