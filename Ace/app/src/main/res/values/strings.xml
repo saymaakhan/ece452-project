@@ -14,6 +14,7 @@
     <string name="title_activity_note_preview">NotePreviewActivity</string>
     <string name="title_activity_add_note">AddNoteActivity</string>
     <string name="title_camera_activity">CameraActivity</string>
+    <string name="title_profile_activity">ProfileActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

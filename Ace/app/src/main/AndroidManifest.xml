@@ -62,6 +62,10 @@
             android:name=".ui.grades.GradesActivity"
             android:exported="false"
             android:label="GradesActivity" />
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:exported="false"
+            android:label="@string/title_profile_activity" />
     </application>
 
 </manifest>
