@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#353333"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#353333"
+        android:layout_width="match_parent"
+        android:outlineSpotShadowColor="@color/black"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:elevation="4dp"/>
+
+    <!-- Other views for adding syllabus items go here -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:padding="16dp">
+        <FrameLayout
+            android:id="@+id/containerFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Add the TextView for the message -->
+            <TextView
+                android:layout_marginTop="0dp"
+                android:id="@+id/tvNoScoreMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="You have no grades added at the moment. Hit the Plus (+) button below to add."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:visibility="visible" />
+            <LinearLayout
+                android:id="@+id/containerScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/toolbar"
+                android:padding="16dp"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddScoreItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_vector_add_24dp"
+        android:tint="@color/white" />
+
+</RelativeLayout>
