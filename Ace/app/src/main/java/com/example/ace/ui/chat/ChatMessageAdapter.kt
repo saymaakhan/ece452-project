@@ -22,6 +22,8 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
 ) : FirebaseRecyclerAdapter<ChatMessage, RecyclerView.ViewHolder>(options) {
     private final val SENT_MESSAGE : Int = 1
     private final val RECEIVE_MESSAGE: Int = 2
+    var sent = 0
+    var received = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         if( viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
@@ -53,17 +55,19 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
 
         if (viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
             val sentPosition = position - messagesReceived.size
-            if (sentPosition >= 0 && sentPosition < messagesSent.size) {
-                val message = messagesSent[sentPosition]
+            if (sent < messagesSent.size) {
+                val message = messagesSent[sent]
                 val sentHolder = holder as SentMessageHolder
                 sentHolder.bind(message)
+                sent += 1
             }
         } else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty()) {
             val receivedPosition = position
-            if (receivedPosition >= 0 && receivedPosition < messagesReceived.size) {
-                val message = messagesReceived[receivedPosition]
+            if (received < messagesReceived.size) {
+                val message = messagesReceived[received]
                 val receivedHolder = holder as ReceivedMessageHolder
                 receivedHolder.bind(message)
+                received += 1
             }
         }
     }
