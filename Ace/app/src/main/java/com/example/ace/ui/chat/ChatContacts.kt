@@ -25,19 +25,12 @@ class ChatContacts : AppCompatActivity() {
     private lateinit var binding: ActivityChatContactsBinding
     private lateinit var auth: FirebaseAuth
 
-    private val db = FirebaseFirestore.getInstance()
     var users : MutableList<String> = mutableListOf()
     private var job: Job = Job()
-
-    val coroutineContext: CoroutineContext
-        get() = Dispatchers.Main + job
 
     override fun onDestroy() {
         super.onDestroy()
         job.cancel()
-    }
-    interface MyCallback {
-        fun onCallback(value: List<String>)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
