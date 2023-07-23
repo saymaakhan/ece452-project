@@ -1,10 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="#353333"
     android:layout_height="match_parent">
-    <Button
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#353333"
+        android:outlineSpotShadowColor="@color/black"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <!-- Add the title text to the Toolbar -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Classes"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Modern text field for displaying cumulative average and GPA -->
+    <TextView
+        android:id="@+id/tvCumulativeAverage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Grades" />
-</LinearLayout>
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Cumulative Average: -- %"
+        android:textColor="#02887B"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Container for dynamically added classes -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fabAdd"
+        android:layout_below="@id/tvCumulativeAverage"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+        <!-- Use FrameLayout as the direct child for ScrollView -->
+        <FrameLayout
+            android:id="@+id/containerFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Add the TextView for the message -->
+            <TextView
+                android:id="@+id/tvNoClassesMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="You have no classes at the moment. Hit the Plus (+) button below to add."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:visibility="visible" />
+            <LinearLayout
+                android:id="@+id/containerClasses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fabAdd"
+                android:orientation="vertical"
+                android:layout_below="@id/tvCumulativeAverage"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_vector_add_24dp"
+        android:tint="@color/white" />
+
+</RelativeLayout>
