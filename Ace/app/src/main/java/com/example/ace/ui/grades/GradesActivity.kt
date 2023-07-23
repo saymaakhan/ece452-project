@@ -114,8 +114,6 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                 .addOnSuccessListener { querySnapshot ->
                     // Clear existing views before displaying new classes
                     containerClasses.removeAllViews()
-                    tvNoClassesMessage.visibility = View.GONE
-                    containerClasses.visibility = View.VISIBLE
 
                     var gradesSum = 0.0
                     var classCounter = 0.0
@@ -123,6 +121,9 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                     // Iterate through the class documents and display them
                     for (documentSnapshot in querySnapshot) {
                         if (documentSnapshot.exists()) {
+                            tvNoClassesMessage.visibility = View.GONE
+                            containerClasses.visibility = View.VISIBLE
+
                             documentSnapshot.data["className"]?.let { it ->
                                 // Create a new TextView to represent the class name
                                 val className = it as CharSequence?
