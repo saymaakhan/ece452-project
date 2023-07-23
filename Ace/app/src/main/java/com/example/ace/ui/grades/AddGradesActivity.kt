@@ -48,6 +48,8 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
         className = intent.getStringExtra("class_name")
 
+
+
         // Set the class name as the title in the Toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"))
@@ -150,7 +152,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                     if (documentSnapshot.exists()) {
                         tvNoSyllabusMessage.visibility = View.GONE
                         containerSyllabus.visibility = View.VISIBLE
-                        
+
                         val syllabusItemName = documentSnapshot.data["syllabusItemName"]
                         val weight = documentSnapshot.data["weight"]
                         val syllabusGrade = documentSnapshot.data["syllabusGrade"]
@@ -166,8 +168,9 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                             val weightFraction = weightPercentage.divide(BigDecimal(100), 2, RoundingMode.HALF_EVEN) // Divide by 100
                             val weightGrade = BigDecimal(syllabusGrade.toString()).multiply(weightFraction)
                             val roundedWeightGrade = weightGrade.setScale(2, RoundingMode.HALF_EVEN)
+                            val roundedSyllabusGrade = BigDecimal(syllabusGrade.toString()).setScale(2, RoundingMode.HALF_EVEN)
 
-                            syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "$roundedWeightGrade / $weight: $syllabusGrade%"
+                            syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "$roundedWeightGrade / $weight: $roundedSyllabusGrade%"
                         }
                         containerSyllabus.addView(syllabusEntryView)
 
