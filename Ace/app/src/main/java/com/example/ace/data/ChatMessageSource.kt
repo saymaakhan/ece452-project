@@ -26,10 +26,14 @@ class ChatMessageSource {
         val sendinguser = ChatUser(userName = user, profileUrl = "")
         val ts = Timestamp(System.currentTimeMillis()).time
 <<<<<<< HEAD
+<<<<<<< HEAD
         val msg = ChatMessage(sender =sendinguser.toString(), timestamp =ts, message =text)
 =======
         val msg = ChatMessage(sender=sendinguser.toString(), timestamp=ts, message=text)
 >>>>>>> 0c9dc5c (load users and save sent messages)
+=======
+        val msg = ChatMessage(sender =sendinguser.toString(), timestamp =ts, message =text)
+>>>>>>> 2c0fbb6 (update messaging functionality)
         return msg
     }
 

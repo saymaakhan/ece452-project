@@ -58,10 +58,14 @@ class DiscussionForumChat : AppCompatActivity() {
         val timeStamp = Timestamp(System.currentTimeMillis()).time
         val user = ChatUser(userName = "self", profileUrl = "")
 <<<<<<< HEAD
+<<<<<<< HEAD
         val newMessage = ChatMessage(sender="self", timestamp=timeStamp, message=text, receiver="")
 =======
         val newMessage = ChatMessage(topic="", sender=user, timestamp=timeStamp, message=text)
 >>>>>>> a0f94ec (Forum activity finished and modified chat layout)
+=======
+        val newMessage = ChatMessage(sender="self", timestamp=timeStamp, message=text, receiver="")
+>>>>>>> 2c0fbb6 (update messaging functionality)
 
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_discussion_forum_space)
         val adapter = recyclerview.adapter as DiscussionForumChatMessageAdapter

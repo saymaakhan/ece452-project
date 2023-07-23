@@ -17,11 +17,16 @@ import java.util.Date
 
 class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessage>,
 <<<<<<< HEAD
+<<<<<<< HEAD
                          private val messagesReceived: ArrayList<ChatMessage>,
                          private val messagesSent: ArrayList<ChatMessage>,
                          private val currentUserName: String?,
                          private val otherUser: String?
 =======
+=======
+                         private val messagesReceived: ArrayList<ChatMessage>,
+                         private val messagesSent: ArrayList<ChatMessage>,
+>>>>>>> 2c0fbb6 (update messaging functionality)
                          private val currentUserName: String?
 >>>>>>> 0c9dc5c (load users and save sent messages)
 ) : FirebaseRecyclerAdapter<ChatMessage, RecyclerView.ViewHolder>(options) {
@@ -46,10 +51,14 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2c0fbb6 (update messaging functionality)
     override fun getItemViewType(position: Int): Int {
         // Implement your logic to determine whether the message is sent or received
         // For example, you can check if the message sender is the current user
         val message = getItem(position)
+<<<<<<< HEAD
         if (message.sender == currentUserName && message.receiver == otherUser) {
             return SENT_MESSAGE
         } else if (message.sender == otherUser && message.receiver == currentUserName){
@@ -102,6 +111,34 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
 //        return mList.size
 //    }
 >>>>>>> 0c9dc5c (load users and save sent messages)
+=======
+        return if (message.sender == currentUserName) {
+            SENT_MESSAGE
+        } else {
+            RECEIVE_MESSAGE
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, model: ChatMessage) {
+        val viewType = getItemViewType(position)
+
+        if (viewType == SENT_MESSAGE) {
+            val sentPosition = position - messagesReceived.size
+            if (sentPosition >= 0 && sentPosition < messagesSent.size) {
+                val message = messagesSent[sentPosition]
+                val sentHolder = holder as SentMessageHolder
+                sentHolder.bind(message)
+            }
+        } else if (viewType == RECEIVE_MESSAGE) {
+            val receivedPosition = position
+            if (receivedPosition >= 0 && receivedPosition < messagesReceived.size) {
+                val message = messagesReceived[receivedPosition]
+                val receivedHolder = holder as ReceivedMessageHolder
+                receivedHolder.bind(message)
+            }
+        }
+    }
+>>>>>>> 2c0fbb6 (update messaging functionality)
 
     open class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         open fun bind (message : ChatMessage) {
@@ -109,19 +146,27 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     class SentMessageHolder(ItemView: View) : ViewHolder(ItemView) {
 =======
     class SentMessageHolder(ItemView: View) : ChatMessageAdapter.ViewHolder(ItemView) {
 >>>>>>> 0c9dc5c (load users and save sent messages)
+=======
+    class SentMessageHolder(ItemView: View) : ViewHolder(ItemView) {
+>>>>>>> 2c0fbb6 (update messaging functionality)
         val messageTextView : TextView =  itemView.findViewById(R.id.text_chat_message_self)
         val timeTextView : TextView = itemView.findViewById(R.id.text_chat_timestamp_self)
 
         override fun bind (message : ChatMessage) {
             messageTextView.text = message.message
 <<<<<<< HEAD
+<<<<<<< HEAD
             Log.d(TAG, "MessageTextView: ${messageTextView.text}")
 =======
 >>>>>>> 0c9dc5c (load users and save sent messages)
+=======
+            Log.d(TAG, "MessageTextView: ${messageTextView.text}")
+>>>>>>> 2c0fbb6 (update messaging functionality)
             val dt = message.timestamp?.let { Date(it) }
             timeTextView.text = dt.toString()
         }
@@ -135,12 +180,17 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
         override fun bind(message : ChatMessage) {
             messageTextView.text = message.message
 <<<<<<< HEAD
+<<<<<<< HEAD
             Log.d(TAG, "Received MessageTextView: ${messageTextView.text}")
             val dt = message.timestamp?.let { Date(it) }
 =======
             val dt = message.timestamp?.let { Date(it) }
             userTextView.text = ""
 >>>>>>> 0c9dc5c (load users and save sent messages)
+=======
+            Log.d(TAG, "Received MessageTextView: ${messageTextView.text}")
+            val dt = message.timestamp?.let { Date(it) }
+>>>>>>> 2c0fbb6 (update messaging functionality)
             timeTextView.text = dt.toString()
         }
     }

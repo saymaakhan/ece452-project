@@ -26,10 +26,14 @@ class DiscussionForumMessageSource
         val sendingUser = ChatUser(userName = user, profileUrl = "")
         val timeStamp = Timestamp(System.currentTimeMillis()).time
 <<<<<<< HEAD
+<<<<<<< HEAD
         val message = ChatMessage(sender =user, timestamp =timeStamp, message =text, receiver = "")
 =======
         val message = ChatMessage(topic=topic, sender=sendingUser, timestamp=timeStamp, message=text)
 >>>>>>> a0f94ec (Forum activity finished and modified chat layout)
+=======
+        val message = ChatMessage(sender =user, timestamp =timeStamp, message =text, receiver = "")
+>>>>>>> 2c0fbb6 (update messaging functionality)
         return message
     }
 
