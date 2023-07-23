@@ -59,6 +59,8 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                 .addOnSuccessListener {
                     val classEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerClasses, false)
                     classEntryView.findViewById<TextView>(R.id.tvClassName).text = className
+                    classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: ${classInfo.grade}"
+
                     containerClasses.addView(classEntryView)
 
                     // Set an onClickListener for the class entry to open the GradesActivity
@@ -106,6 +108,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                                 val className = it as CharSequence?
                                 val classEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerClasses, false)
                                 classEntryView.findViewById<TextView>(R.id.tvClassName).text = className
+                                classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: ${documentSnapshot.data["grade"]}"
                                 containerClasses.addView(classEntryView)
 
                                 // Set an onClickListener for the class entry to open the GradesActivity

@@ -3904,6 +3904,7 @@ id triangle
 id tuesday
 id tuesdayLabel
 id tvClassName
+id tvWeight
 id ucrop
 id ucrop_frame
 id ucrop_photobox

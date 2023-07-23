@@ -22,9 +22,14 @@ public final class ClassItemLayoutBinding implements ViewBinding {
   @NonNull
   public final TextView tvClassName;
 
-  private ClassItemLayoutBinding(@NonNull LinearLayout rootView, @NonNull TextView tvClassName) {
+  @NonNull
+  public final TextView tvWeight;
+
+  private ClassItemLayoutBinding(@NonNull LinearLayout rootView, @NonNull TextView tvClassName,
+      @NonNull TextView tvWeight) {
     this.rootView = rootView;
     this.tvClassName = tvClassName;
+    this.tvWeight = tvWeight;
   }
 
   @Override
@@ -60,7 +65,13 @@ public final class ClassItemLayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ClassItemLayoutBinding((LinearLayout) rootView, tvClassName);
+      id = R.id.tvWeight;
+      TextView tvWeight = ViewBindings.findChildViewById(rootView, id);
+      if (tvWeight == null) {
+        break missingId;
+      }
+
+      return new ClassItemLayoutBinding((LinearLayout) rootView, tvClassName, tvWeight);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

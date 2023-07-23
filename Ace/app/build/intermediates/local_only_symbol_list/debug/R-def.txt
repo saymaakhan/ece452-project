@@ -129,6 +129,7 @@ id toolbar_chatchannel
 id toolbar_chatcontacts
 id toolbar_discussion_forum
 id tvClassName
+id tvWeight
 id username
 id view
 layout activity_add_grades

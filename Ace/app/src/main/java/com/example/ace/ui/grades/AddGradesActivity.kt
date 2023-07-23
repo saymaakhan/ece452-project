@@ -55,14 +55,16 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                 firestore.collection("classes").document(userId).collection("user_classes").document(it)
             }
 
-            val syllabusDocumentRef = classDocumentRef?.collection("syllabus_item")?.document(itemName)
+            val syllabusDocumentRef = classDocumentRef?.collection("syllabus_items")?.document(itemName)
 
             val syllabusItem = SyllabusItem(itemName, itemWeight.toInt())
 
             syllabusDocumentRef?.set(syllabusItem)
                 ?.addOnSuccessListener {
                     val syllabusEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerSyllabus, false)
+
                     syllabusEntryView.findViewById<TextView>(R.id.tvClassName).text = itemName
+                    syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "Weight: $itemWeight"
                     containerSyllabus.addView(syllabusEntryView)
 
                     // Set an onClickListener for the class entry to open the GradesActivity
