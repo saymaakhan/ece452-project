@@ -8,9 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.R
 
 import com.example.ace.data.model.ChatMessage
+import com.firebase.ui.database.FirebaseRecyclerAdapter
+import com.firebase.ui.database.FirebaseRecyclerOptions
 import java.util.Date
 
-class ChatMessageAdapter(private val mList: MutableList<ChatMessage>) : RecyclerView.Adapter<ChatMessageAdapter.ViewHolder>() {
+class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessage>,
+                         private val currentUserName: String?
+) : FirebaseRecyclerAdapter<ChatMessage, RecyclerView.ViewHolder>(options) {
     private final val SENT_MESSAGE : Int = 1
     private final val RECEIVE_MESSAGE: Int = 2
 
@@ -25,53 +29,48 @@ class ChatMessageAdapter(private val mList: MutableList<ChatMessage>) : Recycler
         }
     }
 
-    fun addMessage(msg:ChatMessage) {
-        mList.add(msg)
-    }
-
-    override fun getItemViewType(position: Int) : Int {
-        val message : ChatMessage = mList[position]
-
-        if (message.sender.userName.equals("self") ) {
-            return SENT_MESSAGE
-        }
-        else {
-            return RECEIVE_MESSAGE
-        }
-    }
+//    override fun getItemViewType(position: Int) : Int {
+//        val message : ChatMessage = mList[position]
+//
+//        if (message.sender.userName.equals("self") ) {
+//            return SENT_MESSAGE
+//        }
+//        else {
+//            return RECEIVE_MESSAGE
+//        }
+//    }
 
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val message = mList[position]
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, model: ChatMessage) {
+//        val message = mList[position]
 
-        if ( holder.getItemViewType() == SENT_MESSAGE ) {
+        if (holder.getItemViewType() == SENT_MESSAGE ) {
             val h : SentMessageHolder = holder as SentMessageHolder
-            h.bind(message)
+            h.bind(model)
         }
         else {
             val h : ReceivedMessageHolder = holder as ReceivedMessageHolder
-            h.bind(message)
+            h.bind(model)
         }
     }
 
-    override fun getItemCount(): Int {
-        return mList.size
-    }
+//    override fun getItemCount(): Int {
+//        return mList.size
+//    }
 
     open class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         open fun bind (message : ChatMessage) {
         }
     }
 
-
     class SentMessageHolder(ItemView: View) : ChatMessageAdapter.ViewHolder(ItemView) {
         val messageTextView : TextView =  itemView.findViewById(R.id.text_chat_message_self)
         val timeTextView : TextView = itemView.findViewById(R.id.text_chat_timestamp_self)
 
         override fun bind (message : ChatMessage) {
-            messageTextView.setText(message.message)
-            val dt : Date = Date(message.timestamp)
-            timeTextView.setText(dt.toString())
+            messageTextView.text = message.message
+            val dt = message.timestamp?.let { Date(it) }
+            timeTextView.text = dt.toString()
         }
     }
 
@@ -81,10 +80,11 @@ class ChatMessageAdapter(private val mList: MutableList<ChatMessage>) : Recycler
         val timeTextView : TextView = itemView.findViewById(R.id.text_chat_timestamp_peer)
 
         override fun bind(message : ChatMessage) {
-            messageTextView.setText(message.message)
-            val dt : Date = Date(message.timestamp)
-            userTextView.setText("")
-            timeTextView.setText(dt.toString())
+            messageTextView.text = message.message
+            val dt = message.timestamp?.let { Date(it) }
+            userTextView.text = ""
+            timeTextView.text = dt.toString()
         }
     }
+
 }
