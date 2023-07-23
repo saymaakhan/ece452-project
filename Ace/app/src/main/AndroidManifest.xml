@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ace"
-        tools:targetApi="28">
+        tools:targetApi="28"
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name=".ui.grades.AddItemGradeDialogFragment"
             android:exported="false" />

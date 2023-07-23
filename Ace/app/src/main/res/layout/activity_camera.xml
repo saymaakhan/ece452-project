@@ -8,8 +8,9 @@
     tools:context=".CameraActivity" >
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/cardView"
+        android:layout_width="393dp"
+        android:layout_height="568dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
@@ -17,8 +18,10 @@
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/recgText"
@@ -28,6 +31,8 @@
             android:ems="10"
             android:hint="Extract text will display here"
             android:inputType="text|textMultiLine" />
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,7 +68,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.333"
-            app:srcCompat="@drawable/camera"
+            app:srcCompat="@drawable/camera_icon"
             app:tint="@color/white" />
 
         <ImageView
@@ -97,5 +102,17 @@
             app:layout_constraintStart_toStartOf="@+id/copy"
             app:layout_constraintTop_toBottomOf="@+id/copy"
             app:layout_constraintVertical_bias="0.0" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_generate_pdf"
+        android:layout_width="384dp"
+        android:layout_height="55dp"
+        android:text="Generate PDF"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
