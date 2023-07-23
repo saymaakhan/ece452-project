@@ -3910,6 +3910,8 @@ id tuesday
 id tuesdayLabel
 id tvClassName
 id tvCumulativeAverage
+id tvCumulativeGrade
+id tvSyllabusSum
 id tvWeight
 id ucrop
 id ucrop_frame

@@ -135,6 +135,8 @@ id toolbar_chatcontacts
 id toolbar_discussion_forum
 id tvClassName
 id tvCumulativeAverage
+id tvCumulativeGrade
+id tvSyllabusSum
 id tvWeight
 id username
 id view

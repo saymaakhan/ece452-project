@@ -1,5 +1,6 @@
 package com.example.ace.ui.grades
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -33,6 +34,7 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
         containerScore = findViewById(R.id.containerScore)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
+        toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"))
         setSupportActionBar(toolbar)
         supportActionBar?.title = syllabusItemName
 
@@ -71,7 +73,9 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
                 val scoreEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerScore, false)
 
                 scoreEntryView.findViewById<TextView>(R.id.tvClassName).text = itemName
-                scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: $grade"
+
+                val roundedGrade = BigDecimal(grade.toString()).setScale(2, RoundingMode.HALF_EVEN)
+                scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: $roundedGrade%"
                 containerScore.addView(scoreEntryView)
 
                 updateGradesOnFireStore()
@@ -108,7 +112,8 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
                         val scoreEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerScore, false)
 
                         scoreEntryView.findViewById<TextView>(R.id.tvClassName).text = scoreItemName as CharSequence?
-                        scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: $grade"
+                        val roundedGrade = BigDecimal(grade.toString()).setScale(2, RoundingMode.HALF_EVEN)
+                        scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: $roundedGrade%"
                         containerScore.addView(scoreEntryView)
                     }
                 }

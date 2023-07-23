@@ -2,6 +2,7 @@ package com.example.ace.ui.grades
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -26,6 +27,9 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
     private var className: String? = null
     private lateinit var containerSyllabus: LinearLayout
+    private lateinit var tvCumulativeGrade: TextView
+    private lateinit var tvSyllabusSum: TextView
+
 
     override fun onResume() {
         super.onResume()
@@ -36,13 +40,17 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
         setContentView(R.layout.activity_add_grades)
 
         containerSyllabus = findViewById(R.id.containerSyllabus)
+        tvCumulativeGrade = findViewById(R.id.tvCumulativeGrade)
+        tvSyllabusSum = findViewById(R.id.tvSyllabusSum)
 
         className = intent.getStringExtra("class_name")
 
         // Set the class name as the title in the Toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
+        toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"))
         setSupportActionBar(toolbar)
         supportActionBar?.title = className
+
 
         loadClassesFromFirestore()
 
@@ -88,7 +96,30 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                         startActivity(intent)
                     }
 
-                    Toast.makeText(this, "Syllabus item saved successfully", Toast.LENGTH_SHORT).show()
+                    classDocumentRef.collection("syllabus_items").get().addOnSuccessListener {
+                        var sumSyllabus = 0.0
+                        for (documentSnapshot in it) {
+                            if (documentSnapshot.exists()) {
+                                sumSyllabus += BigDecimal(documentSnapshot.data["weight"].toString()).toDouble()
+                            }
+                        }
+
+                        if (sumSyllabus == 100.0) {
+                            tvSyllabusSum.setTextColor(Color.parseColor("#02887B"))
+                            tvSyllabusSum.text = "The sum of all syllabus items is 100%"
+                        } else {
+                            val roundedSum = BigDecimal(sumSyllabus).setScale(1, RoundingMode.HALF_EVEN)
+                            tvSyllabusSum.setTextColor(Color.parseColor("#EC6161"))
+                            tvSyllabusSum.text = "The sum of all syllabus items is $roundedSum%, not 100%"
+                        }
+                    }
+
+                    classDocumentRef.get().addOnSuccessListener {
+                        if (it.data?.get("grade") != 420.0) {
+                            val roundedGrade = BigDecimal(it.data?.get("grade").toString()).setScale(2,RoundingMode.HALF_EVEN)
+                            tvCumulativeGrade.text = "$roundedGrade%"
+                        }
+                    }
                 }?.addOnFailureListener {
                     Toast.makeText(this, "Error retrieving syllabus items: ${it.message}", Toast.LENGTH_SHORT).show()
                 }
@@ -130,6 +161,31 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                             syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "$roundedWeightGrade / $weight: $syllabusGrade%"
                         }
                         containerSyllabus.addView(syllabusEntryView)
+
+                        classDocumentRef.collection("syllabus_items").get().addOnSuccessListener {
+                            var sumSyllabus = 0.0
+                            for (documentSnapshot in it) {
+                                if (documentSnapshot.exists()) {
+                                    sumSyllabus += BigDecimal(documentSnapshot.data["weight"].toString()).toDouble()
+                                }
+                            }
+
+                            if (sumSyllabus == 100.0) {
+                                tvSyllabusSum.setTextColor(Color.parseColor("#02887B"))
+                                tvSyllabusSum.text = "The sum of all syllabus items is 100%"
+                            } else {
+                                val roundedSum = BigDecimal(sumSyllabus).setScale(1, RoundingMode.HALF_EVEN)
+                                tvSyllabusSum.setTextColor(Color.parseColor("#EC6161"))
+                                tvSyllabusSum.text = "The sum of all syllabus items is $roundedSum%, not 100%"
+                            }
+                        }
+
+                        classDocumentRef.get().addOnSuccessListener {
+                            if (it.data?.get("grade") != 420.0) {
+                                val roundedGrade = BigDecimal(it.data?.get("grade").toString()).setScale(2,RoundingMode.HALF_EVEN)
+                                tvCumulativeGrade.text = "$roundedGrade%"
+                            }
+                        }
 
                         // Set an onClickListener for the class entry to open the GradesActivity
                         syllabusEntryView.setOnClickListener {

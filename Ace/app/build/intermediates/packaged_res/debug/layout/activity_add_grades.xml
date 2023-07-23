@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="#353333"
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        android:background="#353333"
+        android:outlineSpotShadowColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/teal_200"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:elevation="4dp"/>
+
+    <!-- Modern text field for displaying cumulative average and GPA -->
+    <TextView
+        android:id="@+id/tvCumulativeGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="--%"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="38sp" />
+
+    <!-- Modern text field for displaying cumulative average and GPA -->
+    <TextView
+        android:id="@+id/tvSyllabusSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCumulativeGrade"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="The sum of all syllabus items is 0.0%, not 100%"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
 
     <!-- Other views for adding syllabus items go here -->
     <LinearLayout
@@ -17,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/tvSyllabusSum"
         android:padding="16dp" />
 
 
