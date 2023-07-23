@@ -26,11 +26,11 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
     var received = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        if( viewType == SENT_MESSAGE && messagesSent.isNotEmpty()) {
+        if( viewType == SENT_MESSAGE && messagesSent.isNotEmpty() && sent < messagesSent.size) {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_self, parent, false)
             return SentMessageHolder(view)
         }
-        else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty()) {
+        else if (viewType == RECEIVE_MESSAGE && messagesReceived.isNotEmpty() && received < messagesReceived.size) {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_peer, parent, false)
             return ReceivedMessageHolder(view)
         }
