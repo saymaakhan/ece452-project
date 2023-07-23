@@ -25,7 +25,7 @@ class DiscussionForumMessageSource
     fun getMessage(topic : String, user : String, text : String) : ChatMessage {
         val sendingUser = ChatUser(userName = user, profileUrl = "")
         val timeStamp = Timestamp(System.currentTimeMillis()).time
-        val message = ChatMessage(topic=topic, sender=user, timestamp=timeStamp, message=text, receiver="")
+        val message = ChatMessage(sender =user, timestamp =timeStamp, message =text, receiver = "")
         return message
     }
 

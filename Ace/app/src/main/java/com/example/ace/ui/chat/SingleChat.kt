@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.ktx.Firebase
 import com.example.ace.data.model.ChatMessage
+import com.example.ace.data.model.ChatUser
 import com.example.ace.data.ChatMessageSource
 import com.example.ace.databinding.ActivitySingleChatBinding
 import com.google.firebase.auth.ktx.auth

@@ -33,7 +33,7 @@ class DiscussionForumChatMessageAdapter(private val mList: MutableList<ChatMessa
     override fun getItemViewType(position: Int) : Int {
         val message : ChatMessage = mList[position]
 
-        if (message.sender.userName.equals("self") ) {
+        if (message.sender.equals("self") ) {
             return SENT_MESSAGE
         }
         else {
@@ -69,7 +69,7 @@ class DiscussionForumChatMessageAdapter(private val mList: MutableList<ChatMessa
 
         override fun bind (message : ChatMessage) {
             messageTextView.setText(message.message)
-            val dt : Date = Date(message.timestamp)
+            val dt = message.timestamp?.let { Date(it) }
             timeTextView.setText(dt.toString())
         }
     }
@@ -82,8 +82,8 @@ class DiscussionForumChatMessageAdapter(private val mList: MutableList<ChatMessa
 
         override fun bind(message : ChatMessage) {
             messageTextView.setText(message.message)
-            val dt : Date = Date(message.timestamp)
-            userTextView.setText(message.sender.userName)
+            val dt = message.timestamp?.let { Date(it) }
+            userTextView.setText(message.sender)
             timeTextView.setText(dt.toString())
             peerPictureImageView.setImageResource(R.drawable.face_48px)
         }

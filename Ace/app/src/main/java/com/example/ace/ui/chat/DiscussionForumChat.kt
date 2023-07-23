@@ -57,7 +57,7 @@ class DiscussionForumChat : AppCompatActivity() {
         val text = binding.editDiscussionForumMessage.text.toString()
         val timeStamp = Timestamp(System.currentTimeMillis()).time
         val user = ChatUser(userName = "self", profileUrl = "")
-        val newMessage = ChatMessage(topic="", sender=user, timestamp=timeStamp, message=text)
+        val newMessage = ChatMessage(sender="self", timestamp=timeStamp, message=text, receiver="")
 
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_discussion_forum_space)
         val adapter = recyclerview.adapter as DiscussionForumChatMessageAdapter
