@@ -10,6 +10,8 @@ import com.example.ace.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 data class ClassInfo(
     var className: String? = null,
@@ -20,6 +22,10 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
 
     private lateinit var containerClasses: LinearLayout
 
+    override fun onResume() {
+        super.onResume()
+        loadClassesFromFirestore()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grades)
@@ -109,7 +115,8 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                                 val className = it as CharSequence?
                                 val classEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerClasses, false)
                                 classEntryView.findViewById<TextView>(R.id.tvClassName).text = className
-                                classEntryView.findViewById<TextView>(R.id.tvWeight).text = if (documentSnapshot.data["grade"] == 420.0) "Grade: - %" else "Grade: ${documentSnapshot.data["grade"]}%"
+                                val grade = BigDecimal(documentSnapshot.data["grade"].toString()).setScale(2, RoundingMode.HALF_EVEN)
+                                classEntryView.findViewById<TextView>(R.id.tvWeight).text = if (documentSnapshot.data["grade"] == 420.0) "Grade: -- %" else "Grade: $grade%"
                                 containerClasses.addView(classEntryView)
 
                                 // Set an onClickListener for the class entry to open the GradesActivity

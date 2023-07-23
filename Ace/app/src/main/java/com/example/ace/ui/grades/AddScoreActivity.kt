@@ -70,7 +70,7 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
                 val scoreEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerScore, false)
 
                 scoreEntryView.findViewById<TextView>(R.id.tvClassName).text = itemName
-                scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Weight: $grade"
+                scoreEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: $grade"
                 containerScore.addView(scoreEntryView)
 
                 updateGradesOnFireStore()
@@ -122,19 +122,15 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
         if (userId != null) {
             className?.let {className ->
                 syllabusItemName?.let { syllabusItemName ->
-                    val syllabusItemRef = firestore.collection("classes")
+                    val classItemRef = firestore.collection("classes")
                         .document(userId)
                         .collection("user_classes")
                         .document(className)
+                    val syllabusItemRef = classItemRef
                         .collection("syllabus_items")
                         .document(syllabusItemName)
 
-                    firestore.collection("classes")
-                        .document(userId)
-                        .collection("user_classes")
-                        .document(className)
-                        .collection("syllabus_items")
-                        .document(syllabusItemName)
+                    syllabusItemRef
                         .collection("score_items")
                         .get()
                         .addOnSuccessListener {
@@ -148,7 +144,34 @@ class AddScoreActivity : AppCompatActivity(), AddItemGradeDialogFragment.OnSaveC
                             }
                             val syllabusGrade = scoresSum / scoresCounter
 
-                            syllabusItemRef.update("syllabusGrade", syllabusGrade)
+                            syllabusItemRef.update("syllabusGrade", syllabusGrade).addOnSuccessListener {
+                                classItemRef
+                                    .collection("syllabus_items")
+                                    .get()
+                                    .addOnSuccessListener {
+                                        var scoresSum = 0.0
+                                        var weightSum = 0.0
+
+                                        for (scores in it) {
+                                            if(scores.exists()) {
+                                                if (scores["syllabusGrade"] != 420.0) {
+                                                    weightSum += BigDecimal(scores["weight"].toString()).toDouble()
+
+                                                    val syllabusGrade = BigDecimal(scores["syllabusGrade"].toString())
+                                                    val weight = BigDecimal(scores["weight"].toString()).divide(
+                                                        BigDecimal(100), 2, RoundingMode.HALF_EVEN)
+                                                    val weightFraction = syllabusGrade.multiply(weight).toDouble()
+
+                                                    scoresSum += weightFraction
+                                                }
+                                            }
+                                        }
+
+                                        val classGrade = (scoresSum / weightSum) * 100
+
+                                        classItemRef.update("grade", classGrade)
+                                    }
+                            }
                         }
                 }
             }
