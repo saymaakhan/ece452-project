@@ -70,7 +70,7 @@ class SingleChat : AppCompatActivity() {
         val userName = intent.getSerializableExtra("ChatUser" ) as String
         peerName = userName
 
-        getUserMessages(messagesRef, peerName);
+        getUserMessages(messagesRef, peerName)
 
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_chat_space)
         recyclerview.layoutManager=LinearLayoutManager(this)
@@ -115,7 +115,6 @@ class SingleChat : AppCompatActivity() {
 
     private fun getUserMessages(dbref : DatabaseReference, peer : String ) {
         val list = dbref.child("sender")
-        Log.d(TAG, "yoooooo")
         Log.d(TAG, "list: $list.toString()")
         val userName = getUserName()
         dbref.addValueEventListener(object : ValueEventListener {
