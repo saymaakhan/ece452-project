@@ -18,6 +18,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
+import biweekly.Biweekly
+import biweekly.ICalendar
+import biweekly.component.VEvent
+import java.io.File
+import androidx.core.content.FileProvider
+import biweekly.property.DateStart
+import biweekly.property.Summary
 
 class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateListener {
 
@@ -39,7 +46,7 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
         // Set click listener for the FAB button to open the date picker
         binding.fabButton.setOnClickListener { openDatePicker() }
         binding.calendarView.setOnDayClickListener(this)
-        
+
         // Set the current activity as the listener for day clicks on the calendar
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -57,6 +64,9 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
                 finish()
             }
         }
+
+        // Button listening to evoke function
+        binding.icsButton.setOnClickListener { createICSFile() }
     }
 
     // Open the date picker dialog when the FAB button is clicked
@@ -110,5 +120,47 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
         const val CALENDAR_EXTRA = "calendar"
         const val NOTE_EXTRA = "note"
         const val RESULT_CODE = 8
+    }
+
+    // Create the ICS file and make it a clickable link
+    private fun createICSFile() {
+        val iCalendar = ICalendar()
+
+        // Iterate EventDay map and create exportable file
+        for (entry in notes.entries) {
+            val eventDay = entry.key
+            val note = entry.value
+
+            val vEvent = VEvent()
+            val startDate: Date = eventDay.calendar.time
+            val dateStart = DateStart(startDate)
+            vEvent.dateStart = dateStart
+
+            // Set the event summary as the note content
+            vEvent.summary = Summary(note)
+
+            iCalendar.addEvent(vEvent)
+        }
+
+        // iCalendar object
+        val fileName = "events.ics"
+        val icsFile = File(filesDir, fileName)
+
+        icsFile.bufferedWriter().use { writer ->
+            Biweekly.write(iCalendar).go(writer)
+        }
+
+        // Create URI for the ICS
+        val uri = FileProvider.getUriForFile(this, "${packageName}.fileprovider", icsFile)
+
+        // Usable apps and permissions
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/calendar"
+        intent.putExtra(Intent.EXTRA_STREAM, uri)
+
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+
+        // Export file
+        startActivity(Intent.createChooser(intent, "Export ICS"))
     }
 }
