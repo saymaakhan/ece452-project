@@ -36,8 +36,8 @@ class DiscussionForumChat : AppCompatActivity() {
 
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_discussion_forum_space)
         recyclerview.layoutManager=LinearLayoutManager(this)
-        val adapter = DiscussionForumChatMessageAdapter(startupMessages)
-        recyclerview.adapter = adapter
+//        val adapter = DiscussionForumChatMessageAdapter(startupMessages)
+//        recyclerview.adapter = adapter
 
         val channelName  = findViewById<Toolbar>(R.id.toolbar_discussion_forum_channel)
         channelName.title = topicName
@@ -62,15 +62,15 @@ class DiscussionForumChat : AppCompatActivity() {
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_discussion_forum_space)
         val adapter = recyclerview.adapter as DiscussionForumChatMessageAdapter
         val index = adapter.itemCount
-        adapter.addMessage(newMessage)
+//        adapter.addMessage(newMessage)
 
         val messageSource = DiscussionForumMessageSource()
         val responseMessage1 = messageSource.getResponseMessage(responseIndex, topicName,"John")
-        adapter.addMessage(responseMessage1)
+//        adapter.addMessage(responseMessage1)
         responseIndex = responseIndex + 1
 
         val responseMessage2 = messageSource.getResponseMessage(responseIndex, topicName,"Anna")
-        adapter.addMessage(responseMessage2)
+//        adapter.addMessage(responseMessage2)
         responseIndex = responseIndex + 1
 
         adapter.notifyItemRangeChanged(index, 3)
