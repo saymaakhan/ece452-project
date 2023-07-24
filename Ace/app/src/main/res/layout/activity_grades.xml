@@ -87,4 +87,16 @@
         android:src="@drawable/ic_vector_add_24dp"
         android:tint="@color/white" />
 
+    <Button
+        android:id="@+id/btnInsights"
+        android:text="Insights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>
