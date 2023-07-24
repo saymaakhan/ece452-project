@@ -87,6 +87,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
 
                     val userObject = UserInfo(userId)
                     firestore.collection("user_enrolled_classes").document(className).collection("users").document(userId).set(userObject)
+                    firestore.collection("user_enrolled_classes").document(className).set(hashMapOf("test" to 1))
 
                     // Set an onClickListener for the class entry to open the GradesActivity
                     classEntryView.setOnClickListener {
