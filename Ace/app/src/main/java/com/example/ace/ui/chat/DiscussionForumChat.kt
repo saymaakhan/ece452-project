@@ -128,7 +128,6 @@ class DiscussionForumChat : AppCompatActivity() {
                                 messagesReceivedList.add(child)
                             }
                         }
-                        Log.d(TAG, "child: $child")
                     }
                 }
                 Log.d(TAG, "Received: ${messagesReceivedList.toString()}")

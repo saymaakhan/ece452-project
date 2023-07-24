@@ -44,7 +44,6 @@ class DiscussionForumChatMessageAdapter(private val options: FirebaseRecyclerOpt
         position: Int,
         model: DiscussionMessage
     ) {
-        Log.d(TAG, "AHHHHHH")
         val message = getItem(position)
 
         if (holder.getItemViewType() == SENT_MESSAGE) {

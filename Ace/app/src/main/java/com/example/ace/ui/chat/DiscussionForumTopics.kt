@@ -47,7 +47,6 @@ class DiscussionForumTopics : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     var topics : MutableList<DiscussionForumTopic> = mutableListOf()
-                    Log.d(TAG,"SUCCESSFUL: ${task.result.size()}")
                     for (document in task.result) {
                         val docID = document.id
                         val users = classes.document(docID).collection("users")
@@ -56,7 +55,6 @@ class DiscussionForumTopics : AppCompatActivity() {
                                 for (user in it.result) {
                                     val userID = user.data["uid"].toString()
                                     if (userID == currUser) {
-                                        Log.d(TAG, "Discussion name: $docID")
                                         topics.add(DiscussionForumTopic(docID))
                                     }
                                 }

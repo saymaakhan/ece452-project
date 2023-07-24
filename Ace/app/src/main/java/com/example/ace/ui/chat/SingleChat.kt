@@ -129,7 +129,6 @@ class SingleChat : AppCompatActivity() {
                         if (child.sender == userName && child.receiver == peer) {
                             messagesSentList.add(child)
                         }
-                        Log.d(TAG, "child: $child")
                     }
                 }
                 Log.d(TAG, "Received: ${messagesReceivedList.toString()}")
