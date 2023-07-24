@@ -72,7 +72,6 @@ class ChatContacts : AppCompatActivity() {
                         finish()
                     }
                         recyclerview.adapter = adapter
-                        Log.d(TAG, users.toString())
                     }
 
                  else {

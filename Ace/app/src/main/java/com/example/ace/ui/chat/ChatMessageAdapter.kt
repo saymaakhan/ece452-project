@@ -76,7 +76,6 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
 
         override fun bind (message : ChatMessage) {
             messageTextView.text = message.message
-            Log.d(TAG, "MessageTextView: ${messageTextView.text}")
             val dt = message.timestamp?.let { Date(it) }
             timeTextView.text = dt.toString()
         }
@@ -88,7 +87,6 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
 
         override fun bind(message : ChatMessage) {
             messageTextView.text = message.message
-            Log.d(TAG, "Received MessageTextView: ${messageTextView.text}")
             val dt = message.timestamp?.let { Date(it) }
             timeTextView.text = dt.toString()
         }

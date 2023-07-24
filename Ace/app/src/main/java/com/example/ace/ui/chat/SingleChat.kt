@@ -66,11 +66,10 @@ class SingleChat : AppCompatActivity() {
         manager.stackFromEnd = true
 
 
-
         val userName = intent.getSerializableExtra("ChatUser" ) as String
         peerName = userName
 
-        getUserMessages(messagesRef, peerName);
+        getUserMessages(messagesRef, peerName)
 
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_chat_space)
         recyclerview.layoutManager=LinearLayoutManager(this)
@@ -78,7 +77,7 @@ class SingleChat : AppCompatActivity() {
         recyclerview.adapter = adapter
 
         adapter.registerAdapterDataObserver(
-            ScrollToBottom(binding.recyclerChatSpace, adapter, manager)
+            ScrollToBottomSingleChat(binding.recyclerChatSpace, adapter, manager)
         )
 
         val directMessageUserName  = findViewById<Toolbar>(R.id.toolbar_chatchannel)
@@ -114,9 +113,6 @@ class SingleChat : AppCompatActivity() {
     }
 
     private fun getUserMessages(dbref : DatabaseReference, peer : String ) {
-        val list = dbref.child("sender")
-        Log.d(TAG, "yoooooo")
-        Log.d(TAG, "list: $list.toString()")
         val userName = getUserName()
         dbref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -133,7 +129,6 @@ class SingleChat : AppCompatActivity() {
                         if (child.sender == userName && child.receiver == peer) {
                             messagesSentList.add(child)
                         }
-                        Log.d(TAG, "child: $child")
                     }
                 }
                 Log.d(TAG, "Received: ${messagesReceivedList.toString()}")
