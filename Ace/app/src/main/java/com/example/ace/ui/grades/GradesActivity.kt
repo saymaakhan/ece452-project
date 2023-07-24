@@ -77,7 +77,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                 .addOnSuccessListener {
                     val classEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerClasses, false)
                     classEntryView.findViewById<TextView>(R.id.tvClassName).text = className
-                    classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: --%"
+                    classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: ??.??%"
                     classEntryView.findViewById<ImageView>(R.id.letterGradeImageView).setImageResource(R.drawable.letter_unknown)
 
                     containerClasses.addView(classEntryView)
