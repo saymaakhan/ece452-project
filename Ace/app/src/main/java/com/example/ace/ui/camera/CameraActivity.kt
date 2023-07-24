@@ -3,6 +3,7 @@ package com.example.ace.ui.camera
 import com.example.ace.R
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -41,14 +42,7 @@ import java.util.Locale
 
 class CameraActivity : AppCompatActivity() {
 
-
-    private val STORAGE_CODE = 1001
     lateinit var mStorage : StorageReference
-
-    private val CLIPBOARD_SERVICE: String
-        get() {
-            TODO()
-        }
     var clear: ImageView? = null
     var getImage: ImageView? = null
     var copy: ImageView? = null
@@ -70,24 +64,6 @@ class CameraActivity : AppCompatActivity() {
         mStorage = FirebaseStorage.getInstance().reference
         val pdf = btnGeneratePdf
 
-
-//        if(pdf is Button){
-//            pdf.setOnClickListener{
-//                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
-//                    if(checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                        == PackageManager.PERMISSION_DENIED)
-//                    {
-//                        val permission = arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                        requestPermissions(permission, STORAGE_CODE)
-//                    } else {
-//                        savePDF()
-//                    }
-//                } else {
-//                    savePDF()
-//                }
-//            }
-//
-//        }
 
         if(pdf is Button){
             pdf.setOnClickListener{
@@ -124,19 +100,11 @@ class CameraActivity : AppCompatActivity() {
                 val textValue = recgText
                 val text = textValue?.getText().toString()
                 if (text.isEmpty()) {
-                    Toast.makeText(this@CameraActivity, "there is no text to copy", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@CameraActivity, "There is no text to copy", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    val clipboardManager =
-                        getSystemService(this@CameraActivity.CLIPBOARD_SERVICE) as ClipboardManager
-                    if (textValue is EditText) {
-                        val clipData = ClipData.newPlainText("Data", textValue.getText().toString())
 
-                    }
-                    val clipData: ClipData = ClipData.newPlainText("", "")
-                    clipboardManager.setPrimaryClip(clipData)
-                    Toast.makeText(this@CameraActivity, "Text copied to clipboard", Toast.LENGTH_SHORT)
-                        .show()
+                    copyToClipboard(text)
                 }
             })
         }
@@ -155,6 +123,14 @@ class CameraActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+
+    private fun copyToClipboard(text: String) {
+        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText("Copied Text", text)
+        clipboard.setPrimaryClip(clip)
+        Toast.makeText(this@CameraActivity, "Text copied to clipboard!", Toast.LENGTH_SHORT).show()
+
     }
 
     private fun generatePdfByteArray(): ByteArray {
