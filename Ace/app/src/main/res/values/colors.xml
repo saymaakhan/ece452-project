@@ -33,6 +33,6 @@
     <color name= "colorNoteColor4">#3A52Fc</color>> 
     <color name= "colorNoteColors">#000000</color>>
     <color name= "colorDelete">#FF4842</color>>
-    <color name="colorsearchBackground"></color>
+    <color name="colorsearchBackground">#333333</color>
 
 </resources>
