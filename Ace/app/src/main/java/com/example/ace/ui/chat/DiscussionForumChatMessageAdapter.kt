@@ -9,9 +9,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.R
 
 import com.example.ace.data.model.ChatMessage
+import com.example.ace.data.model.DiscussionMessage
+import com.firebase.ui.database.FirebaseRecyclerAdapter
+import com.firebase.ui.database.FirebaseRecyclerOptions
 import java.util.Date
 
-class DiscussionForumChatMessageAdapter(private val mList: MutableList<ChatMessage>) : RecyclerView.Adapter<DiscussionForumChatMessageAdapter.ViewHolder>() {
+class DiscussionForumChatMessageAdapter(private val options: FirebaseRecyclerOptions<DiscussionMessage>,
+                                        private val messagesReceived: ArrayList<ChatMessage>,
+                                        private val messagesSent: ArrayList<ChatMessage>,
+                                        private val currentUserName: String?,
+                                        private val otherUser: String?
+) : FirebaseRecyclerAdapter<DiscussionMessage, RecyclerView.ViewHolder>(options) {
+    private final val NONE : Int = 0
     private final val SENT_MESSAGE : Int = 1
     private final val RECEIVE_MESSAGE: Int = 2
 
@@ -26,36 +35,45 @@ class DiscussionForumChatMessageAdapter(private val mList: MutableList<ChatMessa
         }
     }
 
-    fun addMessage(msg:ChatMessage) {
-        mList.add(msg)
-    }
-
-    override fun getItemViewType(position: Int) : Int {
-        val message : ChatMessage = mList[position]
-
-        if (message.sender.equals("self") ) {
-            return SENT_MESSAGE
-        }
-        else {
-            return RECEIVE_MESSAGE
-        }
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val message = mList[position]
+    override fun onBindViewHolder(
+        holder: RecyclerView.ViewHolder,
+        position: Int,
+        model: DiscussionMessage
+    ) {
+        val message = getItem(position)
 
         if (holder.getItemViewType() == SENT_MESSAGE) {
             val h : SentMessageHolder = holder as SentMessageHolder
-            h.bind(message)
+//            h.bind(message)
         }
         else {
             val h : ReceivedMessageHolder = holder as ReceivedMessageHolder
-            h.bind(message)
+//            h.bind(message)
         }
     }
 
+//    fun addMessage(msg:ChatMessage) {
+//        mList.add(msg)
+//    }
+
+    override fun getItemViewType(position: Int) : Int {
+        val message = getItem(position)
+        val users =
+//        if (message.message.sender == currentUserName && message.receiver == otherUser) {
+//            return SENT_MESSAGE
+//        } else if (message.sender == otherUser && message.receiver == currentUserName){
+//            return RECEIVE_MESSAGE
+//        }
+        return NONE
+    }
+
+//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+//
+//    }
+
     override fun getItemCount(): Int {
-        return mList.size
+//        return mList.size
+        return 0
     }
 
     open class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {

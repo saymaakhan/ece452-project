@@ -1,42 +1,83 @@
 package com.example.ace.ui.chat
 
+import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.compose.ui.text.toLowerCase
 import com.example.ace.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.databinding.ActivityDiscussionForumTopicsBinding
 import com.example.ace.data.model.DiscussionForumTopic
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 
 class DiscussionForumTopics : AppCompatActivity() {
     private lateinit var binding: ActivityDiscussionForumTopicsBinding
-
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityDiscussionForumTopicsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // -- Create a list of discussion thread topics
-        val topics : MutableList<DiscussionForumTopic> = mutableListOf()
-        val topic1 = DiscussionForumTopic(topicName = "ECE 452: Question about exam?")
-        val topic2 = DiscussionForumTopic(topicName = "CLAS 104: Textbook for course?")
-        val topic3 = DiscussionForumTopic(topicName = "Campus Events: When is semi?")
-        topics.add(topic1)
-        topics.add(topic2)
-        topics.add(topic3)
-
+        auth = Firebase.auth
+        loadCoursesFromFirestore()
+    }
+    private fun getUserName(): String? {
+        val user = auth.currentUser
+        return user?.uid ?: SingleChat.ANONYMOUS
+    }
+    private fun loadCoursesFromFirestore() {
+        val firebaseAuth = FirebaseAuth.getInstance()
+        val userId = firebaseAuth.currentUser?.uid
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_discussion_forum_topics)
         recyclerview.layoutManager= LinearLayoutManager(this)
-        val adapter = DiscussionForumTopicsAdapter(topics){ topic: DiscussionForumTopic, position: Int ->
-            val topicName = topic.topicName
-            val intent = Intent(this, DiscussionForumChat::class.java)
-            intent.putExtra("topic", topicName )
-            startActivity(intent)
-            finish()
+        val currUser = getUserName()
+        Log.d(TAG, "curr user: $currUser")
+        if (userId != null) {
+            val firestore = FirebaseFirestore.getInstance()
+            val classes = firestore.collection("user_enrolled_classes")
+            classes
+                .get()
+                .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    var topics : MutableList<DiscussionForumTopic> = mutableListOf()
+                    Log.d(TAG,"SUCCESSFUL: ${task.result.size()}")
+                    for (document in task.result) {
+                        val docID = document.id
+                        val users = classes.document(docID).collection("users")
+                        users.get().addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                for (user in it.result) {
+                                    val userID = user.data["uid"].toString()
+                                    if (userID == currUser) {
+                                        Log.d(TAG, "Discussion name: $docID")
+                                        topics.add(DiscussionForumTopic(docID))
+                                    }
+                                }
+                            }
+                            val adapter =
+                                DiscussionForumTopicsAdapter(topics) { topic: DiscussionForumTopic, position: Int ->
+                                    val topicName = topic.topicName
+                                    val intent = Intent(this, DiscussionForumChat::class.java)
+                                    intent.putExtra("topic", topicName)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                            recyclerview.adapter = adapter
+                        }
+                    }
+                }
+
+                else {
+                    Log.d(TAG, "Error getting documents: ", task.exception)
+                }
+            }
         }
-        recyclerview.adapter = adapter
     }
 }
