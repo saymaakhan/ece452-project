@@ -15,6 +15,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import java.math.BigDecimal
 import java.math.RoundingMode
+import android.app.Dialog
+import android.widget.Button
+
+private lateinit var btnInsights: Button
 
 data class ClassInfo(
     var className: String? = null,
@@ -31,10 +35,16 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
     private lateinit var tvCumulativeAverage: TextView
     private lateinit var tvNoClassesMessage: TextView
 
+    private var lowestGrade: Double = Double.MAX_VALUE
+    private var highestGrade: Double = Double.MIN_VALUE
+    private var lowestCourse:String = ""
+    private var highestCourse:String = ""
+
     override fun onResume() {
         super.onResume()
         loadClassesFromFirestore()
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grades)
@@ -54,6 +64,27 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
             addClassDialog.show(supportFragmentManager, "AddClassDialogFragment")
         }
 
+        // Find Insights button and listen
+        btnInsights = findViewById(R.id.btnInsights)
+        btnInsights.setOnClickListener {
+            showInsightsModal()
+        }
+
+    }
+
+    private fun showInsightsModal() {
+        // Create
+        val dialog = Dialog(this)
+
+        // Set the content view to the custom dialog layout
+        dialog.setContentView(R.layout.dialog_insights)
+
+        val text_dialog = dialog.findViewById<TextView>(R.id.text_dialog)
+        text_dialog.text = "Great job in " + highestCourse + "! You are " +
+                "excelling. Now, it is recommended you focus on studying " +
+                "for " +lowestCourse + ". Good luck!"
+
+        dialog.show()
     }
 
     override fun onSaveClicked(className: String) {
@@ -182,6 +213,18 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                                     intent.putExtra("class_name", className)
                                     startActivity(intent)
                                 }
+
+                                // Calculate the lowest grade
+                                if (grade.toDouble() < lowestGrade) {
+                                    lowestGrade = grade.toDouble()
+                                    lowestCourse = className.toString()
+                                }
+
+                                // Calculate the highest grade
+                                if (grade.toDouble() > highestGrade) {
+                                    highestGrade = grade.toDouble()
+                                    highestCourse = className.toString()
+                                }
                             }
 
                             if (documentSnapshot.data["grade"] != 420.0) {
@@ -196,6 +239,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                         val roundCumulativeGrade = BigDecimal(cumulativeGrade.toString()).setScale(2, RoundingMode.HALF_EVEN)
                         tvCumulativeAverage.text = "Cumulative Average: $roundCumulativeGrade%"
                     }
+
                 }
                 .addOnFailureListener { exception ->
                     // Error retrieving classes
@@ -205,4 +249,5 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
             // User is not logged in, handle this case if needed
         }
     }
+
 }
