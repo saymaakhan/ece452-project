@@ -66,7 +66,6 @@ class SingleChat : AppCompatActivity() {
         manager.stackFromEnd = true
 
 
-
         val userName = intent.getSerializableExtra("ChatUser" ) as String
         peerName = userName
 
@@ -78,7 +77,7 @@ class SingleChat : AppCompatActivity() {
         recyclerview.adapter = adapter
 
         adapter.registerAdapterDataObserver(
-            ScrollToBottom(binding.recyclerChatSpace, adapter, manager)
+            ScrollToBottomSingleChat(binding.recyclerChatSpace, adapter, manager)
         )
 
         val directMessageUserName  = findViewById<Toolbar>(R.id.toolbar_chatchannel)
@@ -114,8 +113,6 @@ class SingleChat : AppCompatActivity() {
     }
 
     private fun getUserMessages(dbref : DatabaseReference, peer : String ) {
-        val list = dbref.child("sender")
-        Log.d(TAG, "list: $list.toString()")
         val userName = getUserName()
         dbref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

@@ -24,8 +24,11 @@ import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -38,6 +41,7 @@ class DiscussionForumChat : AppCompatActivity() {
     private var responseIndex : Int = 0
     private var topicName : String = ""
     private lateinit var manager: LinearLayoutManager
+    private var adapter: DiscussionForumChatMessageAdapter? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseDatabase
     private lateinit var messagesReceivedList: ArrayList<DiscussionMessage>
@@ -62,8 +66,8 @@ class DiscussionForumChat : AppCompatActivity() {
         messagesReceivedList = ArrayList()
         messagesSentList = ArrayList()
 
-        val options = FirebaseRecyclerOptions.Builder<ChatMessage>()
-            .setQuery(discRef, ChatMessage::class.java)
+        val options = FirebaseRecyclerOptions.Builder<DiscussionMessage>()
+            .setQuery(discRef, DiscussionMessage::class.java)
             .build()
         manager = LinearLayoutManager(this)
         manager.stackFromEnd = true
@@ -75,12 +79,13 @@ class DiscussionForumChat : AppCompatActivity() {
 
         val recyclerview : RecyclerView = findViewById<RecyclerView>(R.id.recycler_discussion_forum_space)
         recyclerview.layoutManager=LinearLayoutManager(this)
-//        val adapter = DiscussionForumChatMessageAdapter(startupMessages)
-//        recyclerview.adapter = adapter
-//
-//        adapter.registerAdapterDataObserver(
-//            ScrollToBottom(binding.recyclerChatSpace, adapter, manager)
-//        )
+        adapter = DiscussionForumChatMessageAdapter(options, messagesReceivedList,
+            messagesSentList, getUserName(), topicName)
+        recyclerview.adapter = adapter
+
+        adapter!!.registerAdapterDataObserver(
+            ScrollToBottomDiscussion(binding.recyclerDiscussionForumSpace, adapter!!, manager)
+        )
 
         val channelName  = findViewById<Toolbar>(R.id.toolbar_discussion_forum_channel)
         channelName.title = topicName
@@ -100,62 +105,40 @@ class DiscussionForumChat : AppCompatActivity() {
         val text = binding.editDiscussionForumMessage.text.toString()
         val timeStamp = Timestamp(System.currentTimeMillis()).time
         val user = getUserName() as String
-
-        val receivers_uid = ArrayList<String>()
-        val receivers = ArrayList<String>()
-        val firestore = FirebaseFirestore.getInstance()
-        val userCourses = firestore.collection("user_enrolled_classes")
-
-        userCourses.document(topicName).collection("users").get()
-            .addOnSuccessListener { querySnapshot ->
-                for (userResult in querySnapshot) {
-                    if (userResult.exists()) {
-                        val uid = userResult.getString("uid")
-                        uid?.let { receivers_uid.add(it) }
-                    }
-                }
-
-                // References: https://stackoverflow.com/questions/62835609/which-is-more-preferred-whenallsuccess-or-a-batch-in-firestore
-                // https://stackoverflow.com/questions/51892766/android-firestore-convert-array-of-document-references-to-listpojo/51897261
-                val userRef = firestore.collection("users")
-                val tasks: MutableList<Task<DocumentSnapshot>> = mutableListOf()
-
-                for (receiver in receivers_uid) {
-                    val task = userRef.document(receiver).get()
-                    tasks.add(task)
-                }
-
-                Tasks.whenAllSuccess<DocumentSnapshot>(tasks)
-                    .addOnSuccessListener { snapshots ->
-                        for (snapshot in snapshots) {
-                            if (snapshot.exists()) {
-                                val name = snapshot.getString("displayName")
-                                if (name != user) {
-                                    name?.let {
-                                        Log.d(TAG, "User: $it")
-                                        receivers.add(it)
-                                    }
-                                }
-                            }
-                        }
-
-                        Log.d(TAG, "Receivers: ${receivers.toString()}")
-                        val newMessage = DiscussionMessage(course=topicName, sender=user, timestamp=timeStamp, message=text, users =receivers)
-                        db.reference.child(DISCUSSION_CHILD).push().setValue(newMessage)
-                        Log.d(TAG,"done")
-                    }
-                    .addOnFailureListener { exception ->
-                        Log.e(TAG, "Error getting users: ", exception)
-                    }
-            }
-            .addOnFailureListener { exception ->
-                Log.e(TAG, "Error getting users' UIDs: ", exception)
-            }
+        val newMessage = DiscussionMessage(course=topicName, sender=user, timestamp=timeStamp, message=text)
+        db.reference.child(DISCUSSION_CHILD).push().setValue(newMessage)
         binding.editDiscussionForumMessage.text.clear()
     }
 
     private fun getUserDiscussionMessages(dbref : DatabaseReference, course : String) {
+        val user = getUserName()
+        dbref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // Iterate through all the children of the "data" node
+                messagesSentList.clear()
+                messagesReceivedList.clear()
+                for (childSnapshot in dataSnapshot.children) {
+                    val child = childSnapshot.getValue(DiscussionMessage::class.java)
+                    // Access the data for each child
+                    if (child != null) {
+                        if (child.course == course) {
+                            if (child.sender == user) {
+                                messagesSentList.add(child)
+                            } else {
+                                messagesReceivedList.add(child)
+                            }
+                        }
+                        Log.d(TAG, "child: $child")
+                    }
+                }
+                Log.d(TAG, "Received: ${messagesReceivedList.toString()}")
+                Log.d(TAG, "Sent: ${messagesSentList.toString()}")
+            }
 
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+            }
+        })
     }
 
     private fun getUserName(): String? {
@@ -163,6 +146,16 @@ class DiscussionForumChat : AppCompatActivity() {
         return if (user != null) {
             user.displayName
         } else SingleChat.ANONYMOUS
+    }
+
+    public override fun onPause() {
+        adapter?.stopListening()
+        super.onPause()
+    }
+
+    public override fun onResume() {
+        super.onResume()
+        adapter?.startListening()
     }
 
     companion object {

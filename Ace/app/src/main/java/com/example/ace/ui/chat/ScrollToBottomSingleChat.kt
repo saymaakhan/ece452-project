@@ -4,7 +4,7 @@ package com.example.ace.ui.chat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class ScrollToBottom(
+class ScrollToBottomSingleChat(
     private val recycler: RecyclerView,
     private val adapter: ChatMessageAdapter,
     private val manager: LinearLayoutManager
