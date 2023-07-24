@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import androidx.compose.ui.text.toLowerCase
 import com.example.ace.R
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +26,12 @@ class DiscussionForumTopics : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDiscussionForumTopicsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val logoPictureView : ImageView =  findViewById(R.id.logo_icon)
+        logoPictureView.setImageResource(R.drawable.loginlogo)
+        val iconPictureView : ImageView =  findViewById(R.id.icon_account_picture)
+        iconPictureView.setImageResource(R.drawable.iconaccountpic)
+
         auth = Firebase.auth
         loadCoursesFromFirestore()
     }

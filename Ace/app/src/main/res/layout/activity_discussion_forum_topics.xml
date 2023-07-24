@@ -7,32 +7,44 @@
     android:background="#323131"
     tools:context=".ui.chat.DiscussionForumTopics">
 
+    <ImageView
+        android:id="@+id/logo_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/layout_discussion_forum"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/icon_account_picture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/discussion_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="5dp"
+        android:text="DISCUSSIONS"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_icon" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_discussion_forum"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#323131"
-            app:subtitleTextColor="#FFFFFF"
-            app:title="School Forum"
-            app:titleTextColor="#FFFFFF">
-
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_discussion_forum_topics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/layout_discussion_forum"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/discussion_title"
         tools:itemCount="5"
         tools:listitem="@layout/item_forum_topic" />
 
