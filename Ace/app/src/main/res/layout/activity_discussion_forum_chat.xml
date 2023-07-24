@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".ui.chat.DiscussionForumChat">
-
-<com.google.android.material.appbar.AppBarLayout
-    android:id="@+id/layout_discussion_forum"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_height="match_parent"
+    android:background="#323131"
+    tools:context=".ui.chat.DiscussionForumChat">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_discussion_forum_channel"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#323131"
-        app:subtitleTextColor="#FFFFFF"
-        app:titleTextColor="#FFFFFF">
+    <ImageView
+        android:id="@+id/logo_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/discussion_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_icon" />
 
     <Button
         android:id="@+id/horizontal_barrier"
@@ -33,81 +34,84 @@ tools:context=".ui.chat.DiscussionForumChat">
         android:backgroundTint="#F44336"
         android:textColor="#F44336"
         android:textColorHint="#F44336"
-        app:cornerRadius="32dp" />
+        app:cornerRadius="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/discussion_name" />
 
-</com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_discussion_forum_space"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="16dp"
-        android:background="#00323131"
+        android:background="#323131"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@+id/text_discussion_forum_indicator"
-        app:layout_constraintTop_toBottomOf="@+id/layout_discussion_forum"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_barrier"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp" />
 
-<TextView
-    android:id="@+id/text_discussion_forum_indicator"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:visibility="gone"
-    app:layout_constraintBottom_toTopOf="@id/view"
-    app:layout_constraintStart_toStartOf="parent" />
-
-<View
-    android:id="@+id/view"
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="#e0e0e0"
-    app:layout_constraintBottom_toTopOf="@+id/layout_discussion_forum_chatbox" />
-
-<RelativeLayout
-    android:id="@+id/layout_discussion_forum_chatbox"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
-
-
-    <EditText
-        android:id="@+id/edit_discussion_forum_message"
+    <TextView
+        android:id="@+id/text_discussion_forum_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_marginStart="16dp"
-        android:layout_marginRight="8dp"
-        android:layout_toStartOf="@+id/button_discussion_forum_send"
-        android:background="@android:color/transparent"
-        android:hint="Enter Message"
-        android:inputType="text"
-        android:maxLines="6"
-        android:paddingHorizontal="8dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        tools:ignore="Autofill" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button_discussion_forum_send"
-        android:layout_width="wrap_content"
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e0e0e0"
+        app:layout_constraintBottom_toTopOf="@+id/layout_discussion_forum_chatbox" />
+
+    <RelativeLayout
+        android:id="@+id/layout_discussion_forum_chatbox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/button_discussion_forum_close"
-        android:background="?attr/selectableItemBackground"
-        android:text="Send"
-        android:textColor="@color/primary" />
+        android:background="#323131"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/button_discussion_forum_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:background="?attr/selectableItemBackground"
-        android:text="Close"
-        android:textColor="@color/primary" />
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/edit_discussion_forum_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_toStartOf="@+id/button_discussion_forum_send"
+            android:background="@android:color/transparent"
+            android:hint="Enter Message"
+            android:inputType="text"
+            android:maxLines="6"
+            android:paddingHorizontal="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/white"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/button_discussion_forum_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/button_discussion_forum_close"
+            android:background="?attr/selectableItemBackground"
+            android:text="Send"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button_discussion_forum_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackground"
+            android:text="Close"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
