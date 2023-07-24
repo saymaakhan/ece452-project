@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.util.Log
 import com.example.ace.R
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,6 +44,11 @@ class SingleChat : AppCompatActivity() {
 
         binding = ActivitySingleChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val logoPictureView : ImageView =  findViewById(R.id.logo_icon)
+        logoPictureView.setImageResource(R.drawable.loginlogo)
+        val iconPictureView : ImageView =  findViewById(R.id.icon_account_picture)
+        iconPictureView.setImageResource(R.drawable.iconaccountpic)
 
         auth = Firebase.auth
         if (auth.currentUser == null) {
@@ -80,8 +87,8 @@ class SingleChat : AppCompatActivity() {
             ScrollToBottomSingleChat(binding.recyclerChatSpace, adapter, manager)
         )
 
-        val directMessageUserName  = findViewById<Toolbar>(R.id.toolbar_chatchannel)
-        directMessageUserName.title = peerName
+        val directMessageUserName: TextView = findViewById(R.id.contact_name)
+        directMessageUserName.text = peerName
 
         val sendButton : View = findViewById(R.id.button_chat_send)
         sendButton.setOnClickListener {

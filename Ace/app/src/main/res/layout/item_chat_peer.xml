@@ -39,6 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:background="#AE9A9999"
                 android:maxWidth="260dp"
                 android:paddingLeft="12dp"
                 android:paddingTop="8dp"
