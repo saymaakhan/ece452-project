@@ -23,26 +23,43 @@
                 android:background="@drawable/top_background">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="32dp"
                     android:text="LeBron James"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/profile_avatar"
-                    app:layout_constraintStart_toStartOf="@+id/profile_avatar"
-                    app:layout_constraintTop_toBottomOf="@+id/profile_avatar" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.507"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/avatar"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/edit_avatar"
+                    android:layout_width="67dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="80dp"
+                    android:text="Edit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.633"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/avatar" />
 
                 <ImageView
-                    android:id="@+id/profile_avatar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/avatar"
+                    android:layout_width="108dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@drawable/face_48px"
-                    tools:layout_editor_absoluteY="37dp" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.19"
+                    app:srcCompat="@drawable/user_avatar_profile" />
 
                 <ImageView
                     android:id="@+id/circles"
@@ -52,6 +69,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.507"
                     app:srcCompat="@drawable/circles" />
 
 
@@ -62,30 +80,57 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <HorizontalScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:fillViewport="true">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="264dp">
 
-                            <ImageView
-                                android:id="@+id/button_background"
-                                android:layout_width="100dp"
-                                android:layout_height="97dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
+
+                            <TextView
+                                android:id="@+id/myCourses"
+                                android:layout_width="129dp"
+                                android:layout_height="27dp"
+                                android:layout_marginTop="16dp"
+                                android:text="My Courses"
+                                android:textColor="#000000"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.084"
+                                app:layout_constraintHorizontal_bias="0.056"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imageView19"
+                                android:layout_width="287dp"
+                                android:layout_height="48dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/myCourses"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.129"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.534"
+                                app:layout_constraintVertical_bias="1.0"
+                                app:srcCompat="@drawable/underline" />
+
+                            <ImageView
+                                android:id="@+id/button_background"
+                                android:layout_width="113dp"
+                                android:layout_height="115dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.09"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.503"
                                 app:srcCompat="@drawable/profile_button" />
 
                             <ImageView
@@ -112,10 +157,37 @@
                                 app:layout_constraintStart_toStartOf="@+id/book"
                                 app:layout_constraintTop_toBottomOf="@+id/book" />
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                            <Button
+                                android:id="@+id/button3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="26dp"
+                                android:layout_marginTop="60dp"
+                                android:layout_marginEnd="51dp"
+                                android:layout_marginBottom="112dp"
+                                android:text="Button"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/button4"
+                                app:layout_constraintStart_toEndOf="@+id/button_background"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView19" />
 
+                            <Button
+                                android:id="@+id/button4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="51dp"
+                                android:layout_marginTop="104dp"
+                                android:layout_marginBottom="112dp"
+                                android:text="Button"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/button3"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
-                </LinearLayout>
+                </HorizontalScrollView>
+
             </LinearLayout>
         </LinearLayout>
 

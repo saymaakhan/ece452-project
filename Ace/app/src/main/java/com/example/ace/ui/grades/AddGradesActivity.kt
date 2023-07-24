@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -87,6 +88,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
 
                     syllabusEntryView.findViewById<TextView>(R.id.tvClassName).text = itemName
                     syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "-- / $itemWeight: ??%"
+                    syllabusEntryView.findViewById<ImageView>(R.id.letterGradeImageView).visibility = View.GONE
 
                     containerSyllabus.addView(syllabusEntryView)
 
@@ -150,7 +152,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                     if (documentSnapshot.exists()) {
                         tvNoSyllabusMessage.visibility = View.GONE
                         containerSyllabus.visibility = View.VISIBLE
-                        
+
                         val syllabusItemName = documentSnapshot.data["syllabusItemName"]
                         val weight = documentSnapshot.data["weight"]
                         val syllabusGrade = documentSnapshot.data["syllabusGrade"]
@@ -158,6 +160,7 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                         val syllabusEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerSyllabus, false)
 
                         syllabusEntryView.findViewById<TextView>(R.id.tvClassName).text = syllabusItemName as CharSequence?
+                        syllabusEntryView.findViewById<ImageView>(R.id.letterGradeImageView).visibility = View.GONE
 
                         if (syllabusGrade == 420.0) {
                             syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "-- / $weight: ??%"
@@ -166,8 +169,9 @@ class AddGradesActivity : AppCompatActivity(), AddSyllabusItemDialogFragment.OnS
                             val weightFraction = weightPercentage.divide(BigDecimal(100), 2, RoundingMode.HALF_EVEN) // Divide by 100
                             val weightGrade = BigDecimal(syllabusGrade.toString()).multiply(weightFraction)
                             val roundedWeightGrade = weightGrade.setScale(2, RoundingMode.HALF_EVEN)
+                            val roundedSyllabusGrade = BigDecimal(syllabusGrade.toString()).setScale(2, RoundingMode.HALF_EVEN)
 
-                            syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "$roundedWeightGrade / $weight: $syllabusGrade%"
+                            syllabusEntryView.findViewById<TextView>(R.id.tvWeight).text = "$roundedWeightGrade / $weight: $roundedSyllabusGrade%"
                         }
                         containerSyllabus.addView(syllabusEntryView)
 
