@@ -14,5 +14,6 @@
     <color name="secondary_light">#F97685</color>
     <color name="secondary">#F85467</color>
     <color name="background">#363B8A</color>
+    <color name="gray">#454749</color>
 
 </resources>

@@ -63,7 +63,11 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
     private fun openDatePicker() {
         DatePickerBuilder(this, this)
             .pickerType(CalendarView.ONE_DAY_PICKER)
-            .headerColor(R.color.primary)
+            .headerColor(R.color.gray)
+            .pagesColor(R.color.gray)
+            .daysLabelsColor(R.color.white)
+            .abbreviationsBarColor(R.color.gray)
+            .abbreviationsLabelsColor(R.color.white)
             .todayLabelColor(R.color.secondary)
             .selectionColor(R.color.secondary_light)
             .dialogButtonsColor(R.color.secondary)
