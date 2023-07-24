@@ -12,12 +12,17 @@ import com.example.ace.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import java.math.BigDecimal
 import java.math.RoundingMode
 
 data class ClassInfo(
     var className: String? = null,
     var grade: Double? = 420.0
+)
+
+data class UserInfo(
+    var uid: String? =null
 )
 
 class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickListener {
@@ -79,6 +84,9 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
 
                     tvNoClassesMessage.visibility = View.GONE
                     containerClasses.visibility = View.VISIBLE
+
+                    val userObject = UserInfo(userId)
+                    firestore.collection("user_enrolled_classes").document(className).collection("users").document(userId).set(userObject)
 
                     // Set an onClickListener for the class entry to open the GradesActivity
                     classEntryView.setOnClickListener {
