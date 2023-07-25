@@ -54,6 +54,7 @@ class DiscussionForumTopics : AppCompatActivity() {
         Log.d(TAG, "curr user: $currUser")
         if (userId != null) {
             val firestore = FirebaseFirestore.getInstance()
+            var numberOfStudents = 0
             val classes = firestore.collection("user_enrolled_classes")
             classes
                 .get()
@@ -66,12 +67,16 @@ class DiscussionForumTopics : AppCompatActivity() {
                         users.get().addOnCompleteListener {
                             if (it.isSuccessful) {
                                 for (user in it.result) {
+                                    numberOfStudents += 1
+                                }
+                                for (user in it.result) {
                                     val userID = user.data["uid"].toString()
                                     if (userID == currUser) {
-                                        topics.add(DiscussionForumTopic(docID))
+                                        topics.add(DiscussionForumTopic(docID, numberOfStudents))
                                     }
                                 }
                             }
+                            numberOfStudents = 0
                             val adapter =
                                 DiscussionForumTopicsAdapter(topics) { topic: DiscussionForumTopic, position: Int ->
                                     val topicName = topic.topicName

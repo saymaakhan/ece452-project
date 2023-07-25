@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.R
 
 import com.example.ace.data.model.DiscussionForumTopic
+import org.w3c.dom.Text
 
 
 class DiscussionForumTopicsAdapter(private val mList: MutableList<DiscussionForumTopic>, val clickListner : (DiscussionForumTopic, Int) -> Unit) : RecyclerView.Adapter<DiscussionForumTopicsAdapter.ViewHolder>() {
@@ -32,8 +33,10 @@ class DiscussionForumTopicsAdapter(private val mList: MutableList<DiscussionForu
     open class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val topicPictureImageView : ImageView =  itemView.findViewById(R.id.forum_topic_picture)
         val nameTextView : TextView = itemView.findViewById(R.id.forum_topic_name)
+        val numberOfStudentsTextView : TextView = itemView.findViewById(R.id.num_of_users)
         open fun bind (topic : DiscussionForumTopic) {
             nameTextView.setText(topic.topicName)
+            numberOfStudentsTextView.setText(topic.numberOfStudents.toString())
             topicPictureImageView.setImageResource(R.drawable.chat_icon)
         }
     }
