@@ -38,7 +38,7 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical">
 
                 <TextView
@@ -47,14 +47,15 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:text="0"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_toLeftOf="@id/num_of_users"
                     android:src="@drawable/ppl_icon"
                     android:layout_centerVertical="true" />
