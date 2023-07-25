@@ -286,7 +286,7 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
                 "com.example.ace.fileprovider",
                 icsFile
             )
-            downloadLink.text = "Download ICS"
+            downloadLink.text = "Export to Google Calendar"
             downloadLink.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
