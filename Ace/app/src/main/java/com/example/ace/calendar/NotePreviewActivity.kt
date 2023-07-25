@@ -22,10 +22,10 @@ class NotePreviewActivity : AppCompatActivity() {
         val calendar = intent.getSerializableExtra(CALENDAR_EXTRA) as Calendar
         binding.toolbar.subtitle = calendar.time.toSimpleDate()
 
-        val note = intent.getStringExtra(NOTE_EXTRA)
+        val eventTitle = intent.getStringExtra(NOTE_EXTRA)
 
-        if (note != null) {
-            binding.noteTextView.text = note
+        if (eventTitle != null) {
+            binding.noteTextView.text = eventTitle
             binding.emptyStateTextView.isVisible = false
         }
     }

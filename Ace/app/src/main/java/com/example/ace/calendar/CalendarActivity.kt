@@ -1,6 +1,7 @@
 package com.example.ace.calendar
 
 import android.content.Intent
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import com.applandeo.materialcalendarview.EventDay
 import com.applandeo.materialcalendarview.builders.DatePickerBuilder
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener
 import com.applandeo.materialcalendarview.listeners.OnSelectDateListener
+import com.applandeo.materialcalendarview.utils.calendar
 import com.example.ace.MainActivity
 import com.example.ace.R
 import com.example.ace.databinding.ActivityCalendarBinding
@@ -17,6 +19,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 
 class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateListener {
@@ -39,6 +43,9 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
         // Set click listener for the FAB button to open the date picker
         binding.fabButton.setOnClickListener { openDatePicker() }
         binding.calendarView.setOnDayClickListener(this)
+
+        // Get Firebase Info & Render Events
+        val userId = auth.currentUser?.uid
         
         // Set the current activity as the listener for day clicks on the calendar
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -47,6 +54,8 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
+        //fetchUserEvents()
+        fetchEventsFromFirestore(userId)
         val logout = binding.logout
 
         logout.setOnClickListener {
@@ -58,6 +67,48 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
             }
         }
     }
+
+    private fun fetchEventsFromFirestore(userId: String?){
+        // Check if the user is logged in
+        if (userId != null) {
+            // Get a reference to the Firestore collection "calendar_events" for the current user
+            val firestore = FirebaseFirestore.getInstance()
+            val userDocumentRef = firestore.collection("users").document(userId)
+            val calendarEventsCollectionRef = userDocumentRef.collection("calendar_events")
+
+            // Fetch events for the current user from Firestore
+            calendarEventsCollectionRef.get()
+                .addOnSuccessListener { querySnapshot ->
+                    val events = mutableListOf<EventDay>()
+
+                    for (document in querySnapshot.documents) {
+                        val eventTitle = document.getString("eventTitle")
+                        val eventDate = document.getString("eventDate")
+                        if (eventTitle != null && eventDate != null) {
+                            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                            val eventDate = dateFormat.parse(eventDate) ?: Date()
+
+                            val eventDay = EventDay(Calendar.getInstance().apply { time = eventDate }, applicationContext.getDot())
+                            events.add(eventDay)
+
+                            notes[eventDay] = "$eventTitle at $eventDate"
+
+                        }
+                    }
+
+                    // Recreate the events on the calendar view with the new list of EventDays
+                    binding.calendarView.setEvents(events)
+                }
+                .addOnFailureListener { exception ->
+                    // Error fetching events
+                    // ... (handle error)
+                }
+        }
+    }
+
+
+
+
 
     // Open the date picker dialog when the FAB button is clicked
     private fun openDatePicker() {
@@ -77,11 +128,15 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
 
     // Handle the click event for a specific day on the calendar
     override fun onDayClick(eventDay: EventDay) {
-        // Start the NotePreviewActivity and pass the selected calendar date and associated note
+        // Start the NotePreviewActivity and pass the selected calendar date and associated eventTitle
         val intent = Intent(this, NotePreviewActivity::class.java)
         intent.putExtra(CALENDAR_EXTRA, eventDay.calendar)
-        intent.putExtra(NOTE_EXTRA, notes[eventDay])
+
+        // Get the associated eventTitle from the notes map and pass it to the NotePreviewActivity
+        val eventTitle = notes[eventDay]
+        intent.putExtra(NOTE_EXTRA, eventTitle)
         startActivity(intent)
+
     }
 
     // Handle the selection of one or more dates in the date picker
@@ -96,19 +151,80 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK && requestCode == RESULT_CODE) {
-            val note = data?.getStringExtra(NOTE_EXTRA) ?: return
+            val eventTitle = data?.getStringExtra(NOTE_EXTRA) ?: return
             val calendar = data.getSerializableExtra(CALENDAR_EXTRA) as Calendar
 
-            // Create an EventDay with the selected calendar date and a dot indicating a note is available
-            val eventDay = EventDay(calendar, applicationContext.getDot())
+            // Convert the calendar date to a string representation (you can adjust the format as needed)
+            val dateString = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(calendar.time)
 
-            // Store the note in the map with the associated EventDay
-            notes[eventDay] = note
+            // Get a reference to the Firestore collection "calendar_events" for the current user
+            val firestore = FirebaseFirestore.getInstance()
+            val userId = auth.currentUser?.uid ?: return
+            val eventDocumentRef = firestore.collection("users").document(userId)
+                .collection("calendar_events").document(dateString)
 
-            // Update the events on the calendar view with the new list of EventDays
-            binding.calendarView.setEvents(notes.keys.toList())
+            // Create a map to represent the event data
+            val eventMap = hashMapOf(
+                "eventTitle" to eventTitle,
+                "eventDate" to dateString// You can also save the timestamp when the event was added
+            )
+
+            // Set the event data in the document
+            eventDocumentRef.set(eventMap)
+                .addOnSuccessListener {
+                    // Event data saved successfully
+                    val eventDay = EventDay(calendar, applicationContext.getDot())
+                    notes[eventDay] = eventTitle
+                    binding.calendarView.setEvents(notes.keys.toList())
+                    Toast.makeText(this, "Event saved successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    // Error saving event data
+                    Toast.makeText(this, "Error saving event: ${exception.message}", Toast.LENGTH_SHORT).show()
+                }
         }
     }
+
+    /*
+    private fun fetchUserEvents() {
+        // Get a reference to the Firestore collection "calendar_events" for the current user
+        val firestore = FirebaseFirestore.getInstance()
+        val userId = auth.currentUser?.uid ?: return
+
+        val eventsCollectionRef = firestore.collection("users").document(userId)
+            .collection("calendar_events")
+
+        // Clear existing events before fetching new ones
+//        notes.clear()
+
+        // Fetch all events for the user
+        eventsCollectionRef.get()
+            .addOnSuccessListener { querySnapshot ->
+                for (documentSnapshot in querySnapshot) {
+                    // Get the event data from the document
+                    val eventTitle = documentSnapshot.getString("eventTitle")
+                    val eventDateTimestamp = documentSnapshot.getTimestamp("eventDate")
+
+                    // Convert the eventDateTimestamp to a Calendar object
+                    val eventDateCalendar = Calendar.getInstance()
+                    eventDateCalendar.timeInMillis = eventDateTimestamp?.toDate()?.time ?: continue
+
+                    // Create an EventDay with the event date and a dot indicating an event is available
+                    val eventDay = EventDay(eventDateCalendar, applicationContext.getDot())
+
+                    // Store the event in the map with the associated EventDay
+                    eventTitle?.let { title -> notes[eventDay] = title }
+                }
+
+                // Update the events on the calendar view with the new list of EventDays
+                binding.calendarView.setEvents(notes.keys.toList())
+            }
+            .addOnFailureListener { exception ->
+                // Error fetching events
+                Toast.makeText(this, "Error fetching events: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+*/
 
     companion object {
         const val CALENDAR_EXTRA = "calendar"
@@ -116,3 +232,5 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
         const val RESULT_CODE = 8
     }
 }
+
+
