@@ -29,8 +29,8 @@
 
     <ImageView
         android:id="@+id/icon_account_picture"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +88,7 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
             tools:ignore="Autofill" />
 
         <Button
