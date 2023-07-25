@@ -34,7 +34,7 @@ class DiscussionForumTopicsAdapter(private val mList: MutableList<DiscussionForu
         val nameTextView : TextView = itemView.findViewById(R.id.forum_topic_name)
         open fun bind (topic : DiscussionForumTopic) {
             nameTextView.setText(topic.topicName)
-            topicPictureImageView.setImageResource(R.drawable.forum_48px)
+            topicPictureImageView.setImageResource(R.drawable.chat_icon)
         }
     }
 }
