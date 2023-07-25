@@ -62,12 +62,13 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         tvCumulativeAverage = findViewById(R.id.tvCumulativeAverage)
         tvNoClassesMessage = findViewById(R.id.tvNoClassesMessage)
 
-        val spannableString = SpannableString("You have no classes at the moment. Go to My Profile to add courses")
+        val spannableString = SpannableString("You have no classes at the moment.\nGo to My Profile to add courses.")
 
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
                 val intent = Intent(this@GradesActivity, ProfileActivity::class.java)
                 startActivity(intent)
+                finish()
             }
 
             override fun updateDrawState(ds: TextPaint) {
@@ -82,15 +83,6 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         tvNoClassesMessage.movementMethod = LinkMovementMethod.getInstance()
 
         loadClassesFromFirestore()
-
-        val fabAdd: FloatingActionButton = findViewById(R.id.fabAdd)
-
-        fabAdd.setOnClickListener {
-            // Show the AddClassDialogFragment
-            val addClassDialog = AddClassDialogFragment()
-            addClassDialog.setOnSaveClickListener(this)
-            addClassDialog.show(supportFragmentManager, "AddClassDialogFragment")
-        }
 
         // Find Insights button and listen
         btnInsights = findViewById(R.id.btnInsights)
