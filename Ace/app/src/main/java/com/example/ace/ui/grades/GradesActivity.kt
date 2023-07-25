@@ -83,10 +83,11 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         if (highestGrade == Double.MIN_VALUE) {
             text_dialog.text = "At this moment, there isn't sufficient information available to provide insights on your grades"
         } else {
-            text_dialog.text = "Great job in " + highestCourse + "! You are " +
-                    "excelling. Now, it is recommended you focus on studying " +
-                    "for " + lowestCourse + ". Good luck!"
+            text_dialog.text = "Great job in \n" + highestCourse + "!\n You are " +
+                    "excelling. \n\n Now, it is recommended you focus on studying " +
+                    "for \n" +lowestCourse + ". \n\n Good luck!"
         }
+
         dialog.show()
     }
 
@@ -162,11 +163,6 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
 
                     var gradesSum = 0.0
                     var classCounter = 0.0
-
-                    highestGrade = Double.MIN_VALUE
-                    lowestGrade = Double.MAX_VALUE
-                    highestCourse = ""
-                    lowestCourse = ""
 
                     // Iterate through the class documents and display them
                     for (documentSnapshot in querySnapshot) {

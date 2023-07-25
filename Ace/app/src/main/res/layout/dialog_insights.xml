@@ -6,12 +6,29 @@
     android:background="#020c4d"
     android:padding="16dp">
 
+    <!-- Image above the text -->
+    <ImageView
+        android:id="@+id/image_above_text"
+        android:layout_width="103dp"
+        android:layout_height="85dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/loginlogo" />
+
     <TextView
         android:id="@+id/text_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         android:textColor="@android:color/white" />
+
+    <!-- Image below the text -->
+    <ImageView
+        android:id="@+id/image_below_text"
+        android:layout_width="237dp"
+        android:layout_height="127dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/data" />
 
 </LinearLayout>
