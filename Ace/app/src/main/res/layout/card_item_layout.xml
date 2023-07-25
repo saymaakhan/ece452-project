@@ -1,0 +1,29 @@
+<!-- card_item_layout.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="40dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:elevation="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    >
+
+
+    <!-- Customize this layout to display information about each enrolled class -->
+    <!-- For example, you can add an ImageView for a course image, TextViews for class name and grade, etc. -->
+
+    <TextView
+        android:id="@+id/tvClassName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Class Name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="8dp" />
+
+</androidx.cardview.widget.CardView>
