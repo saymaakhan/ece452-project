@@ -20,17 +20,27 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="231dp"
-                android:background="@drawable/top_background">
+                android:layout_height="368dp"
+                android:background="@color/material_dynamic_neutral20">
+
+                <ImageView
+                    android:id="@+id/logo_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/loginlogo" />
 
                 <TextView
                     android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="10dp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -43,35 +53,28 @@
                     android:id="@+id/edit_avatar"
                     android:layout_width="67dp"
                     android:layout_height="35dp"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="140dp"
+                    android:backgroundTint="#F95252"
                     android:text="Edit"
+                    app:cornerRadius="32dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.633"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/avatar" />
 
+
                 <ImageView
                     android:id="@+id/avatar"
-                    android:layout_width="108dp"
-                    android:layout_height="100dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginBottom="100dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_icon"
                     app:layout_constraintVertical_bias="0.19"
-                    app:srcCompat="@drawable/user_avatar_profile" />
-
-                <ImageView
-                    android:id="@+id/circles"
-                    android:layout_width="779dp"
-                    android:layout_height="300dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.507"
-                    app:srcCompat="@drawable/circles" />
+                    app:srcCompat="@drawable/account_circle_48px__1_" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -83,7 +86,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="57dp">
+                    android:layout_height="69dp">
 
                     <TextView
                         android:id="@+id/myCourses"
@@ -92,27 +95,19 @@
                         android:text="My Courses"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        android:textStyle="bold|italic"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView20"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.035"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.56" />
-
-                    <ImageView
-                        android:id="@+id/imageView20"
-                        android:layout_width="135dp"
-                        android:layout_height="52dp"
-                        app:layout_constraintStart_toStartOf="@+id/myCourses"
-                        app:srcCompat="@drawable/underline"
-                        tools:layout_editor_absoluteY="-1dp" />
 
                     <ImageButton
                         android:id="@+id/add_course_button"
                         android:layout_width="59dp"
                         android:layout_height="56dp"
-                        android:background="@drawable/add_button"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/icons8_plus_50"
                         android:onClick="onAddCourseButtonClick"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -120,6 +115,9 @@
                         app:layout_constraintStart_toEndOf="@+id/myCourses"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="1.0" />
+
+
+
 
                     <!--                    <ImageView-->
                     <!--                        android:id="@+id/add_course_button"-->
@@ -158,32 +156,22 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="57dp">
+                    android:layout_height="118dp">
 
                     <TextView
                         android:id="@+id/myNotes"
                         android:layout_width="129dp"
                         android:layout_height="27dp"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="30dp"
                         android:text="My Notes"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        android:textStyle="bold|italic"
-                        app:layout_constraintBottom_toTopOf="@+id/underline2"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.056"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/underline2"
-                        android:layout_width="369dp"
-                        android:layout_height="10dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.104"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:srcCompat="@drawable/underline" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
