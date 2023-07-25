@@ -30,7 +30,7 @@ class DiscussionForumTopics : AppCompatActivity() {
         val logoPictureView : ImageView =  findViewById(R.id.logo_icon)
         logoPictureView.setImageResource(R.drawable.loginlogo)
         val iconPictureView : ImageView =  findViewById(R.id.icon_account_picture)
-        iconPictureView.setImageResource(R.drawable.iconaccountpic)
+        iconPictureView.setImageResource(R.drawable.account_circle_48px__1_)
 
         auth = Firebase.auth
         loadCoursesFromFirestore()
