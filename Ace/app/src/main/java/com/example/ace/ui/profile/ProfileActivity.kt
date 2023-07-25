@@ -41,6 +41,8 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
         val userId = firebaseAuth.currentUser?.uid
         val nonNullUserId = userId ?: "defaultUserId"
 
+        containerClasses = findViewById(R.id.container_classes)
+
         databaseReference = FirebaseDatabase.getInstance().reference.child("users").child(nonNullUserId)
         val courseButton: ImageButton = findViewById(R.id.add_course_button)
 
@@ -110,6 +112,8 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
     private fun updateUIWithEnrolledClasses(enrolledClassesList: List<String>) {
         containerClasses = findViewById(R.id.container_classes)
 
+        containerClasses.removeAllViews()
+
         val recyclerView = RecyclerView(this)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val adapter = EnrolledClassesAdapter(enrolledClassesList)
@@ -175,6 +179,8 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
                          intent.putExtra("class_name", className)
                          startActivity(intent)
                      }
+
+                     fetchUserEnrolledClasses(userId)
 
                      Toast.makeText(this, "Class saved successfully", Toast.LENGTH_SHORT).show()
                  }
