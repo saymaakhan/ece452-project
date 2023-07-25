@@ -4,7 +4,6 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,10 +46,6 @@ class ChatContacts : AppCompatActivity() {
         auth = Firebase.auth
         loadUsersFromFirestore()
 
-        val backButton : View = findViewById(R.id.back_button)
-        backButton.setOnClickListener {
-            finish()
-        }
     }
 
     private fun getUserName(): String? {
