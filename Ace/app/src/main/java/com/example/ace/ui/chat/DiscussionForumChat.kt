@@ -5,11 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import com.example.ace.R
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -115,6 +117,11 @@ class DiscussionForumChat : AppCompatActivity() {
         val newMessage = DiscussionMessage(course=topicName, sender=user, timestamp=timeStamp, message=text)
         db.reference.child(DISCUSSION_CHILD).push().setValue(newMessage)
         binding.editDiscussionForumMessage.text.clear()
+
+        // Send chat sent notif
+        val toast = Toast.makeText(this, "Message delivered", Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.TOP, 0, 0)
+        toast.show()
     }
 
     private fun getUserDiscussionMessages(dbref : DatabaseReference, course : String) {
