@@ -22,6 +22,16 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
+import android.app.Dialog
+import android.view.View
+import android.widget.TextView
+import androidx.core.content.FileProvider
+import com.example.ace.calendar.extensions.getDot
+import java.io.File
+import java.io.IOException
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateListener {
 
@@ -231,6 +241,65 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
         const val NOTE_EXTRA = "note"
         const val RESULT_CODE = 8
     }
+
+    private fun generateICSContent(): String {
+        val icsBuilder = StringBuilder()
+        icsBuilder.appendLine("BEGIN:VCALENDAR")
+        icsBuilder.appendLine("VERSION:2.0")
+        icsBuilder.appendLine("PRODID:-//Your Company//Your App//EN")
+
+        for (eventDay in notes.keys) {
+            val eventTitle = notes[eventDay] ?: continue
+            val dateFormat = SimpleDateFormat("yyyyMMdd", Locale.getDefault())
+            val dateString = dateFormat.format(eventDay.calendar.time)
+            icsBuilder.appendLine("BEGIN:VEVENT")
+            icsBuilder.appendLine("DTSTART:$dateString")
+            icsBuilder.appendLine("SUMMARY:$eventTitle")
+            icsBuilder.appendLine("END:VEVENT")
+        }
+
+        icsBuilder.appendLine("END:VCALENDAR")
+        return icsBuilder.toString()
+    }
+
+    private fun saveICSFile(icsContent: String): File? {
+        val externalFilesDir = getExternalFilesDir(null)
+        val icsFile = File(externalFilesDir, "calendar_events.ics")
+        return try {
+            icsFile.writeText(icsContent)
+            icsFile
+        } catch (e: IOException) {
+            null
+        }
+    }
+
+    fun createICSFile(view: View) {
+        val icsContent = generateICSContent()
+        val icsFile = saveICSFile(icsContent)
+        if (icsFile != null) {
+            // Show the custom dialog with the download link
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.dialog_download_ics)
+            val downloadLink = dialog.findViewById<TextView>(R.id.downloadLink)
+            val icsFileUri = FileProvider.getUriForFile(
+                this,
+                "com.example.ace.fileprovider",
+                icsFile
+            )
+            downloadLink.text = "Export to Google Calendar"
+            downloadLink.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                intent.setDataAndType(icsFileUri, "text/calendar")
+                startActivity(intent)
+            }
+            dialog.show()
+        } else {
+            Toast.makeText(this, "Error generating ICS file", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
 }
 
 

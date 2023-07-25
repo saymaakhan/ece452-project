@@ -60,7 +60,7 @@
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:onClick="createICSFile"
-        android:text="Export ICS"
+        android:text="Export"
         android:textColor="@color/white"
         app:backgroundTint="@color/material_dynamic_neutral30"
         app:layout_constraintBottom_toBottomOf="parent"
