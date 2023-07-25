@@ -20,10 +20,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Class Name"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
+        android:background="@color/material_dynamic_neutral30"
         android:padding="8dp" />
 
 </androidx.cardview.widget.CardView>
