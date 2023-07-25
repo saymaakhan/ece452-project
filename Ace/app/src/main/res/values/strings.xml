@@ -58,4 +58,5 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="title_activity_create_class">CreateClassActivity</string>
+    <string name="scanned_text_visible_here">Scanned Text Visible Here</string>
 </resources>

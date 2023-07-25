@@ -3,6 +3,7 @@ package com.example.ace.ui.camera
 import com.example.ace.R
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -17,15 +18,19 @@ import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.TextRecognizer
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -41,72 +46,97 @@ import java.util.Locale
 
 class CameraActivity : AppCompatActivity() {
 
+    private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this@CameraActivity, R.anim.rotate_open_anim) }
+    private val rotateClose : Animation by lazy { AnimationUtils.loadAnimation(this@CameraActivity, R.anim.rotate_close_anim) }
+    private val fromBottom : Animation by lazy { AnimationUtils.loadAnimation(this@CameraActivity, R.anim.from_bottom_anim) }
+    private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(this@CameraActivity, R.anim.to_bottom_anim) }
 
-    private val STORAGE_CODE = 1001
+    private var pdfUrl: String = ""
+
+    private lateinit var builder: AlertDialog.Builder
+
     lateinit var mStorage : StorageReference
-
-    private val CLIPBOARD_SERVICE: String
-        get() {
-            TODO()
-        }
-    var clear: ImageView? = null
-    var getImage: ImageView? = null
-    var copy: ImageView? = null
-    var recgText: EditText? = null
+//    var clear: ImageView? = null
+//    var getImage: ImageView? = null
+//    var copy: ImageView? = null
+//    var recgText: EditText? = null
     var imageUri: Uri? = null
     var textRecognizer: TextRecognizer? = null
-    var btnGeneratePdf: Button? = null
+//    var btnGeneratePdf: Button? = null
+
+    var textbox:EditText? = null
+    var addBtn: FloatingActionButton? = null
+    var copyBtn: FloatingActionButton? = null
+    var pdfBtn: FloatingActionButton? = null
+    var clearBtn: FloatingActionButton? = null
+    var camBtn:FloatingActionButton? = null
+
+    private var clicked = false
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
-        clear = findViewById(R.id.clear)
-        getImage = findViewById(R.id.getImage)
-        copy = findViewById(R.id.copy)
-        recgText = findViewById(R.id.recgText)
+//        clear = findViewById(R.id.clear)
+//        getImage = findViewById(R.id.getImage)
+//        copy = findViewById(R.id.copy)
+//        recgText = findViewById(R.id.recgText)
         textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
+//
+//        btnGeneratePdf = findViewById(R.id.btn_generate_pdf)
 
-        btnGeneratePdf = findViewById(R.id.btn_generate_pdf)
+        addBtn = findViewById(R.id.plus)
+        copyBtn = findViewById(R.id.copy)
+        clearBtn = findViewById(R.id.clear)
+        camBtn = findViewById(R.id.cam)
+        pdfBtn = findViewById(R.id.pdf)
+        textbox = findViewById(R.id.textbox)
 
         mStorage = FirebaseStorage.getInstance().reference
-        val pdf = btnGeneratePdf
+        builder = AlertDialog.Builder(this@CameraActivity)
 
 
-//        if(pdf is Button){
-//            pdf.setOnClickListener{
-//                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
-//                    if(checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                        == PackageManager.PERMISSION_DENIED)
-//                    {
-//                        val permission = arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                        requestPermissions(permission, STORAGE_CODE)
-//                    } else {
-//                        savePDF()
-//                    }
-//                } else {
-//                    savePDF()
-//                }
-//            }
-//
-//        }
+        val add = addBtn
+        if(add is FloatingActionButton){
+            add.setOnClickListener {
+                onAddBtnClicked()
+            }
+        }
 
-        if(pdf is Button){
+
+
+        val pdf = pdfBtn
+        if(pdf is FloatingActionButton){
             pdf.setOnClickListener{
                 //Toast.makeText(this@CameraActivity, "Button Clicked", Toast.LENGTH_SHORT).show()
 
-                val textValue = recgText
+                val textValue = textbox
                 val textContent = textValue?.text.toString()
                 if (textContent.isEmpty()){
                     Toast.makeText(this@CameraActivity, "Text box is empty", Toast.LENGTH_SHORT).show()
                 } else {
                     val pdfByteArray = generatePdfByteArray()
                     uploadPdfToFirebase(pdfByteArray)
+                    builder.setTitle("PDF Created!")
+                        .setMessage("Do you want to view the file?")
+                        .setCancelable(true)
+                        .setPositiveButton("Yes"){dialogInterface, it ->
+                            //OPEN PDF
+                            val url = pdfUrl
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                            startActivity(intent)
+                        }
+                        .setNegativeButton("No"){dialogInterface, it ->
+                            dialogInterface.cancel()
+                        }
+                        .show()
                 }
             }
         }
 
 
-        val image = getImage
-        if (image is ImageView) {
+        val image = camBtn
+        if (image is FloatingActionButton) {
             image.setOnClickListener(View.OnClickListener {
                 ImagePicker.with(this@CameraActivity)
                     .crop() //Crop image(Optional), Check Customization for more option
@@ -118,32 +148,24 @@ class CameraActivity : AppCompatActivity() {
                     .start()
             })
         }
-        val copyValue = copy
-        if (copyValue is ImageView) {
+        val copyValue = copyBtn
+        if (copyValue is FloatingActionButton) {
             copyValue.setOnClickListener(View.OnClickListener {
-                val textValue = recgText
+                val textValue = textbox
                 val text = textValue?.getText().toString()
                 if (text.isEmpty()) {
-                    Toast.makeText(this@CameraActivity, "there is no text to copy", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@CameraActivity, "There is no text to copy", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    val clipboardManager =
-                        getSystemService(this@CameraActivity.CLIPBOARD_SERVICE) as ClipboardManager
-                    if (textValue is EditText) {
-                        val clipData = ClipData.newPlainText("Data", textValue.getText().toString())
 
-                    }
-                    val clipData: ClipData = ClipData.newPlainText("", "")
-                    clipboardManager.setPrimaryClip(clipData)
-                    Toast.makeText(this@CameraActivity, "Text copied to clipboard", Toast.LENGTH_SHORT)
-                        .show()
+                    copyToClipboard(text)
                 }
             })
         }
-        val clearValue = clear
-        if (clearValue is ImageView) {
+        val clearValue = clearBtn
+        if (clearValue is FloatingActionButton) {
             clearValue.setOnClickListener(View.OnClickListener {
-                val textValue = recgText
+                val textValue = textbox
                 val text = textValue?.getText().toString()
                 if (text.isEmpty()) {
                     Toast.makeText(this@CameraActivity, "There is no text to clear", Toast.LENGTH_SHORT)
@@ -157,8 +179,67 @@ class CameraActivity : AppCompatActivity() {
         }
     }
 
+    private fun onAddBtnClicked() {
+        setVisibility(clicked)
+        setClickable(clicked)
+        setAnimation(clicked)
+        clicked = !clicked
+    }
+
+    private fun setAnimation(clicked: Boolean) {
+        if(!clicked){
+            pdfBtn?.visibility ?: View.VISIBLE
+            copyBtn?.visibility ?: View.VISIBLE
+            clearBtn?.visibility ?: View.VISIBLE
+            camBtn?.visibility ?: View.VISIBLE
+        } else {
+            pdfBtn?.visibility ?: View.INVISIBLE
+            copyBtn?.visibility ?: View.INVISIBLE
+            clearBtn?.visibility ?: View.INVISIBLE
+            camBtn?.visibility ?: View.INVISIBLE
+        }
+    }
+
+    private fun setVisibility(clicked: Boolean) {
+        if(!clicked){
+            pdfBtn?.startAnimation(fromBottom)
+            copyBtn?.startAnimation(fromBottom)
+            clearBtn?.startAnimation(fromBottom)
+            camBtn?.startAnimation(fromBottom)
+            addBtn?.startAnimation(rotateOpen)
+        }else {
+            pdfBtn?.startAnimation(toBottom)
+            copyBtn?.startAnimation(toBottom)
+            clearBtn?.startAnimation(toBottom)
+            camBtn?.startAnimation(toBottom)
+            addBtn?.startAnimation(rotateClose)
+        }
+    }
+
+    private fun setClickable(clicked: Boolean) {
+        if(!clicked){
+            pdfBtn?.isClickable = true
+            copyBtn?.isClickable = true
+            clearBtn?.isClickable = true
+            camBtn?.isClickable = true
+        } else {
+            pdfBtn?.isClickable = false
+            copyBtn?.isClickable = false
+            clearBtn?.isClickable = false
+            camBtn?.isClickable = false
+        }
+    }
+
+    private fun copyToClipboard(text: String) {
+        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText("Copied Text", text)
+        clipboard.setPrimaryClip(clip)
+        Toast.makeText(this@CameraActivity, "Text copied to clipboard!", Toast.LENGTH_SHORT).show()
+
+    }
+
     private fun generatePdfByteArray(): ByteArray {
-        val textValue = recgText
+        val textValue = textbox
         val textContent = textValue?.text.toString()
 
         val outputStream = ByteArrayOutputStream()
@@ -175,7 +256,7 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun uploadPdfToFirebase(pdfByteArray: ByteArray) {
-        val textValue = recgText
+        val textValue = textbox
         val mFileName = SimpleDateFormat("yyyMMdd_HHmmss", Locale.getDefault())
             .format(System.currentTimeMillis())
         val websiteText = "Your PDF is ready!"
@@ -188,19 +269,19 @@ class CameraActivity : AppCompatActivity() {
             Toast.makeText(this@CameraActivity, "File Upload Successful!" , Toast.LENGTH_SHORT).show()
 
             pdfRef.downloadUrl.addOnSuccessListener { downloadUrl ->
-                val url = downloadUrl.toString()
+                pdfUrl = downloadUrl.toString()
                 //textValue?.setText(url)
-                val clickableSpan = object : ClickableSpan() {
-                    override fun onClick(view: View) {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                        startActivity(intent)
-                    }
-                }
-                spannableString.setSpan(clickableSpan, 0, websiteText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-                val redColor = Color.RED
-                spannableString.setSpan(ForegroundColorSpan(redColor), 0, websiteText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-                textValue?.text = spannableString.toEditable()
-                textValue?.movementMethod = LinkMovementMethod.getInstance()
+//                val clickableSpan = object : ClickableSpan() {
+//                    override fun onClick(view: View) {
+//                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+//                        startActivity(intent)
+//                    }
+//                }
+//                spannableString.setSpan(clickableSpan, 0, websiteText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                val redColor = Color.RED
+//                spannableString.setSpan(ForegroundColorSpan(redColor), 0, websiteText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                textValue?.text = spannableString.toEditable()
+//                textValue?.movementMethod = LinkMovementMethod.getInstance()
             }
 
         }.addOnFailureListener{ e: Exception ->
@@ -213,49 +294,6 @@ class CameraActivity : AppCompatActivity() {
     private fun SpannableString.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 
 
-//    private fun savePDF() {
-//        val textValue = recgText
-//        //var mReference = mStorage.child("files")
-//        val text = textValue?.getText().toString()
-//        val mDoc = Document()
-//        val mFileName = SimpleDateFormat("yyyMMdd_HHmmss", Locale.getDefault())
-//            .format(System.currentTimeMillis())
-//
-//        val mFilePath = Environment.getExternalStorageDirectory().toString() + "/" + mFileName + ".pdf"
-//
-//        try {
-//            PdfWriter.getInstance(mDoc, FileOutputStream(mFilePath))
-//            mDoc.open()
-//
-//            val data = text
-//            mDoc.addAuthor("Ace_author")
-//            mDoc.add(Paragraph(data))
-//            mDoc.close()
-//            Toast.makeText(this@CameraActivity, "$mFileName.pdf\n is created to \n $mFilePath", Toast.LENGTH_SHORT).show()
-//
-//        }catch (e: Exception){
-//            Toast.makeText(this@CameraActivity, ""+e.toString(), Toast.LENGTH_SHORT).show()
-//        }
-//
-//    }
-
-//    override fun onRequestPermissionsResult(
-//        requestCode: Int,
-//        permissions: Array<out String>,
-//        grantResults: IntArray
-//    ) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-//        when(requestCode){
-//            STORAGE_CODE -> {
-//                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                    savePDF()
-//                } else {
-//                    Toast.makeText(this@CameraActivity, "Permission Denied!", Toast.LENGTH_SHORT).show()
-//                }
-//
-//            }
-//        }
-//    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -277,7 +315,7 @@ class CameraActivity : AppCompatActivity() {
                 val result = textRecognizer!!.process(inputImage)
                     .addOnSuccessListener { text ->
                         val recognizeText = text.text
-                        recgText!!.setText(recognizeText)
+                        textbox!!.setText(recognizeText)
                     }.addOnFailureListener { e ->
                         Toast.makeText(
                             this@CameraActivity,
