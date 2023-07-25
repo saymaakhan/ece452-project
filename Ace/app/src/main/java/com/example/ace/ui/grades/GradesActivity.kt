@@ -80,10 +80,13 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         dialog.setContentView(R.layout.dialog_insights)
 
         val text_dialog = dialog.findViewById<TextView>(R.id.text_dialog)
-        text_dialog.text = "Great job in " + highestCourse + "! You are " +
-                "excelling. Now, it is recommended you focus on studying " +
-                "for " +lowestCourse + ". Good luck!"
-
+        if (highestGrade == Double.MIN_VALUE) {
+            text_dialog.text = "At this moment, there isn't sufficient information available to provide insights on your grades"
+        } else {
+            text_dialog.text = "Great job in " + highestCourse + "! You are " +
+                    "excelling. Now, it is recommended you focus on studying " +
+                    "for " + lowestCourse + ". Good luck!"
+        }
         dialog.show()
     }
 
@@ -160,6 +163,11 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                     var gradesSum = 0.0
                     var classCounter = 0.0
 
+                    highestGrade = Double.MIN_VALUE
+                    lowestGrade = Double.MAX_VALUE
+                    highestCourse = ""
+                    lowestCourse = ""
+
                     // Iterate through the class documents and display them
                     for (documentSnapshot in querySnapshot) {
                         if (documentSnapshot.exists()) {
@@ -221,7 +229,7 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                                 }
 
                                 // Calculate the highest grade
-                                if (grade.toDouble() > highestGrade) {
+                                if (grade.toDouble() > highestGrade && grade.toDouble() != 420.0) {
                                     highestGrade = grade.toDouble()
                                     highestCourse = className.toString()
                                 }
