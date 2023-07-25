@@ -102,6 +102,8 @@ class DiscussionForumChat : AppCompatActivity() {
 
         val closeButton : View = findViewById(R.id.button_discussion_forum_close)
         closeButton.setOnClickListener {
+            val intent = Intent(this, DiscussionForumTopics::class.java)
+            startActivity(intent)
             finish()
         }
     }
