@@ -41,9 +41,9 @@
 
     <Button
         android:id="@+id/fabButton"
-        android:layout_width="390dp"
-        android:layout_height="50dp"
-        android:layout_margin="16dp"
+        android:layout_width="389dp"
+        android:layout_height="47dp"
+        android:layout_margin="11dp"
         android:text="ADD EVENT +"
         android:textColor="@color/white"
         app:backgroundTint="@color/material_dynamic_neutral30"
@@ -55,8 +55,8 @@
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="51dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="16dp"
@@ -65,6 +65,7 @@
         app:backgroundTint="#FF454749"
         app:layout_constraintBottom_toTopOf="@+id/calendarView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView1"
         app:layout_constraintTop_toTopOf="parent" />
 
