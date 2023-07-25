@@ -14,5 +14,6 @@
 |07/22/2023|0|0|10|0|0|0|Experiment: PDF generation of scanned image to text directly to phone's internal storage. Result -> Permission error (SDK 33 issue) (legacy code in pdf_feature branch)|
 |07/23/2023|0|0|5|0|0|0|Created Firebase Storage to directly upload generated pdfs from app. Implemented UI to allow seamless access to pdf content directly downloaded to internal storage from firebase|
 |07/24/2023|0|0|0|0|14|0|Created backend for discussion (group-chat) feature including database in firebase & integrated with UI|
+|07/24/2023|0|0|10|0|0|0|Redesigned the CameraActivity UI to match the theme. Fixed bugs and polished the transitions for pdf downloads using dialog boxes.
 
 
