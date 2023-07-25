@@ -133,88 +133,41 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <HorizontalScrollView
-                    android:layout_width="match_parent"
+                    android:id="@+id/course_scroll"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:id="@+id/container_classes"
+                        android:layout_width="9000dp"
                         android:layout_height="match_parent"
-                        android:fillViewport="true"
                         android:orientation="horizontal">
 
                         <Button
-                            android:id="@+id/button14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/button2"
                             android:layout_width="match_parent"
-                            android:layout_height="264dp">
+                            android:layout_height="wrap_content"
+                            android:text="Button" />
 
-
-                            <ImageView
-                                android:id="@+id/button_background"
-                                android:layout_width="113dp"
-                                android:layout_height="115dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="1.0"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.503"
-                                app:srcCompat="@drawable/profile_button" />
-
-                            <ImageView
-                                android:id="@+id/book"
-                                android:layout_width="86dp"
-                                android:layout_height="81dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/button_background"
-                                app:layout_constraintEnd_toEndOf="@+id/button_background"
-                                app:layout_constraintStart_toStartOf="@+id/button_background"
-                                app:layout_constraintTop_toTopOf="@+id/button_background"
-                                app:srcCompat="@drawable/book" />
-
-                            <TextView
-                                android:id="@+id/textView8"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Courses"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
-                                android:textStyle="bold"
-                                app:layout_constraintBottom_toBottomOf="@+id/button_background"
-                                app:layout_constraintEnd_toEndOf="@+id/book"
-                                app:layout_constraintHorizontal_bias="0.47"
-                                app:layout_constraintStart_toStartOf="@+id/book"
-                                app:layout_constraintTop_toBottomOf="@+id/book" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
+                        <Button
+                            android:id="@+id/button3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Button" />
                     </LinearLayout>
                 </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tvNoClassesMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No enrolled classes"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -246,61 +199,6 @@
                         app:srcCompat="@drawable/underline" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:fillViewport="true"
-                        android:orientation="horizontal">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="264dp">
-
-
-                            <ImageView
-                                android:id="@+id/button_background2"
-                                android:layout_width="113dp"
-                                android:layout_height="115dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.09"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.503"
-                                app:srcCompat="@drawable/profile_button" />
-
-                            <ImageView
-                                android:id="@+id/book2"
-                                android:layout_width="86dp"
-                                android:layout_height="81dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/button_background2"
-                                app:layout_constraintEnd_toEndOf="@+id/button_background2"
-                                app:layout_constraintStart_toStartOf="@+id/button_background2"
-                                app:layout_constraintTop_toTopOf="@+id/button_background2"
-                                app:srcCompat="@drawable/book" />
-
-                            <TextView
-                                android:id="@+id/textView9"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Courses"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
-                                android:textStyle="bold"
-                                app:layout_constraintBottom_toBottomOf="@+id/button_background2"
-                                app:layout_constraintEnd_toEndOf="@+id/book2"
-                                app:layout_constraintHorizontal_bias="0.47"
-                                app:layout_constraintStart_toStartOf="@+id/book2"
-                                app:layout_constraintTop_toBottomOf="@+id/book2" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </LinearLayout>
-                </HorizontalScrollView>
 
             </LinearLayout>
         </LinearLayout>

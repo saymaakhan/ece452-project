@@ -9,6 +9,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.R
 import com.example.ace.data.Course
 import com.example.ace.ui.grades.AddClassDialogFragment
@@ -38,6 +40,7 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
         val firebaseAuth = FirebaseAuth.getInstance()
         val userId = firebaseAuth.currentUser?.uid
         val nonNullUserId = userId ?: "defaultUserId"
+
         databaseReference = FirebaseDatabase.getInstance().reference.child("users").child(nonNullUserId)
         val courseButton: ImageButton = findViewById(R.id.add_course_button)
 
@@ -47,6 +50,66 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
             addClassDialog.setOnAddClickListener(this)
             addClassDialog.show(supportFragmentManager, "AddClassDialogFragment")
         }
+
+        fetchUserEnrolledClasses(nonNullUserId)
+
+    }
+
+    private fun fetchUserEnrolledClasses(userId: String) {
+        val firestore = FirebaseFirestore.getInstance()
+
+        val userDocumentRef = firestore.collection("classes").document(userId)
+        val userClassesRef = userDocumentRef.collection("user_classes")
+
+        // Get a reference to the user's document in the "user_enrolled_classes" collection
+
+        userClassesRef.get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    // If there are enrolled classes, update the UI
+                    val enrolledClassesList = mutableListOf<String>()
+                    for (document in querySnapshot.documents) {
+                        val className = document.id
+                        enrolledClassesList.add(className)
+                    }
+
+                    // Update the UI with the enrolled classes
+                    updateUIWithEnrolledClasses(enrolledClassesList)
+                } else {
+                    // If there are no enrolled classes, handle this case if needed
+                    // For example, you could display a message like "No enrolled classes"
+                    Toast.makeText(this, "TODO: DEBUG", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener { exception ->
+                // Error fetching enrolled classes
+                Toast.makeText(this, "Error fetching enrolled classes: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun updateUIWithEnrolledClasses(enrolledClassesList: List<String>) {
+        containerClasses = findViewById(R.id.container_classes)
+
+        val recyclerView = RecyclerView(this)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val adapter = EnrolledClassesAdapter(enrolledClassesList)
+        recyclerView.adapter = adapter
+        containerClasses.addView(recyclerView)
+
+        if (enrolledClassesList.isEmpty()) {
+//            tvNoClassesMessage.visibility = View.VISIBLE
+//            containerClasses.visibility = View.GONE
+        } else {
+//            tvNoClassesMessage.visibility = View.GONE
+//            containerClasses.visibility = View.VISIBLE
+        }
+
+
+
+//TODO: FIX
+//            tvNoClassesMessage.visibility = View.GONE
+//            containerClasses.visibility = View.VISIBLE
+
     }
 
      override fun onAddClicked(className: String){
@@ -109,52 +172,53 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
 }
 
 
+/*
+    private fun loadClassesFromFirestore() {
 
-//    private fun loadClassesFromFirestore() {
-//
-//        // Get the user's UID
-//        val firebaseAuth = FirebaseAuth.getInstance()
-//        val userId = firebaseAuth.currentUser?.uid
-//
-//        // Check if the user is logged in and the UID is not null
-//        if (userId != null) {
-//            // Get a reference to the user's document in the "classes" collection
-//            val firestore = FirebaseFirestore.getInstance()
-//            val userDocumentRef = firestore.collection("classes").document(userId)
-//
-//            // Get all class documents from the subcollection
-//            userDocumentRef.collection("user_classes").get()
-//                .addOnSuccessListener { querySnapshot ->
-//                    // Clear existing views before displaying new classes
-//                    courseContainer.removeAllViews()
-//
-//                    // Iterate through each class document in the subcollection
-//                    for (documentSnapshot in querySnapshot.documents) {
-//                        // Get the class data from the document
-//                        val classId = documentSnapshot.id
-//                        val className = documentSnapshot.getString("class_name")
-//                        // Add other properties as needed
-//
-//                        // Create a view to display the class information
-//                        val classView = layoutInflater.inflate(R.layout.class_item_layout, null)
-//                        val classNameTextView = classView.findViewById<TextView>(R.id.classNameTextView)
-//                        classNameTextView.text = className
-//
-//                        // Add the view to the container
-//                        courseContainer.addView(classView)
-//
-//                    }
-//                }
-//                .addOnFailureListener { exception ->
-//                    // Handle any errors that occurred while fetching data
-//                    Toast.makeText(this, "Error loading classes: ${exception.message}", Toast.LENGTH_SHORT).show()
-//                }
-//        }
-//        else {
-//            // Error : User not logged in, send prompt.
-//            Toast.makeText(this, "Please log in to view your classes.", Toast.LENGTH_SHORT).show()
-//            val intent = Intent(this, LoginActivity::class.java)
-//             startActivity(intent)
-//        }
-//
-//    }
+        // Get the user's UID
+        val firebaseAuth = FirebaseAuth.getInstance()
+        val userId = firebaseAuth.currentUser?.uid
+
+        // Check if the user is logged in and the UID is not null
+        if (userId != null) {
+            // Get a reference to the user's document in the "classes" collection
+            val firestore = FirebaseFirestore.getInstance()
+            val userDocumentRef = firestore.collection("classes").document(userId)
+
+            // Get all class documents from the subcollection
+            userDocumentRef.collection("user_classes").get()
+                .addOnSuccessListener { querySnapshot ->
+                    // Clear existing views before displaying new classes
+                    courseContainer.removeAllViews()
+
+                    // Iterate through each class document in the subcollection
+                    for (documentSnapshot in querySnapshot.documents) {
+                        // Get the class data from the document
+                        val classId = documentSnapshot.id
+                        val className = documentSnapshot.getString("class_name")
+                        // Add other properties as needed
+
+                        // Create a view to display the class information
+                        val classView = layoutInflater.inflate(R.layout.class_item_layout, null)
+                        val classNameTextView = classView.findViewById<TextView>(R.id.classNameTextView)
+                        classNameTextView.text = className
+
+                        // Add the view to the container
+                        courseContainer.addView(classView)
+
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    // Handle any errors that occurred while fetching data
+                    Toast.makeText(this, "Error loading classes: ${exception.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+        else {
+            // Error : User not logged in, send prompt.
+            Toast.makeText(this, "Please log in to view your classes.", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LoginActivity::class.java)
+             startActivity(intent)
+        }
+
+    }
+*/
