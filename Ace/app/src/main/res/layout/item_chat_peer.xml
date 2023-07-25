@@ -11,7 +11,9 @@
         android:id="@+id/text_chat_user_peer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:text="Friend"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,7 +22,7 @@
         android:id="@+id/card_chat_message_peer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#eef1f6"
+        app:cardBackgroundColor="#AE9A9999"
         app:cardCornerRadius="12dp"
         app:cardElevation="0dp"
         app:cardPreventCornerOverlap="false"
@@ -32,6 +34,7 @@
             android:id="@+id/layout_chat_container_peer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#9A9999"
             android:orientation="vertical">
 
             <TextView
@@ -39,11 +42,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:background="#AE9A9999"
                 android:maxWidth="260dp"
                 android:paddingLeft="12dp"
                 android:paddingTop="8dp"
                 android:paddingRight="12dp"
-                android:textColor="#000000"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +20,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.tasks.await
 import kotlin.coroutines.CoroutineContext
-
 
 class ChatContacts : AppCompatActivity() {
     private lateinit var binding: ActivityChatContactsBinding
@@ -37,6 +37,12 @@ class ChatContacts : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChatContactsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val logoPictureView : ImageView =  findViewById(R.id.logo_icon)
+        logoPictureView.setImageResource(R.drawable.loginlogo)
+        val iconPictureView : ImageView =  findViewById(R.id.icon_account_picture)
+        iconPictureView.setImageResource(R.drawable.account_circle_48px__1_)
+
         auth = Firebase.auth
         loadUsersFromFirestore()
     }

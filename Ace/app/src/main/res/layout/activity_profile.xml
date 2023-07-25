@@ -27,7 +27,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
-                    android:text="LeBron James"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -80,113 +80,111 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <HorizontalScrollView
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
+                    android:layout_height="57dp">
+
+                    <TextView
+                        android:id="@+id/myCourses"
+                        android:layout_width="129dp"
+                        android:layout_height="27dp"
+                        android:text="My Courses"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView20"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.035"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.56" />
+
+                    <ImageView
+                        android:id="@+id/imageView20"
+                        android:layout_width="135dp"
+                        android:layout_height="52dp"
+                        app:layout_constraintStart_toStartOf="@+id/myCourses"
+                        app:srcCompat="@drawable/underline"
+                        tools:layout_editor_absoluteY="-1dp" />
+
+                    <ImageButton
+                        android:id="@+id/add_course_button"
+                        android:layout_width="59dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/add_button"
+                        android:onClick="onAddCourseButtonClick"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.922"
+                        app:layout_constraintStart_toEndOf="@+id/myCourses"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/add_course_button"-->
+                    <!--                        android:layout_width="59dp"-->
+                    <!--                        android:layout_height="55dp"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintHorizontal_bias="0.922"-->
+                    <!--                        app:layout_constraintStart_toEndOf="@+id/myCourses"-->
+                    <!--                        app:srcCompat="@drawable/add_button"-->
+                    <!--                        tools:layout_editor_absoluteY="1dp" />-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/course_scroll"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:id="@+id/container_classes"
+                        android:layout_width="9000dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:fillViewport="true">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="264dp">
-
-
-                            <TextView
-                                android:id="@+id/myCourses"
-                                android:layout_width="129dp"
-                                android:layout_height="27dp"
-                                android:layout_marginTop="16dp"
-                                android:text="My Courses"
-                                android:textColor="#000000"
-                                android:textSize="20sp"
-                                android:textStyle="bold|italic"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.056"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <ImageView
-                                android:id="@+id/imageView19"
-                                android:layout_width="287dp"
-                                android:layout_height="48dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/myCourses"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.129"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0"
-                                app:srcCompat="@drawable/underline" />
-
-                            <ImageView
-                                android:id="@+id/button_background"
-                                android:layout_width="113dp"
-                                android:layout_height="115dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.09"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.503"
-                                app:srcCompat="@drawable/profile_button" />
-
-                            <ImageView
-                                android:id="@+id/book"
-                                android:layout_width="86dp"
-                                android:layout_height="81dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/button_background"
-                                app:layout_constraintEnd_toEndOf="@+id/button_background"
-                                app:layout_constraintStart_toStartOf="@+id/button_background"
-                                app:layout_constraintTop_toTopOf="@+id/button_background"
-                                app:srcCompat="@drawable/book" />
-
-                            <TextView
-                                android:id="@+id/textView8"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Courses"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
-                                android:textStyle="bold"
-                                app:layout_constraintBottom_toBottomOf="@+id/button_background"
-                                app:layout_constraintEnd_toEndOf="@+id/book"
-                                app:layout_constraintHorizontal_bias="0.47"
-                                app:layout_constraintStart_toStartOf="@+id/book"
-                                app:layout_constraintTop_toBottomOf="@+id/book" />
-
-                            <Button
-                                android:id="@+id/button3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="26dp"
-                                android:layout_marginTop="60dp"
-                                android:layout_marginEnd="51dp"
-                                android:layout_marginBottom="112dp"
-                                android:text="Button"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/button4"
-                                app:layout_constraintStart_toEndOf="@+id/button_background"
-                                app:layout_constraintTop_toBottomOf="@+id/imageView19" />
-
-                            <Button
-                                android:id="@+id/button4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="51dp"
-                                android:layout_marginTop="104dp"
-                                android:layout_marginBottom="112dp"
-                                android:text="Button"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/button3"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </LinearLayout>
+                        android:orientation="horizontal"/>
                 </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tvNoClassesMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No enrolled classes"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp">
+
+                    <TextView
+                        android:id="@+id/myNotes"
+                        android:layout_width="129dp"
+                        android:layout_height="27dp"
+                        android:layout_marginTop="12dp"
+                        android:text="My Notes"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toTopOf="@+id/underline2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.056"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/underline2"
+                        android:layout_width="369dp"
+                        android:layout_height="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.104"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/underline" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
         </LinearLayout>

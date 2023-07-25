@@ -95,7 +95,7 @@ class DiscussionForumChatMessageAdapter(private val options: FirebaseRecyclerOpt
                 val dt = message.timestamp?.let { Date(it) }
                 userTextView.text = message.sender
                 timeTextView.text = dt.toString()
-                peerPictureImageView.setImageResource(R.drawable.face_48px)
+                peerPictureImageView.setImageResource(R.drawable.sharp_person_24)
             }
         }
     }

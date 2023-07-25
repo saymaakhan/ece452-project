@@ -4,37 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#323131"
     tools:context=".ui.chat.SingleChat">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/layout_chat"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/logo_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/contact_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_icon" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_chatchannel"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#323131"
-            app:subtitleTextColor="#92FFFFFF"
-            app:titleTextColor="#FFFFFF">
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <Button
-            android:id="@+id/horizontal_barrier"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:layout_gravity="start"
-            android:backgroundTint="#F44336"
-            android:textColor="#F44336"
-            android:textColorHint="#F44336"
-            app:cornerRadius="32dp" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:id="@+id/icon_account_picture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_name" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_chat_space"
@@ -44,7 +44,7 @@
         android:background="#323131"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@+id/text_chat_indicator"
-        app:layout_constraintTop_toBottomOf="@+id/layout_chat"
+        app:layout_constraintTop_toBottomOf="@+id/icon_account_picture"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -87,6 +87,8 @@
             android:paddingHorizontal="8dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
             tools:ignore="Autofill" />
 
         <Button
@@ -96,7 +98,7 @@
             android:layout_toStartOf="@+id/button_chat_close"
             android:background="?attr/selectableItemBackground"
             android:text="Send"
-            android:textColor="@color/primary" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/button_chat_close"
@@ -105,7 +107,7 @@
             android:layout_alignParentEnd="true"
             android:background="?attr/selectableItemBackground"
             android:text="Close"
-            android:textColor="@color/primary" />
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

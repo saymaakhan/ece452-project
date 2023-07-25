@@ -8,6 +8,8 @@ import android.util.Log
 import com.example.ace.R
 
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -53,6 +55,9 @@ class DiscussionForumChat : AppCompatActivity() {
         binding = ActivityDiscussionForumChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val logoPictureView : ImageView =  findViewById(R.id.logo_icon)
+        logoPictureView.setImageResource(R.drawable.loginlogo)
+
         auth = Firebase.auth
         if (auth.currentUser == null) {
             // Not signed in, launch the Sign In activity
@@ -87,8 +92,8 @@ class DiscussionForumChat : AppCompatActivity() {
             ScrollToBottomDiscussion(binding.recyclerDiscussionForumSpace, adapter!!, manager)
         )
 
-        val channelName  = findViewById<Toolbar>(R.id.toolbar_discussion_forum_channel)
-        channelName.title = topicName
+        val channelName  : TextView = findViewById(R.id.discussion_name)
+        channelName.text = topicName
 
         val sendButton : View = findViewById(R.id.button_discussion_forum_send)
         sendButton.setOnClickListener {
