@@ -141,21 +141,7 @@
                         android:id="@+id/container_classes"
                         android:layout_width="9000dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/button2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-                    </LinearLayout>
+                        android:orientation="horizontal"/>
                 </HorizontalScrollView>
 
                 <TextView
