@@ -157,17 +157,17 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
                  .addOnSuccessListener {
                      val classEntryView = layoutInflater.inflate(R.layout.class_item_layout, containerClasses, false)
                      classEntryView.findViewById<TextView>(R.id.tvClassName).text = className
-                     classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: --%"
-                     classEntryView.findViewById<ImageView>(R.id.letterGradeImageView).setImageResource(R.drawable.letter_unknown)
+//                     classEntryView.findViewById<TextView>(R.id.tvWeight).text = "Grade: --%"
+//                     classEntryView.findViewById<ImageView>(R.id.letterGradeImageView).setImageResource(R.drawable.letter_unknown)
 
-                     containerClasses.addView(classEntryView)
+                     //containerClasses.addView(classEntryView)
 
-                     tvNoClassesMessage.visibility = View.GONE
+//                     tvNoClassesMessage.visibility = View.GONE
                      containerClasses.visibility = View.VISIBLE
 
                      val userObject = UserInfo(userId)
                      firestore.collection("user_enrolled_classes").document(className).collection("users").document(userId).set(userObject)
-
+                     firestore.collection("user_enrolled_classes").document(className).set(hashMapOf("test" to 1))
                      // Set an onClickListener for the class entry to open the GradesActivity
                      classEntryView.setOnClickListener {
                          // Launch the activity to add grades for the selected class
