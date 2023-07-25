@@ -51,10 +51,30 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
             addClassDialog.show(supportFragmentManager, "AddClassDialogFragment")
         }
 
+        fetchUserName(nonNullUserId)
         fetchUserEnrolledClasses(nonNullUserId)
 
     }
 
+    private fun fetchUserName(userId: String) {
+        val firestore = FirebaseFirestore.getInstance()
+
+        val userDocumentRef = firestore.collection("users").document(userId)
+        userDocumentRef.get()
+            .addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists()) {
+                    // User data exists, update the UI with the user's name
+                    val userName = documentSnapshot.getString("displayName")
+                    findViewById<TextView>(R.id.user_name).text = userName
+                } else {
+                    // Handle the case when user data does not exist in Firestore
+                }
+            }
+            .addOnFailureListener { exception ->
+                // Handle any errors that occurred while fetching user data
+                Toast.makeText(this, "Error fetching user data: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
     private fun fetchUserEnrolledClasses(userId: String) {
         val firestore = FirebaseFirestore.getInstance()
 
