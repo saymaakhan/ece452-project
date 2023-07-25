@@ -16,7 +16,14 @@ import com.google.firebase.firestore.SetOptions
 import java.math.BigDecimal
 import java.math.RoundingMode
 import android.app.Dialog
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.widget.Button
+import androidx.core.content.ContextCompat
+import com.example.ace.ui.profile.ProfileActivity
 
 private lateinit var btnInsights: Button
 
@@ -40,6 +47,8 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
     private var lowestCourse:String = ""
     private var highestCourse:String = ""
 
+    private val openAIAPIKey: String = "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"
+
     override fun onResume() {
         super.onResume()
         loadClassesFromFirestore()
@@ -52,6 +61,25 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         containerClasses = findViewById(R.id.containerClasses)
         tvCumulativeAverage = findViewById(R.id.tvCumulativeAverage)
         tvNoClassesMessage = findViewById(R.id.tvNoClassesMessage)
+
+        val spannableString = SpannableString("You have no classes at the moment. Go to My Profile to add courses")
+
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                val intent = Intent(this@GradesActivity, ProfileActivity::class.java)
+                startActivity(intent)
+            }
+
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = true // Underline the text to make it look like a link
+                ds.color = ContextCompat.getColor(this@GradesActivity, R.color.teal_200)
+            }
+        }
+
+        spannableString.setSpan(clickableSpan, 41, 51, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        tvNoClassesMessage.text = spannableString
+        tvNoClassesMessage.movementMethod = LinkMovementMethod.getInstance()
 
         loadClassesFromFirestore()
 
