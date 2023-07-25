@@ -13,7 +13,9 @@ import com.example.ace.R
 import com.example.ace.data.model.DiscussionMessage
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 
 class DiscussionForumChatMessageAdapter(private val options: FirebaseRecyclerOptions<DiscussionMessage>,
                                         private val messagesReceived: ArrayList<DiscussionMessage>,
@@ -77,9 +79,12 @@ class DiscussionForumChatMessageAdapter(private val options: FirebaseRecyclerOpt
         val timeTextView : TextView = itemView.findViewById(R.id.text_forum_timestamp_self)
 
         override fun bind(message: DiscussionMessage, type: Int) {
-            messageTextView.setText(message.message)
-            val dt = message.timestamp?.let { Date(it) }
-            timeTextView.setText(dt.toString())
+            messageTextView.text = message.message
+            val timestamp = message.timestamp?.let { Date(it) }
+
+            val dateFormat = SimpleDateFormat("HH:mm MMM dd, yyyy", Locale.getDefault())
+            val formattedTimestamp = dateFormat.format(timestamp)
+            timeTextView.text = formattedTimestamp
         }
     }
 
@@ -92,10 +97,15 @@ class DiscussionForumChatMessageAdapter(private val options: FirebaseRecyclerOpt
         override fun bind(message: DiscussionMessage, type: Int) {
             if (type == 2) {
                 messageTextView.text = message.message
-                val dt = message.timestamp?.let { Date(it) }
                 userTextView.text = message.sender
-                timeTextView.text = dt.toString()
                 peerPictureImageView.setImageResource(R.drawable.sharp_person_24)
+
+                messageTextView.text = message.message
+                val timestamp = message.timestamp?.let { Date(it) }
+
+                val dateFormat = SimpleDateFormat("HH:mm MMM dd, yyyy", Locale.getDefault())
+                val formattedTimestamp = dateFormat.format(timestamp)
+                timeTextView.text = formattedTimestamp
             }
         }
     }

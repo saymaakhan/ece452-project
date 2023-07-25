@@ -13,7 +13,9 @@ import com.example.ace.R
 import com.example.ace.data.model.ChatMessage
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 
 class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessage>,
                          private val messagesReceived: ArrayList<ChatMessage>,
@@ -76,8 +78,11 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
 
         override fun bind (message : ChatMessage) {
             messageTextView.text = message.message
-            val dt = message.timestamp?.let { Date(it) }
-            timeTextView.text = dt.toString()
+            val timestamp = message.timestamp?.let { Date(it) }
+
+            val dateFormat = SimpleDateFormat("HH:mm MMM dd, yyyy", Locale.getDefault())
+            val formattedTimestamp = dateFormat.format(timestamp)
+            timeTextView.text = formattedTimestamp
         }
     }
 
@@ -87,8 +92,11 @@ class ChatMessageAdapter(private val options: FirebaseRecyclerOptions<ChatMessag
 
         override fun bind(message : ChatMessage) {
             messageTextView.text = message.message
-            val dt = message.timestamp?.let { Date(it) }
-            timeTextView.text = dt.toString()
+            val timestamp = message.timestamp?.let { Date(it) }
+
+            val dateFormat = SimpleDateFormat("HH:mm MMM dd, yyyy", Locale.getDefault())
+            val formattedTimestamp = dateFormat.format(timestamp)
+            timeTextView.text = formattedTimestamp
         }
     }
 

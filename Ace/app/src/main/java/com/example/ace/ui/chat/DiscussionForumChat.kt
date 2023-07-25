@@ -119,9 +119,9 @@ class DiscussionForumChat : AppCompatActivity() {
         binding.editDiscussionForumMessage.text.clear()
 
         // Send chat sent notif
-        val toast = Toast.makeText(this, "Message delivered", Toast.LENGTH_SHORT)
-        toast.setGravity(Gravity.TOP, 0, 0)
-        toast.show()
+//        val toast = Toast.makeText(this, "Message delivered", Toast.LENGTH_SHORT)
+//        toast.setGravity(Gravity.TOP, 0, 0)
+//        toast.show()
     }
 
     private fun getUserDiscussionMessages(dbref : DatabaseReference, course : String) {
