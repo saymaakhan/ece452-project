@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import androidx.compose.ui.text.toLowerCase
 import com.example.ace.R
@@ -34,6 +35,11 @@ class DiscussionForumTopics : AppCompatActivity() {
 
         auth = Firebase.auth
         loadCoursesFromFirestore()
+
+        val backButton : View = findViewById(R.id.back_button)
+        backButton.setOnClickListener {
+            finish()
+        }
     }
     private fun getUserName(): String? {
         val user = auth.currentUser
