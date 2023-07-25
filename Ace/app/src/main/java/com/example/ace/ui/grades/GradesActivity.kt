@@ -80,9 +80,9 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         dialog.setContentView(R.layout.dialog_insights)
 
         val text_dialog = dialog.findViewById<TextView>(R.id.text_dialog)
-        text_dialog.text = "Great job in " + highestCourse + "! You are " +
-                "excelling. Now, it is recommended you focus on studying " +
-                "for " +lowestCourse + ". Good luck!"
+        text_dialog.text = "Great job in \n" + highestCourse + "!\n You are " +
+                "excelling. \n\n Now, it is recommended you focus on studying " +
+                "for \n" +lowestCourse + ". \n\n Good luck!"
 
         dialog.show()
     }
