@@ -22,6 +22,7 @@ import com.example.ace.data.model.ChatMessage
 import com.example.ace.data.model.ChatUser
 import com.example.ace.data.ChatMessageSource
 import com.example.ace.databinding.ActivitySingleChatBinding
+import com.example.ace.ui.grades.AddGradesActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.*
@@ -97,6 +98,8 @@ class SingleChat : AppCompatActivity() {
 
         val closeButton : View = findViewById(R.id.button_chat_close)
         closeButton.setOnClickListener {
+            val intent = Intent(this, ChatContacts::class.java)
+            startActivity(intent)
             finish()
         }
     }
