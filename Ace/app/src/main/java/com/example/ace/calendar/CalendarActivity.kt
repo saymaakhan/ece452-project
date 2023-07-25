@@ -186,7 +186,6 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
                     val eventDay = EventDay(calendar, applicationContext.getDot())
                     notes[eventDay] = eventTitle
                     binding.calendarView.setEvents(notes.keys.toList())
-                    Toast.makeText(this, "Event saved successfully", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener { exception ->
                     // Error saving event data

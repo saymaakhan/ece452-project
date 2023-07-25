@@ -181,8 +181,6 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
                      }
 
                      fetchUserEnrolledClasses(userId)
-
-                     Toast.makeText(this, "Class saved successfully", Toast.LENGTH_SHORT).show()
                  }
                  .addOnFailureListener { exception ->
                      // Error saving class data

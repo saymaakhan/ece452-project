@@ -108,8 +108,6 @@ class CameraActivity : AppCompatActivity() {
         val pdf = pdfBtn
         if(pdf is FloatingActionButton){
             pdf.setOnClickListener{
-                //Toast.makeText(this@CameraActivity, "Button Clicked", Toast.LENGTH_SHORT).show()
-
                 val textValue = textbox
                 val textContent = textValue?.text.toString()
                 if (textContent.isEmpty()){

@@ -151,8 +151,6 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                         intent.putExtra("class_name", className)
                         startActivity(intent)
                     }
-
-                    Toast.makeText(this, "Class saved successfully", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener { exception ->
                     // Error saving class data
