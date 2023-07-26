@@ -4,6 +4,7 @@ import android.content.Intent
 import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.widget.Toast
+import com.example.ace.ui.profile.ProfileActivity
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ace.calendar.extensions.getDot
 import com.applandeo.materialcalendarview.CalendarView
@@ -66,15 +67,11 @@ class CalendarActivity : AppCompatActivity(), OnDayClickListener, OnSelectDateLi
 
         //fetchUserEvents()
         fetchEventsFromFirestore(userId)
-        val logout = binding.logout
+        val profile = binding.profile
 
-        logout.setOnClickListener {
-            mGoogleSignInClient.signOut().addOnCompleteListener {
-                val intent = Intent(this, MainActivity::class.java)
-                Toast.makeText(this, "Logging Out", Toast.LENGTH_SHORT).show()
-                startActivity(intent)
-                finish()
-            }
+        profile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 
