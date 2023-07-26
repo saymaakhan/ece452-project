@@ -100,8 +100,9 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         dialog.setContentView(R.layout.dialog_insights)
 
         val text_dialog = dialog.findViewById<TextView>(R.id.text_dialog)
-        if (highestGrade == Double.MIN_VALUE) {
-            text_dialog.text = "At this moment,\n there isn't sufficient \ninformation available to provide \ninsights on your grades"
+        if (highestGrade == Double.MIN_VALUE || highestGrade == lowestGrade) {
+            text_dialog.text =
+                "At this moment,\n there isn't sufficient \ninformation available to provide \ninsights on your grades"
         } else {
             text_dialog.text = "Great job in \n" + highestCourse + "!\n You are " +
                     "excelling. \n\n Now, it is recommended you focus on studying " +
