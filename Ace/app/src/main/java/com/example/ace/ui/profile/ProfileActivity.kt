@@ -63,14 +63,9 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
 
         val userDocumentRef = firestore.collection("users").document(userId)
         userDocumentRef.get()
-            .addOnSuccessListener { documentSnapshot ->
-                if (documentSnapshot.exists()) {
-                    // User data exists, update the UI with the user's name
-                    val userName = documentSnapshot.getString("displayName")
-                    findViewById<TextView>(R.id.user_name).text = userName
-                } else {
-                    // Handle the case when user data does not exist in Firestore
-                }
+            .addOnSuccessListener {
+                val userName = it.getString("displayName")
+                findViewById<TextView>(R.id.user_name).text = userName
             }
             .addOnFailureListener { exception ->
                 // Handle any errors that occurred while fetching user data
@@ -97,10 +92,6 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
 
                     // Update the UI with the enrolled classes
                     updateUIWithEnrolledClasses(enrolledClassesList)
-                } else {
-                    // If there are no enrolled classes, handle this case if needed
-                    // For example, you could display a message like "No enrolled classes"
-                    Toast.makeText(this, "TODO: DEBUG", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener { exception ->
@@ -111,6 +102,7 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
 
     private fun updateUIWithEnrolledClasses(enrolledClassesList: List<String>) {
         containerClasses = findViewById(R.id.container_classes)
+        tvNoClassesMessage = findViewById(R.id.tvNoClassesMessage)
 
         containerClasses.removeAllViews()
 
@@ -121,19 +113,12 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
         containerClasses.addView(recyclerView)
 
         if (enrolledClassesList.isEmpty()) {
-//            tvNoClassesMessage.visibility = View.VISIBLE
-//            containerClasses.visibility = View.GONE
+            tvNoClassesMessage.visibility = View.VISIBLE
+            containerClasses.visibility = View.GONE
         } else {
-//            tvNoClassesMessage.visibility = View.GONE
-//            containerClasses.visibility = View.VISIBLE
+            tvNoClassesMessage.visibility = View.GONE
+            containerClasses.visibility = View.VISIBLE
         }
-
-
-
-//TODO: FIX
-//            tvNoClassesMessage.visibility = View.GONE
-//            containerClasses.visibility = View.VISIBLE
-
     }
 
      override fun onAddClicked(className: String){
