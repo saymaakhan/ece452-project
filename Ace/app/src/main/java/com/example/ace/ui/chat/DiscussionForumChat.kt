@@ -51,6 +51,8 @@ class DiscussionForumChat : AppCompatActivity() {
     private lateinit var messagesReceivedList: ArrayList<DiscussionMessage>
     private lateinit var messagesSentList: ArrayList<DiscussionMessage>
 
+    val badWords = arrayOf("fuck", "shit", "bitch", "ass", "sex", "dick", "cunt", "pussy", "whore", "slut")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // setContentView(R.layout.activity_discussion_thread_chat)
@@ -111,7 +113,10 @@ class DiscussionForumChat : AppCompatActivity() {
     }
 
     fun discussionChatSendOnClick() {
-        val text = binding.editDiscussionForumMessage.text.toString()
+        var text = binding.editDiscussionForumMessage.text.toString()
+        if (badWords.any {word -> text.contains(word)}) {
+            text = "This message contains profanity"
+        }
         val timeStamp = Timestamp(System.currentTimeMillis()).time
         val user = getUserName() as String
         val newMessage = DiscussionMessage(course=topicName, sender=user, timestamp=timeStamp, message=text)
