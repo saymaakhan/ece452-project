@@ -1,6 +1,7 @@
 | Date       | Sidharth | Ryan | Aditya | Prisha | Emily | Sayma | Task                             |
 |------------|----------|------|--------|--------|-------|-------|----------------------------------|
 |05/19/2023 |2|2|2|2|2|2|Brain storming ideas session|
+|06/02/2023|0|0|0|0|0|2|Created mock-ups for UI of different key features|
 |06/24/2023|0|0|0|5|0|0|Implemented running skeleton of app|
 |06/24/2023|0|0|6|0|0|0|Created Notes scanning functionality using androidMLkit api in Java (contributions not visible for this as email was not configured) |
 |06/25/2023|4|0|0|0|0|0|Converting Note Scanner code from Java to Kotlin and integrating with temporary dashboard for demoing purposes|
