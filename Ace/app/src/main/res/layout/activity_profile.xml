@@ -201,7 +201,14 @@
                         android:id="@+id/pdfLinkTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Click here to open the PDF"
+                        android:text="Please generate PDFs to view your notes."
+                        android:visibility="visible"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="italic"
                         android:padding="16dp" />
 
 <!--                    <androidx.cardview.widget.CardView-->
