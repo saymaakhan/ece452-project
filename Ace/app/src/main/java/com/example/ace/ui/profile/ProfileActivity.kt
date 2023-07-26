@@ -1,15 +1,26 @@
 package com.example.ace.ui.profile
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+
+import android.webkit.WebView
+import android.webkit.WebViewClient
+
 import android.widget.Button
+
 import android.widget.ImageButton
+import com.example.ace.ui.camera.PdfHandler
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.R
@@ -32,6 +43,11 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
     private lateinit var databaseReference: DatabaseReference
     private lateinit var tvCumulativeAverage: TextView
     private lateinit var tvNoClassesMessage: TextView
+    private lateinit var pdfWebView: WebView
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var pdfHandler: PdfHandler
+    private lateinit var pdfContainer: LinearLayout
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,10 +58,24 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
         val userId = firebaseAuth.currentUser?.uid
         val nonNullUserId = userId ?: "defaultUserId"
 
+        //FindViews
         containerClasses = findViewById(R.id.container_classes)
+        val courseButton: ImageButton = findViewById(R.id.add_course_button)
+        pdfHandler = PdfHandler()
+
+        // Retrieve the pdfUrl from SharedPreferences
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val pdfUrl = sharedPreferences.getString("pdfUrl", "")
+
+        if (pdfUrl.isNullOrEmpty()) {
+            // PDF not saved, show a message or handle this scenario
+            //displayPdf(pdfUrl)
+        } else {
+            // Display the PDF using WebView
+            updateUIWithPdfs(pdfUrl)
+        }
 
         databaseReference = FirebaseDatabase.getInstance().reference.child("users").child(nonNullUserId)
-        val courseButton: ImageButton = findViewById(R.id.add_course_button)
 
         courseButton.setOnClickListener {
             // Show the AddClassDialogFragment
@@ -58,6 +88,42 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
         fetchUserEnrolledClasses(nonNullUserId)
 
     }
+
+    private fun displayPdf(url: String?){
+        if (url != null) {
+            pdfWebView.settings.javaScriptEnabled = true
+            pdfWebView.webViewClient = WebViewClient()
+            pdfWebView.loadUrl(url)
+            pdfWebView.visibility = View.VISIBLE
+        }
+    }
+
+    private fun updateUIWithPdfs(pdfUrls: String) {
+        pdfContainer = findViewById(R.id.pdfContainer)
+
+        pdfContainer.removeAllViews()
+
+        val recyclerView = RecyclerView(this)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        val pdfUrlList: List<String> = if (pdfUrls.isEmpty()) {
+            emptyList() // If pdfUrls is empty, use an empty list
+        } else {
+            pdfUrls.split(",") // Assuming pdfUrls is a comma-separated string of URLs
+        }
+
+        val adapter = PdfAdapter(pdfUrlList)
+        recyclerView.adapter = adapter
+        pdfContainer.addView(recyclerView)
+
+        if (pdfUrlList.isEmpty()) {
+            // Show a message or handle the scenario when there are no PDFs
+        } else {
+            // Handle the case when there are PDFs
+        }
+    }
+
+
 
     private fun fetchUserName(userId: String) {
         val firestore = FirebaseFirestore.getInstance()
@@ -123,6 +189,10 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
 
                     // Update the UI with the enrolled classes
                     updateUIWithEnrolledClasses(enrolledClassesList)
+
+                } else {
+                    // If there are no enrolled classes, handle this case if needed
+                    Toast.makeText(this, "Not currently enrolled in classes", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener { exception ->

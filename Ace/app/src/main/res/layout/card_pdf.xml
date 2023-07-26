@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:elevation="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:id="@+id/pdfCardView">
+
+    <!-- Customize the content of the card view as you desire -->
+    <TextView
+        android:id="@+id/pdfLinkTextView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click here to open the PDF"
+        android:textColor="@color/secondary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/material_dynamic_neutral30"
+        android:padding="8dp"
+        />
+
+</androidx.cardview.widget.CardView>

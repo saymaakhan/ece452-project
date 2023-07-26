@@ -5,6 +5,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
@@ -20,6 +21,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.webkit.WebView
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -54,6 +56,9 @@ class CameraActivity : AppCompatActivity() {
     private var pdfUrl: String = ""
 
     private lateinit var builder: AlertDialog.Builder
+    private lateinit var pdfHandler: PdfHandler
+    private lateinit var  sharedPreferences: SharedPreferences
+
 
     lateinit var mStorage : StorageReference
 //    var clear: ImageView? = null
@@ -103,18 +108,28 @@ class CameraActivity : AppCompatActivity() {
             }
         }
 
-
+        // <-------------------- Backend PDF Logic -------------------->
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        pdfHandler = PdfHandler()
 
         val pdf = pdfBtn
         if(pdf is FloatingActionButton){
             pdf.setOnClickListener{
                 val textValue = textbox
                 val textContent = textValue?.text.toString()
+
                 if (textContent.isEmpty()){
                     Toast.makeText(this@CameraActivity, "Text box is empty", Toast.LENGTH_SHORT).show()
                 } else {
                     val pdfByteArray = generatePdfByteArray()
                     uploadPdfToFirebase(pdfByteArray)
+
+//                    val editor = sharedPreferences.edit()
+//                    editor.putString("pdfUrl", pdfUrl)
+//                    editor.apply()
+
+                    pdfHandler.setPdfUrl(pdfUrl)
+
                     builder.setTitle("PDF Created!")
                         .setMessage("Do you want to view the file?")
                         .setCancelable(true)
@@ -268,6 +283,10 @@ class CameraActivity : AppCompatActivity() {
 
             pdfRef.downloadUrl.addOnSuccessListener { downloadUrl ->
                 pdfUrl = downloadUrl.toString()
+
+                val editor = sharedPreferences.edit()
+                editor.putString("pdfUrl",pdfUrl)
+                editor.apply()
                 //textValue?.setText(url)
 //                val clickableSpan = object : ClickableSpan() {
 //                    override fun onClick(view: View) {
