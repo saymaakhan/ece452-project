@@ -23,12 +23,19 @@ import com.google.firebase.ktx.Firebase
 import com.example.ace.data.model.ChatMessage
 import com.example.ace.data.model.ChatUser
 import com.example.ace.data.ChatMessageSource
+import com.example.ace.data.RetrofitInstance
+import com.example.ace.data.model.NotificationData
+import com.example.ace.data.model.PushNotification
 import com.example.ace.databinding.ActivitySingleChatBinding
 import com.example.ace.ui.grades.AddGradesActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
+import com.google.gson.Gson
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 import java.sql.Timestamp
 
@@ -41,6 +48,7 @@ class SingleChat : AppCompatActivity() {
     private lateinit var adapter: ChatMessageAdapter
     private lateinit var messagesReceivedList: ArrayList<ChatMessage>
     private lateinit var messagesSentList: ArrayList<ChatMessage>
+    var topic = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,6 +124,14 @@ class SingleChat : AppCompatActivity() {
         db.reference.child(MESSAGES_CHILD).push().setValue(newMessage)
         binding.editChatMessage.text.clear()
 
+        val curr_user = auth.currentUser
+        val user_id = curr_user?.uid
+
+        topic = "/topics/${user_id}"
+        PushNotification(NotificationData(user, textView), topic).also {
+            sendNotification(it)
+        }
+
         // Send chat sent notif
 //        val toast = Toast.makeText(this, "Message delivered", Toast.LENGTH_SHORT)
 //        toast.setGravity(Gravity.TOP, 0, 0)
@@ -172,5 +188,19 @@ class SingleChat : AppCompatActivity() {
     companion object {
         const val MESSAGES_CHILD = "messages"
         const val ANONYMOUS = "anonymous"
+    }
+
+    private fun sendNotification(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
+        try {
+            val response = RetrofitInstance.api.postNotification(notification)
+            if(response.isSuccessful){
+                Toast.makeText(this@SingleChat, "Response ${Gson().toJson(response)}", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this@SingleChat, response.errorBody().toString(), Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            Toast.makeText(this@SingleChat, e.message, Toast.LENGTH_SHORT).show()
+
+        }
     }
 }
