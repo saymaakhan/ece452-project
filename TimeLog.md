@@ -30,3 +30,4 @@
 |07/25/2023|0|0|0|0|1|0|Added a bad word filter to prevent harrassment in direct messages/discussions|
 |07/25/2023|0|6|0|0|0|0|Expanded on backend functionality for the pdf scanner so it shows up on the user's profile. Also conducted general testing and UI updates|
 |07/25/2023|0|0|6|0|0|0|Experiment: Tried implementing push notifications for the chat message feature. Device tokens are not available and notification permissions required for SDK's later than Android Oreo. Code available on 'notification' branch|
+|07/26/2023|0|0|1|0|0|0|UI enhancement for notes section in profile view.|
