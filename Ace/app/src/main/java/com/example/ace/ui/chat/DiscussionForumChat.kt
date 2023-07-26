@@ -51,7 +51,7 @@ class DiscussionForumChat : AppCompatActivity() {
     private lateinit var messagesReceivedList: ArrayList<DiscussionMessage>
     private lateinit var messagesSentList: ArrayList<DiscussionMessage>
 
-    val badWords = arrayOf("fuck", "shit", "bitch", "ass", "sex", "dick", "cunt", "pussy", "whore", "slut")
+    val badWords = arrayOf("fuck", "shit", "bitch", "sex", "dick", "cunt", "pussy", "whore", "slut")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
