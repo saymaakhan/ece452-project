@@ -16,7 +16,14 @@ import com.google.firebase.firestore.SetOptions
 import java.math.BigDecimal
 import java.math.RoundingMode
 import android.app.Dialog
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.widget.Button
+import androidx.core.content.ContextCompat
+import com.example.ace.ui.profile.ProfileActivity
 
 private lateinit var btnInsights: Button
 
@@ -40,6 +47,8 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
     private var lowestCourse:String = ""
     private var highestCourse:String = ""
 
+    private val openAIAPIKey: String = "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"
+
     override fun onResume() {
         super.onResume()
         loadClassesFromFirestore()
@@ -53,16 +62,27 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         tvCumulativeAverage = findViewById(R.id.tvCumulativeAverage)
         tvNoClassesMessage = findViewById(R.id.tvNoClassesMessage)
 
-        loadClassesFromFirestore()
+        val spannableString = SpannableString("You have no classes at the moment.\nGo to My Profile to add courses.")
 
-        val fabAdd: FloatingActionButton = findViewById(R.id.fabAdd)
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                val intent = Intent(this@GradesActivity, ProfileActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
 
-        fabAdd.setOnClickListener {
-            // Show the AddClassDialogFragment
-            val addClassDialog = AddClassDialogFragment()
-            addClassDialog.setOnSaveClickListener(this)
-            addClassDialog.show(supportFragmentManager, "AddClassDialogFragment")
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = true // Underline the text to make it look like a link
+                ds.color = ContextCompat.getColor(this@GradesActivity, R.color.teal_200)
+            }
         }
+
+        spannableString.setSpan(clickableSpan, 41, 51, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        tvNoClassesMessage.text = spannableString
+        tvNoClassesMessage.movementMethod = LinkMovementMethod.getInstance()
+
+        loadClassesFromFirestore()
 
         // Find Insights button and listen
         btnInsights = findViewById(R.id.btnInsights)
@@ -80,8 +100,9 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
         dialog.setContentView(R.layout.dialog_insights)
 
         val text_dialog = dialog.findViewById<TextView>(R.id.text_dialog)
-        if (highestGrade == Double.MIN_VALUE) {
-            text_dialog.text = "At this moment,\n there isn't sufficient \ninformation available to provide \ninsights on your grades"
+        if (highestGrade == Double.MIN_VALUE || highestGrade == lowestGrade) {
+            text_dialog.text =
+                "At this moment,\n there isn't sufficient \ninformation available to provide \ninsights on your grades"
         } else {
             text_dialog.text = "Great job in \n" + highestCourse + "!\n You are " +
                     "excelling. \n\n Now, it is recommended you focus on studying " +
@@ -131,8 +152,6 @@ class GradesActivity : AppCompatActivity(), AddClassDialogFragment.OnSaveClickLi
                         intent.putExtra("class_name", className)
                         startActivity(intent)
                     }
-
-                    Toast.makeText(this, "Class saved successfully", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener { exception ->
                     // Error saving class data

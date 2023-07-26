@@ -3,6 +3,7 @@ package com.example.ace.ui.profile
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -24,7 +25,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickListener {
+class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickListener, EditNameDialogFragment.OnNameUpdateListener {
     var DUMMY_COURSE_ID = "101"
     var DUMMY_COURSE_NAME = "Coding"
     private lateinit var containerClasses: LinearLayout
@@ -61,22 +62,47 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
     private fun fetchUserName(userId: String) {
         val firestore = FirebaseFirestore.getInstance()
 
+        findViewById<Button>(R.id.edit_avatar).setOnClickListener {
+            // Show the EditNameDialogFragment with the current user name
+            val editNameDialog = EditNameDialogFragment()
+            val bundle = Bundle()
+            bundle.putString("currentName", findViewById<TextView>(R.id.user_name).text.toString())
+            editNameDialog.arguments = bundle
+            editNameDialog.show(supportFragmentManager, "EditNameDialogFragment")
+        }
+
         val userDocumentRef = firestore.collection("users").document(userId)
         userDocumentRef.get()
-            .addOnSuccessListener { documentSnapshot ->
-                if (documentSnapshot.exists()) {
-                    // User data exists, update the UI with the user's name
-                    val userName = documentSnapshot.getString("displayName")
-                    findViewById<TextView>(R.id.user_name).text = userName
-                } else {
-                    // Handle the case when user data does not exist in Firestore
-                }
+            .addOnSuccessListener {
+                val userName = it.getString("displayName")
+                findViewById<TextView>(R.id.user_name).text = userName
             }
             .addOnFailureListener { exception ->
                 // Handle any errors that occurred while fetching user data
                 Toast.makeText(this, "Error fetching user data: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+    override fun onNameUpdated(newName: String) {
+        val firestore = FirebaseFirestore.getInstance()
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+
+        if (userId != null) {
+            val userDocumentRef = firestore.collection("users").document(userId)
+
+            // Update the "displayName" field in Firestore with the new name
+            userDocumentRef.update("displayName", newName)
+                .addOnSuccessListener {
+                    // Update the UI with the new name
+                    findViewById<TextView>(R.id.user_name).text = newName
+                    Toast.makeText(this, "Name updated successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this, "Error updating name: ${exception.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
     private fun fetchUserEnrolledClasses(userId: String) {
         val firestore = FirebaseFirestore.getInstance()
 
@@ -97,10 +123,6 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
 
                     // Update the UI with the enrolled classes
                     updateUIWithEnrolledClasses(enrolledClassesList)
-                } else {
-                    // If there are no enrolled classes, handle this case if needed
-                    // For example, you could display a message like "No enrolled classes"
-                    Toast.makeText(this, "TODO: DEBUG", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener { exception ->
@@ -111,6 +133,7 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
 
     private fun updateUIWithEnrolledClasses(enrolledClassesList: List<String>) {
         containerClasses = findViewById(R.id.container_classes)
+        tvNoClassesMessage = findViewById(R.id.tvNoClassesMessage)
 
         containerClasses.removeAllViews()
 
@@ -121,19 +144,12 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
         containerClasses.addView(recyclerView)
 
         if (enrolledClassesList.isEmpty()) {
-//            tvNoClassesMessage.visibility = View.VISIBLE
-//            containerClasses.visibility = View.GONE
+            tvNoClassesMessage.visibility = View.VISIBLE
+            containerClasses.visibility = View.GONE
         } else {
-//            tvNoClassesMessage.visibility = View.GONE
-//            containerClasses.visibility = View.VISIBLE
+            tvNoClassesMessage.visibility = View.GONE
+            containerClasses.visibility = View.VISIBLE
         }
-
-
-
-//TODO: FIX
-//            tvNoClassesMessage.visibility = View.GONE
-//            containerClasses.visibility = View.VISIBLE
-
     }
 
      override fun onAddClicked(className: String){
@@ -181,8 +197,6 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
                      }
 
                      fetchUserEnrolledClasses(userId)
-
-                     Toast.makeText(this, "Class saved successfully", Toast.LENGTH_SHORT).show()
                  }
                  .addOnFailureListener { exception ->
                      // Error saving class data

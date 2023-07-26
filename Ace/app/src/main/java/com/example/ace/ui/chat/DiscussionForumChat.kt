@@ -115,7 +115,7 @@ class DiscussionForumChat : AppCompatActivity() {
     fun discussionChatSendOnClick() {
         var text = binding.editDiscussionForumMessage.text.toString()
         if (badWords.any {word -> text.contains(word)}) {
-            text = "This message contains profanity"
+            text = "** This message has been censored as it contains profanity **"
         }
         val timeStamp = Timestamp(System.currentTimeMillis()).time
         val user = getUserName() as String

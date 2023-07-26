@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
@@ -10,11 +11,14 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ace"
-        tools:targetApi="28"
-        android:requestLegacyExternalStorage="true">
+        tools:targetApi="28">
+        <activity
+            android:name=".ui.profile.EditNameDialogFragment"
+            android:exported="false" />
         <activity
             android:name=".ui.grades.AddItemGradeDialogFragment"
             android:exported="false" />
@@ -59,23 +63,23 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login"/>
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".calendar.CalendarActivity"
             android:exported="false"
-            android:label="@string/title_activity_calendar"/>
+            android:label="@string/title_activity_calendar" />
         <activity
             android:name=".calendar.NotePreviewActivity"
             android:exported="false"
-            android:label="@string/title_activity_note_preview"/>
+            android:label="@string/title_activity_note_preview" />
         <activity
             android:name=".calendar.AddNoteActivity"
             android:exported="false"
-            android:label="@string/title_activity_add_note"/>
+            android:label="@string/title_activity_add_note" />
         <activity
             android:name=".ui.camera.CameraActivity"
             android:exported="false"
-            android:label="@string/title_camera_activity"/>
+            android:label="@string/title_camera_activity" />
         <activity
             android:name=".ui.grades.GradesActivity"
             android:exported="false"
@@ -84,15 +88,16 @@
             android:name=".ui.profile.ProfileActivity"
             android:exported="false"
             android:label="@string/title_profile_activity" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.ace.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/file_paths" />
-    </provider>
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>
