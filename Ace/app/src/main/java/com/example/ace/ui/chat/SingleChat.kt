@@ -42,7 +42,7 @@ class SingleChat : AppCompatActivity() {
     private lateinit var messagesReceivedList: ArrayList<ChatMessage>
     private lateinit var messagesSentList: ArrayList<ChatMessage>
 
-    val badWords = arrayOf("fuck", "shit", "bitch", "ass", "sex", "dick", "cunt", "pussy", "whore", "slut")
+    val badWords = arrayOf("fuck", "shit", "bitch", "sex", "dick", "cunt", "pussy", "whore", "slut")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
