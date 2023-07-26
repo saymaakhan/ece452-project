@@ -104,9 +104,6 @@ class MainActivity : AppCompatActivity() {
                         )
 
                         userDocumentRef.set(userMap)
-                            .addOnSuccessListener {
-                                Toast.makeText(this, "Added user succesfully to firestore", Toast.LENGTH_SHORT).show()
-                            }
                             .addOnFailureListener {
                                 Toast.makeText(this, "Failed to add user to firestore", Toast.LENGTH_SHORT).show()
                             }

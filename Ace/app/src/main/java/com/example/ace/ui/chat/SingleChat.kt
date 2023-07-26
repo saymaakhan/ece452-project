@@ -42,7 +42,7 @@ class SingleChat : AppCompatActivity() {
     private lateinit var messagesReceivedList: ArrayList<ChatMessage>
     private lateinit var messagesSentList: ArrayList<ChatMessage>
 
-    val badWords = arrayOf("fuck", "shit", "bitch", "ass", "sex", "dick", "cunt", "pussy", "whore", "slut")
+    val badWords = arrayOf("fuck", "shit", "bitch", "sex", "dick", "cunt", "pussy", "whore", "slut")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -112,7 +112,7 @@ class SingleChat : AppCompatActivity() {
         val userName = intent.getSerializableExtra("ChatUser" ) as String
         var textView = binding.editChatMessage.text.toString()
         if (badWords.any {word -> textView.contains(word)}) {
-            textView = "This message contains profanity"
+            textView = "** This message has been censored as it contains profanity **"
         }
         val timeStamp = Timestamp(System.currentTimeMillis()).time
         val user = getUserName() as String

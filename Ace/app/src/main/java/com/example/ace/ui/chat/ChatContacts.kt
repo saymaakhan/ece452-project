@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ace.R
 import com.example.ace.databinding.ActivityChatContactsBinding
+import com.example.ace.ui.profile.ProfileActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentSnapshot
@@ -46,6 +47,11 @@ class ChatContacts : AppCompatActivity() {
         auth = Firebase.auth
         loadUsersFromFirestore()
 
+        iconPictureView.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun getUserName(): String? {

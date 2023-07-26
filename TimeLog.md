@@ -27,4 +27,4 @@
 |07/24/2023|0|0|0|6|0|0|Redesigned chat messaging, contact list, discussion forum, discussoin topics UI layout|
 |07/25/2023|0|0|0|0|0|15|Make UI fit on multiple devices, enhance performance insights graphics, update profile UI to match mock-ups, add ability to export user calendar into .ics file that directly loads into Google Calendar account, code profile UI to match application|
 |07/25/2023|0|0|0|2.5|0|0|Added sent notifications to indicate user's message is successfully sent and added navigation back to dashboard from chat contacts and discussion forum topics |
-
+|07/25/2023|0|0|0|0|1|0|Added a bad word filter to prevent harrassment in direct messages/discussions|

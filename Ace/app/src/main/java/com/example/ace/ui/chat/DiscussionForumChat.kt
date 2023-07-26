@@ -51,7 +51,7 @@ class DiscussionForumChat : AppCompatActivity() {
     private lateinit var messagesReceivedList: ArrayList<DiscussionMessage>
     private lateinit var messagesSentList: ArrayList<DiscussionMessage>
 
-    val badWords = arrayOf("fuck", "shit", "bitch", "ass", "sex", "dick", "cunt", "pussy", "whore", "slut")
+    val badWords = arrayOf("fuck", "shit", "bitch", "sex", "dick", "cunt", "pussy", "whore", "slut")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -115,7 +115,7 @@ class DiscussionForumChat : AppCompatActivity() {
     fun discussionChatSendOnClick() {
         var text = binding.editDiscussionForumMessage.text.toString()
         if (badWords.any {word -> text.contains(word)}) {
-            text = "This message contains profanity"
+            text = "** This message has been censored as it contains profanity **"
         }
         val timeStamp = Timestamp(System.currentTimeMillis()).time
         val user = getUserName() as String

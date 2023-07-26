@@ -35,16 +35,17 @@
 
                 <TextView
                     android:id="@+id/user_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:gravity="center"
                     android:text=""
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.507"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/avatar"
                     app:layout_constraintVertical_bias="0.0" />
@@ -52,8 +53,10 @@
                 <Button
                     android:id="@+id/edit_avatar"
                     android:layout_width="67dp"
-                    android:layout_height="35dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="140dp"
+                    android:paddingTop="-5dp"
+                    android:paddingBottom="-5dp"
                     android:backgroundTint="#F95252"
                     android:text="Edit"
                     app:cornerRadius="32dp"
@@ -86,34 +89,38 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="69dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/myCourses"
-                        android:layout_width="129dp"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="10dp"
                         android:layout_height="27dp"
+                        android:layout_marginTop="5dp"
                         android:text="My Courses"
                         android:textColor="@color/white"
                         android:textSize="20sp"
+                        android:gravity="center_vertical"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView20"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.035"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.56" />
 
                     <ImageButton
                         android:id="@+id/add_course_button"
-                        android:layout_width="59dp"
-                        android:layout_height="56dp"
+                        android:layout_width="39dp"
+                        android:layout_height="39dp"
+                        android:layout_marginRight="10dp"
                         android:layout_marginBottom="15dp"
                         android:background="@drawable/icons8_plus_50"
                         android:onClick="onAddCourseButtonClick"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.922"
-                        app:layout_constraintStart_toEndOf="@+id/myCourses"
                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintVertical_bias="1.0" />
 
 
@@ -147,22 +154,25 @@
                     android:id="@+id/tvNoClassesMessage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="No enrolled classes"
-                    android:visibility="gone"
+                    android:text="You are not enrolled in any classes at the moment, hit the (+) button to add."
+                    android:visibility="visible"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="italic" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="118dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/myNotes"
-                        android:layout_width="129dp"
+                        android:layout_width="match_parent"
                         android:layout_height="27dp"
                         android:layout_marginTop="30dp"
+                        android:layout_marginLeft="10dp"
                         android:text="My Notes"
                         android:textColor="@color/white"
                         android:textSize="20sp"
