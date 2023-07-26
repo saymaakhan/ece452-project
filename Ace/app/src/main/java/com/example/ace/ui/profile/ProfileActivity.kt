@@ -3,6 +3,7 @@ package com.example.ace.ui.profile
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -24,7 +25,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickListener {
+class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickListener, EditNameDialogFragment.OnNameUpdateListener {
     var DUMMY_COURSE_ID = "101"
     var DUMMY_COURSE_NAME = "Coding"
     private lateinit var containerClasses: LinearLayout
@@ -61,6 +62,15 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
     private fun fetchUserName(userId: String) {
         val firestore = FirebaseFirestore.getInstance()
 
+        findViewById<Button>(R.id.edit_avatar).setOnClickListener {
+            // Show the EditNameDialogFragment with the current user name
+            val editNameDialog = EditNameDialogFragment()
+            val bundle = Bundle()
+            bundle.putString("currentName", findViewById<TextView>(R.id.user_name).text.toString())
+            editNameDialog.arguments = bundle
+            editNameDialog.show(supportFragmentManager, "EditNameDialogFragment")
+        }
+
         val userDocumentRef = firestore.collection("users").document(userId)
         userDocumentRef.get()
             .addOnSuccessListener {
@@ -72,6 +82,27 @@ class ProfileActivity : AppCompatActivity(), AddCourseDialogFragment.OnAddClickL
                 Toast.makeText(this, "Error fetching user data: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+    override fun onNameUpdated(newName: String) {
+        val firestore = FirebaseFirestore.getInstance()
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+
+        if (userId != null) {
+            val userDocumentRef = firestore.collection("users").document(userId)
+
+            // Update the "displayName" field in Firestore with the new name
+            userDocumentRef.update("displayName", newName)
+                .addOnSuccessListener {
+                    // Update the UI with the new name
+                    findViewById<TextView>(R.id.user_name).text = newName
+                    Toast.makeText(this, "Name updated successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this, "Error updating name: ${exception.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
     private fun fetchUserEnrolledClasses(userId: String) {
         val firestore = FirebaseFirestore.getInstance()
 
