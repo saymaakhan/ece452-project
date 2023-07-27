@@ -13,9 +13,9 @@
 |06/25/2023|0|0|0|4|0|0|Created login activity inlcuding allowing users to type in username and password and verify. It also checked for password conditions (shown in commit)|
 |06/27/2023|0|0|0|0|0|5|Set up initial dashboard interface and calendar UI (front-end)|
 |06/28/2023|0|0|0|0|0|2|Continue calendar (dark scheme) and logout UI|
-|07/10/2023|5|0|0|0|0|0|Setup firestore for Ace Project and setup codebase to access firestore from Kotlin files|
+|07/10/2023|4|0|0|0|0|0|Setup firestore for Ace Project and setup codebase to access firestore from Kotlin files|
 |07/18/2023|0|2|0|0|0|0|Fixed bugs where calendar and camera were closing on 'Back'|
-|07/18/2023|7|0|0|0|0|0|Extracted data from authentication to get UID from firebase, in order to setup firestore. Update dashboard from ConstraintLayout to LinearLayout for easier future developement|
+|07/18/2023|5|0|0|0|0|0|Extracted data from authentication to get UID from firebase, in order to setup firestore. Update dashboard from ConstraintLayout to LinearLayout for easier future developement|
 |07/19/2023|0|0|1|0|0|0|Updated email for project, contributions visible and updated image assets|
 |07/19/2023|0|2|0|0|0|0|Added Profile to Dashboard + General UI fixes|
 |07/20/2023|5|0|0|0|0|0|Create document and collection infrastructure for fellow team members to store data on firebase such as calendar events and messaging services. Review Pull Requests and debug camera scanner crashing|
@@ -33,7 +33,7 @@
 |07/22/2023|0|0|0|3|0|0|Allowed users to select topics to dicuss on. (Seperated topics for each discussion forum)|
 |07/22/2023|0|0|10|0|0|0|Experiment: PDF generation of scanned image to text directly to phone's internal storage. Result -> Permission error (SDK 33 issue) (legacy code in pdf_feature branch)|
 |07/22/2023|0|0|0|0|0|6|Design main page UX, design icons, and refactor activity for functionality|
-|07/23/2023|16|0|0|0|0|0|Created custom card components to showcase Grades and messaging features. Finalized firestore infrastructure to be utilized throughout app. Implemented hot reloading from firestore. Added the math logic for grades, syllabus grades, class grades and cummalitive grade. Updated color theme of app. Add /drawable assets to be used in application by fellow team members|
+|07/23/2023|13|0|0|0|0|0|Created custom card components to showcase Grades and messaging features. Finalized firestore infrastructure to be utilized throughout app. Implemented hot reloading from firestore. Added the math logic for grades, syllabus grades, class grades and cummalitive grade. Updated color theme of app. Add /drawable assets to be used in application by fellow team members|
 |07/23/2023|0|0|0|0|5|0|Integrated chat backend with existing frontend|
 |07/23/2023|0|0|10|0|0|0|Created Firebase Storage to directly upload generated pdfs from app. Implemented UI to allow seamless access to pdf content directly downloaded to internal storage from firebase|
 |07/23/2023|0|16|0|0|0|0|Profile UI edits + horizontal scrolling for course cards + Begin fetching backend data to load courses from user's firebase into the profile UI and render cards based on what courses they take + route cards to grades pages onClick|
