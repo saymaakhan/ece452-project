@@ -1,3 +1,4 @@
+// Reference: https://www.geeksforgeeks.org/google-signing-using-firebase-authentication-in-kotlin/
 package com.example.ace
 
 import androidx.appcompat.app.AppCompatActivity
