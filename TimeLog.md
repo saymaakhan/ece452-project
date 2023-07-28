@@ -4,7 +4,7 @@
 |06/02/2023|0|0|0|0|0|8|Created mock-ups/lo-fidelity wireframes for UI/UX of different key features|
 |06/24/2023|0|0|0|8|0|0|Implemented working skeleton of app and allowed easy access of including new acitivities/features|
 |06/24/2023|0|0|16|0|0|0|Created Notes scanning functionality using androidMLkit api in Java (contributions not visible for this as email was not configured) |
-|06/24/2023|0|8|0|0|0|0| Set up + Created initial skeleton and frontend for calendar code
+|06/24/2023|0|10|0|0|0|0| Set up + Created initial skeleton and frontend for calendar code
 |06/25/2023|7|0|0|0|0|0|Converting Note Scanner code from Java to Kotlin and integrating with temporary dashboard for demoing purposes|
 |06/25/2023|0|0|0|0|8|0|Set up firebase for project and set up google authentication (contributions not visible for this as email was not configured but shows if in commits with my name)|
 |06/25/2023|0|0|0|0|4|0|Integrated google auth with existing UI (contributions not visible for this as email was not configured but shows if in commits with my name)|
@@ -14,7 +14,7 @@
 |06/27/2023|0|0|0|0|0|6|Set up initial dashboard interface and calendar UI (front-end), add redirecting to other features|
 |06/28/2023|0|0|0|0|0|6|Continue calendar and logout front-end/UI|
 |07/10/2023|4|0|0|0|0|0|Setup firestore for Ace Project and setup codebase to access firestore from Kotlin files|
-|07/18/2023|0|2|0|0|0|0|Fixed bugs where calendar and camera were closing on 'Back'|
+|07/18/2023|0|6|0|0|0|0|Fixed bugs where calendar and camera were closing on 'Back'|
 |07/18/2023|5|0|0|0|0|0|Extracted data from authentication to get UID from firebase, in order to setup firestore. Update dashboard from ConstraintLayout to LinearLayout for easier future developement|
 |07/19/2023|0|0|1|0|0|0|Updated email for project, contributions visible and updated image assets|
 |07/19/2023|0|2|0|0|0|0|Added Profile to Dashboard + General UI fixes|
