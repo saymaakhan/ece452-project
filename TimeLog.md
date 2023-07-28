@@ -10,7 +10,7 @@
 |06/25/2023|0|0|0|0|4|0|Integrated google auth with existing UI (contributions not visible for this as email was not configured but shows if in commits with my name)|
 |06/25/2023|0|2|0|0|0|0|Resolving merges with google authentication and calendar|
 |06/25/2023|0|0|0|3|0|0|Created splash page for application and modified to match mockups|
-|06/25/2023|0|0|0|4|0|0|Created login activity inlcuding allowing users to type in username and password and verify. It also checked for password conditions (shown in commit)|
+|06/25/2023|0|0|0|5|0|0|Created login activity inlcuding allowing users to type in username and password and verify. It also checked for password conditions (shown in commit)|
 |06/27/2023|0|0|0|0|0|6|Set up initial dashboard interface and calendar UI (front-end), add redirecting to other features|
 |06/28/2023|0|0|0|0|0|6|Continue calendar and logout front-end/UI|
 |07/10/2023|4|0|0|0|0|0|Setup firestore for Ace Project and setup codebase to access firestore from Kotlin files|
@@ -19,9 +19,9 @@
 |07/19/2023|0|0|1|0|0|0|Updated email for project, contributions visible and updated image assets|
 |07/19/2023|0|2|0|0|0|0|Added Profile to Dashboard + General UI fixes|
 |07/20/2023|5|0|0|0|0|0|Create document and collection infrastructure for fellow team members to store data on firebase such as calendar events and messaging services. Review Pull Requests and debug camera scanner crashing|
+|07/20/2023|0|0|0|15|0|0|Implemented frontend chat messaging functionality allowing users to send and recieve test messages. Was able to to recieve test messages for system after sending a message.|
+|07/20/2023|0|0|0|4|0|0|Allowed users to select contacts to chat with and seperated chats for each contacts |
 |07/21/2023|5|0|0|0|0|0|Developed Dialog Window and three splash screens to host all grade content.|
-|07/21/2023|0|0|0|15|0|0|Implemented frontend chat messaging functionality allowing users to send and recieve test messages. |
-|07/21/2023|0|0|0|4|0|0|Allowed users to select contacts to chat with. (Seperated chats for each contacts) |
 |07/21/2023|0|0|0|3|0|0|Fixed issues in Android Manifest |
 |07/21/2023|0|8|0|0|0|0|Frontend updates for profile|
 |07/21/2023|0|0|0|0|0|10|Created and designed navbar to make application's key features easier to access, integrate with other activities|
@@ -31,7 +31,7 @@
 |07/22/2023|0|2|0|0|0|0|Updates to profile UI + AndroidManifest|
 |07/22/2023|10|0|0|0|0|0|Created UI and data retrieval from Firestore for grades and classes for a user|
 |07/22/2023|0|0|0|14|0|0|Implemented frontend discussion forum functionality allowing grouped users to send and recieve test messages.|
-|07/22/2023|0|0|0|3|0|0|Allowed users to select topics to dicuss on. (Seperated topics for each discussion forum)|
+|07/22/2023|0|0|0|3|0|0|Allowed users to select topics to dicuss on as well as seperated topics for each discussion forum|
 |07/22/2023|0|0|10|0|0|0|Experiment: PDF generation of scanned image to text directly to phone's internal storage. Result -> Permission error (SDK 33 issue) (legacy code in pdf_feature branch)|
 |07/22/2023|0|0|0|0|0|13|Design main page UX (new wireframe), design icons, and refactor activity for functionality, enhance notes interface|
 |07/23/2023|13|0|0|0|0|0|Created custom card components to showcase Grades and messaging features. Finalized firestore infrastructure to be utilized throughout app. Implemented hot reloading from firestore. Added the math logic for grades, syllabus grades, class grades and cummalitive grade. Updated color theme of app. Add /drawable assets to be used in application by fellow team members|
@@ -44,11 +44,11 @@
 |07/24/2023|0|0|0|0|0|12|Make calendar interface close to mock-up schemes and create front-end/back-end for study recommendations based on grade performance|
 |07/24/2023|0|13|0|0|0|0|Added more backend functionality for profile UI + load user's name into the profile + general bug fixes|
 |07/24/2023|0|0|15|0|0|0|Redesigned the CameraActivity UI to match the theme. Fixed bugs and polished the transitions for pdf downloads using dialog boxes.  
-|07/24/2023|0|0|0|9|0|0|Redesigned chat messaging, contact list, discussion forum, discussion topics UI layout|
+|07/24/2023|0|0|0|10|0|0|Redesigned chat messaging, contact list, discussion forum, discussion topics UI layout|
 |07/25/2023|15|0|0|0|0|0|Update insights modal to not show incorrect insights for classes that have just been created. Fix bugs within Chat and Forum pages. Update chat and Forum UI to be more modern and replicate mockups. Create a counter for the number of students in a class, so that this can be displayed in the forums page. Port the logic from Grades where we add classes, over to the Profile page to handle this. Clean up UI for demo. Create hyperlink from all pages that need classes, over to the Profile page when there are no classes. Add the ability to edit a users displayName (later to be removed for security)|
 |07/25/2023|0|0|0|0|10|0|Redesigned discussion messages to store minimal fields. Coded the backend to show sent messages and all incoming received messages from any authenticated user in their class in realtime. Fixed bugs in receiving messages list and making sure only enrolled users were able to message in the discussion|
 |07/25/2023|0|0|0|4|0|0|Added sent notifications to indicate user's message is successfully sent and added navigation back to dashboard from chat contacts and discussion forum topics. (Was removed in favor of navigation bar but commits are shown)|
-|07/25/2023|0|0|0|3|0|0|Remodeled profile layout and matched UI with rest of the application|
+|07/25/2023|0|0|0|4|0|0|Remodeled profile layout and matched UI with rest of the application|
 |07/25/2023|0|0|0|0|0|16|Make UI fit on multiple devices, enhance performance insights graphics, update profile UI to match mock-ups, add ability to export user calendar into .ics file that directly loads into Google Calendar account, code profile UI to match application|
 |07/25/2023|0|0|0|0|6|0|Added a bad word filter to prevent harrassment in direct messages/discussions. General bug fixes in chat/messaging features|
 |07/25/2023|0|10|0|0|0|0|Expanded on backend functionality for the pdf scanner so that the link is shared between activities|
